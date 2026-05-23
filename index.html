@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Presales Weekly Report — May 19, 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg:        #f4f6f9;
+    --bg-card:   #ffffff;
+    --bg-card-2: #f0f4f8;
+    --border:    #e2e8f0;
+    --text:      #1a202c;
+    --text-dim:  #4a5568;
+    --text-muted:#9aa4b2;
+    --accent:    #2563eb;
+    --green:     #16a34a;
+    --orange:    #d97706;
+    --red:       #dc2626;
+    --purple:    #7c3aed;
+    --xv:        #2563eb;
+    --cg:        #7c3aed;
+    --pia:       #d97706;
+    --actual:    #16a34a;
+    --projected: #d97706;
+    --target:    #dc2626;
+    --shadow:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.05);
+    --shadow-lg: 0 4px 12px rgba(0,0,0,.10), 0 2px 4px rgba(0,0,0,.06);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px;
+    background: var(--bg); color: var(--text);
+    font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  .container { max-width: 1320px; margin: 0 auto; }
+
+  /* ---- Header ---- */
+  header {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 24px; margin-bottom: 20px;
+    box-shadow: var(--shadow);
+  }
+  h1 { font-size: 24px; margin: 0 0 4px; font-weight: 700; color: var(--text); }
+  h2 {
+    font-size: 17px; margin: 0 0 14px; padding-bottom: 10px;
+    border-bottom: 2px solid var(--border); font-weight: 700;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer; user-select: none;
+  }
+  h2 .toggle-icon { font-size: 13px; color: var(--text-muted); transition: transform .2s; }
+  h2.collapsed .toggle-icon { transform: rotate(-90deg); }
+  h3 { font-size: 15px; margin: 0 0 10px; color: var(--text); font-weight: 600; }
+  .subtitle { color: var(--text-dim); font-size: 13px; margin-top: 4px; }
+  .meta-row {
+    display: flex; gap: 18px; margin-top: 12px;
+    color: var(--text-dim); font-size: 13px; flex-wrap: wrap;
+  }
+  .meta-row span { display: inline-flex; align-items: center; gap: 6px; }
+  .meta-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+  .meta-pill {
+    background: rgba(22,163,74,.1); color: var(--green);
+    border-radius: 20px; padding: 2px 10px; font-weight: 600; font-size: 12px;
+  }
+
+  /* ---- Section wrapper ---- */
+  .section { margin-bottom: 24px; }
+  .section-body { overflow: hidden; transition: max-height .3s ease, opacity .3s ease; }
+  .section-body.collapsed { max-height: 0 !important; opacity: 0; pointer-events: none; }
+
+  /* ---- KPI Grid ---- */
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+  .kpi {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px;
+    box-shadow: var(--shadow);
+    transition: transform .15s, box-shadow .15s;
+    cursor: default;
+  }
+  .kpi:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .kpi-label { color: var(--text-dim); font-size: 11px; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 8px; font-weight: 600; }
+  .kpi-value { font-size: 28px; font-weight: 800; color: var(--text); line-height: 1; }
+  .kpi-sub { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+  .kpi.good .kpi-value { color: var(--green); }
+  .kpi.warn .kpi-value { color: var(--orange); }
+  .kpi.bad  .kpi-value { color: var(--red); }
+  .kpi-bar { height: 3px; border-radius: 2px; margin-top: 12px; background: var(--bg-card-2); overflow: hidden; }
+  .kpi-bar-fill { height: 100%; border-radius: 2px; transition: width 1s ease; }
+  .kpi.good .kpi-bar-fill { background: var(--green); }
+  .kpi.warn .kpi-bar-fill { background: var(--orange); }
+  .kpi.bad  .kpi-bar-fill { background: var(--red); }
+
+  /* ---- Alerts ---- */
+  .alerts-panel {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+  .alert-item {
+    padding: 10px 14px; border-radius: 8px; margin-bottom: 8px;
+    border-left: 3px solid var(--border); background: var(--bg-card-2);
+    font-size: 13px; cursor: pointer;
+    transition: background .15s;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .alert-item:last-child { margin-bottom: 0; }
+  .alert-item:hover { background: #edf2f7; }
+  .alert-item.red { border-left-color: var(--red); }
+  .alert-item.orange { border-left-color: var(--orange); }
+  .alert-item.green { border-left-color: var(--green); }
+  .alert-item.gray { border-left-color: var(--text-muted); }
+  .alert-badge {
+    font-weight: 700; font-size: 11px; padding: 2px 8px;
+    border-radius: 20px; white-space: nowrap; flex-shrink: 0; margin-top: 1px;
+  }
+  .alert-badge.red    { background: rgba(220,38,38,.1);    color: var(--red); }
+  .alert-badge.orange { background: rgba(217,119,6,.1);    color: var(--orange); }
+  .alert-badge.green  { background: rgba(22,163,74,.1);    color: var(--green); }
+  .alert-badge.gray   { background: rgba(154,164,178,.12); color: var(--text-muted); }
+
+  /* ---- Brand Tabs ---- */
+  .brand-tabs { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+  .brand-tab {
+    padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;
+    border: 1.5px solid var(--border); background: var(--bg-card); cursor: pointer;
+    transition: all .15s; color: var(--text-dim);
+  }
+  .brand-tab:hover { border-color: var(--accent); color: var(--accent); }
+  .brand-tab.active.xv  { background: rgba(37,99,235,.1);  border-color: var(--xv);  color: var(--xv);  }
+  .brand-tab.active.cg  { background: rgba(124,58,237,.1); border-color: var(--cg);  color: var(--cg);  }
+  .brand-tab.active.pia { background: rgba(217,119,6,.1);  border-color: var(--pia); color: var(--pia); }
+  .brand-tab.active.all { background: rgba(22,163,74,.1);  border-color: var(--green); color: var(--green); }
+
+  /* ---- Chart Cards ---- */
+  .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; }
+  .chart-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 18px;
+    box-shadow: var(--shadow);
+    transition: box-shadow .15s;
+  }
+  .chart-card:hover { box-shadow: var(--shadow-lg); }
+  .chart-card.hidden { display: none; }
+  .chart-title { font-weight: 700; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+  .brand-tag {
+    font-size: 11px; padding: 3px 10px; border-radius: 20px;
+    text-transform: uppercase; font-weight: 700; letter-spacing: 0.04em;
+  }
+  .brand-tag.xv  { background: rgba(37,99,235,.1);  color: var(--xv); }
+  .brand-tag.cg  { background: rgba(124,58,237,.1); color: var(--cg); }
+  .brand-tag.pia { background: rgba(217,119,6,.1);  color: var(--pia); }
+  .brand-tag.all { background: rgba(22,163,74,.1);  color: var(--green); }
+  .chart-wrap { position: relative; height: 220px; margin-top: 10px; }
+  .insight {
+    margin-top: 12px; padding: 10px 14px; border-radius: 8px;
+    background: var(--bg-card-2); font-size: 13px; color: var(--text-dim);
+    border-left: 2px solid var(--accent);
+  }
+  .insight b { color: var(--text); font-weight: 600; }
+  .legend-row {
+    display: flex; gap: 14px; margin-bottom: 10px; font-size: 12px;
+    color: var(--text-dim); flex-wrap: wrap;
+  }
+  .legend-row span { display: inline-flex; align-items: center; gap: 6px; }
+  .swatch { width: 10px; height: 10px; border-radius: 2px; }
+
+  /* ---- Pilot Cards ---- */
+  .pilot-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 20px; margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+  .pilot-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; }
+  .pilot-status { font-size: 12px; padding: 3px 10px; border-radius: 20px; font-weight: 700; }
+  .pilot-status.live    { background: rgba(22,163,74,.1);  color: var(--green); }
+  .pilot-status.pending { background: rgba(217,119,6,.1);  color: var(--orange); }
+  .pilot-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 16px; }
+  .pilot-metric { background: var(--bg-card-2); border-radius: 8px; padding: 14px; border: 1px solid var(--border); }
+  .pilot-metric .l { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .pilot-metric .v { font-size: 24px; font-weight: 800; margin-top: 6px; }
+  .pilot-metric .s { font-size: 12px; color: var(--text-muted); margin-top: 3px; }
+
+  /* ---- Table ---- */
+  table.weekly { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 13px; }
+  table.weekly th, table.weekly td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); }
+  table.weekly th { color: var(--text-dim); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; background: var(--bg-card-2); }
+  table.weekly th:first-child { border-radius: 6px 0 0 6px; }
+  table.weekly th:last-child  { border-radius: 0 6px 6px 0; }
+  table.weekly td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  table.weekly tr.pending td { color: var(--text-muted); font-style: italic; }
+  table.weekly tbody tr:hover td { background: #f8fafc; }
+
+  /* ---- Notes ---- */
+  .notes {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px;
+    box-shadow: var(--shadow);
+  }
+  .notes ul { margin: 8px 0 0; padding-left: 20px; }
+  .notes li { margin-bottom: 8px; color: var(--text-dim); font-size: 13px; }
+  .notes li b { color: var(--text); }
+  .placeholder {
+    border: 1.5px dashed var(--border); border-radius: 8px; padding: 28px;
+    text-align: center; color: var(--text-muted); font-size: 13px;
+    background: var(--bg-card-2);
+  }
+
+  /* ---- Footer ---- */
+  footer {
+    margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--border);
+    color: var(--text-muted); font-size: 12px; display: flex;
+    justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  .print-btn {
+    padding: 6px 14px; background: var(--accent); color: #fff; border: none;
+    border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;
+    transition: opacity .15s;
+  }
+  .print-btn:hover { opacity: .85; }
+
+  @media (max-width: 640px) {
+    body { padding: 12px; }
+    .chart-grid { grid-template-columns: 1fr; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media print {
+    .print-btn { display: none; }
+    .brand-tabs { display: none; }
+    .chart-card.hidden { display: block !important; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ============================================================= -->
+<!--  DATA BLOCK — UPDATE THIS EACH WEEK                            -->
+<!-- ============================================================= -->
+<script id="report-data">
+window.REPORT = {
+  reportDate: "May 19, 2026",
+  weekOf: "Week 21 (May 12–18, 2026)",
+  preparedBy: "Phillip Tagarda",
+  audience: "Yossi Tal (C-level)",
+
+  thresholds: {
+    conversionBEU:   0.40,
+    conversionAlert: 0.25,
+    volumeDropWoW:   0.20,
+  },
+
+  months:      ["Jan 2026","Feb 2026","Mar 2026","Apr 2026","May 2026 MTD"],
+  monthsLabels:["Jan","Feb","Mar","Apr","May MTD"],
+
+  brands: {
+    XV: {
+      grossSalesUSD:  [null, null, null, null, 55031],
+      grossSalesProj: [null, null, null, null, 89700],
+      saleCount:      [699, 1005, 1087, 1166, 648.5],
+      conversionRate: [0.2330, 0.2916, 0.2733, 0.2800, 0.2805],
+      presaleVolume:  [3000, 3446, 3978, 4164, 2310],
+      presaleVolumeZD:[null, null, null, 1460, 1600],
+      bauVolume:      [910, 264, 261, 319, 264],
+      bauSale:        [184, 50, 33, 74, 78],
+      bauConversion:  [0.2022, 0.1894, 0.1264, 0.2320, 0.2955],
+    },
+    CG: {
+      grossSalesUSD:  [null,null,null,null,null],
+      grossSalesProj: [null,null,null,null,null],
+      saleCount:      [null,null,null,null,null],
+      conversionRate: [null,null,null,null,null],
+      presaleVolume:  [null,null,null,null,null],
+      presaleVolumeZD:[null,null,null,null,null],
+      bauVolume:      [null,null,null,null,null],
+      bauSale:        [null,null,null,null,null],
+      bauConversion:  [null,null,null,null,null],
+    },
+    PIA: {
+      grossSalesUSD:  [null,null,null,null,null],
+      grossSalesProj: [null,null,null,null,null],
+      saleCount:      [null,null,null,null,null],
+      conversionRate: [null,null,null,null,null],
+      presaleVolume:  [null,null,null,null,null],
+      presaleVolumeZD:[null,null,null,null,null],
+      bauVolume:      [null,null,null,null,null],
+      bauSale:        [null,null,null,null,null],
+      bauConversion:  [null,null,null,null,null],
+    },
+  },
+
+  pilots: {
+    inboundCopilotV3: {
+      status: "live",
+      goLiveDate: "May 18, 2026",
+      checkpointDate: "June 15, 2026",
+      brandsLive: ["XV", "CG", "PIA"],
+      weeks: [],
+      note: "May 11–17 pilot-week conversion data pending from Gena Puro. V3 went live May 18 for all XV/CG/PIA agents."
+    },
+    outboundCopilot: {
+      status: "live",
+      aggregatePassRate: 0.4375,
+      teamRevenueMTD: 3532.49,
+      agents: [
+        { name: "Audrey", passRate: 0.545, teamRevenue: 1473.53 },
+        { name: "Mabel",  passRate: 0.200, teamRevenue: 2058.96 },
+      ],
+    },
+  },
+
+  dataQuality: [
+    "May Teams amounts are BLANK in the gsheet. Need dollar values filled in by team owner.",
+    "Presale volume definition mismatch: Zendesk shows 1,460 unique tickets for April; prior report cited 3,767. Looker definition pending confirmation.",
+    "TN 31784335 ($17,625 Teams deal) was entered 3× by different agents in April. Dedupe before reporting revenue.",
+    "Gsheet lineage is unconfirmed. If gsheet is auto-populated from Looker, audit is circular — treat as snapshot only.",
+    "XV PreSale Zendesk brand is out-of-scope for Zendesk MCP. Zendesk presale_* counts come from ExpressVPN brand only.",
+    "Looker default date range is Jan 1, 2026 – present. Widen to May 1, 2025 for full back-history."
+  ],
+};
+</script>
+<!-- ============================================================= -->
+
+<header>
+  <h1 id="hdrTitle"></h1>
+  <div class="subtitle" id="hdrSubtitle"></div>
+  <div class="meta-row">
+    <span><span class="meta-dot"></span><span class="meta-pill">Inbound Copilot V3 LIVE</span>&nbsp;since May 18, 2026</span>
+    <span>Outbound Copilot active — Audrey &amp; Mabel</span>
+    <span>📅 June 15 V3 checkpoint</span>
+  </div>
+</header>
+
+<!-- KPIs -->
+<div class="section">
+  <h2 onclick="toggleSection(this)">Key Metrics <span class="toggle-icon">▾</span></h2>
+  <div class="section-body">
+    <div id="kpiGrid" class="kpi-grid"></div>
+  </div>
+</div>
+
+<!-- Alerts -->
+<div class="section">
+  <h2 onclick="toggleSection(this)">Alerts &amp; Watch-Items <span class="toggle-icon">▾</span></h2>
+  <div class="section-body">
+    <div class="alerts-panel">
+      <div id="alertsList"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Gross Sales -->
+<div class="section">
+  <h2 onclick="toggleSection(this)">Monthly Gross Sales (USD) <span class="toggle-icon">▾</span></h2>
+  <div class="section-body">
+    <div class="legend-row">
+      <span><span class="swatch" style="background:var(--actual)"></span>Actual</span>
+      <span><span class="swatch" style="background:var(--projected)"></span>Projected (May run rate)</span>
+    </div>
+    <div class="brand-tabs" id="grossSalesTabs"></div>
+    <div class="chart-grid" id="grossSalesGrid"></div>
+  </div>
+</div>
+
+<!-- Conversion Rate -->
+<div class="section">
+  <h2 onclick="toggleSection(this)">Presale Team Conversion Rate vs 40% BEU Target <span class="toggle-icon">▾</span></h2>
+  <div class="section-body">
+    <div class="legend-row">
+      <span><span class="swatch" style="background:var(--actual)"></span>Actual</span>
+      <span><span class="swatch" style="background:var(--target)"></span>40% BEU Target</span>
+      <span><span class="swatch" style="background:var(--orange)"></span>25% Alert Floor</span>
+    </div>
+    <div class="brand-tabs" id="conversionTabs"></div>
+    <div class="chart-grid" id="conversionGrid"></div>
+  </div>
+</div>
+
+<!-- Presale Volume -->
+<div class="section">
+  <h2 onclick="toggleSection(this)">Presale Volume (Top of Funnel) <span class="toggle-icon">▾</span></h2>
+  <div class="section-body">
+    <div class="legend-row">
+      <span><span class="swatch" style="background:var(--actual)"></span>Looker definition</span>
+      <span><span class="swatch" style="background:var(--projected)"></span>Zendesk presale_* (unique)</span>
+    </div>
+    <div class="brand-tabs" id="presaleVolumeTabs"></div>
+    <div class="chart-grid" id="presaleVolumeGrid"></div>
+  </div>
+</div>
+
+<!-- BAU -->
+<div class="section">
+  <h2 onclick="toggleSection(this)">BAU Volume &amp; Conversion <span class="toggle-icon">▾</span></h2>
+  <div class="section-body">
+    <div class="brand-tabs" id="bauTabs"></div>
+    <div class="chart-grid" id="bauGrid"></div>
+  </div>
+</div>
+
+<!-- Outbound Copilot -->
+<div class="section">
+  <h2 onclick="toggleSection(this)">Outbound Copilot — Mabel &amp; Audrey <span class="toggle-icon">▾</span></h2>
+  <div class="section-body" id="outboundSection"></div>
+</div>
+
+<!-- Inbound Copilot V3 -->
+<div class="section">
+  <h2 onclick="toggleSection(this)">Inbound Copilot V3 — June 15 Checkpoint <span class="toggle-icon">▾</span></h2>
+  <div class="section-body" id="inboundSection"></div>
+</div>
+
+<!-- Data Quality -->
+<div class="section">
+  <h2 onclick="toggleSection(this)">Data Quality &amp; Open Items <span class="toggle-icon">▾</span></h2>
+  <div class="section-body">
+    <div class="notes" id="dataQualityNotes"></div>
+  </div>
+</div>
+
+<footer>
+  <span>Generated <span id="genTime"></span> · Save as <code>Presales_Weekly_Report_[Month]_[Day]_[Year].html</code></span>
+  <button class="print-btn" onclick="window.print()">🖨 Print / Save PDF</button>
+</footer>
+
+</div><!-- /.container -->
+
+<script>
+// ============================================================= //
+// Rendering logic
+// ============================================================= //
+const R = window.REPORT;
+const fmtUSD = v => v == null ? "—" : "$" + Math.round(v).toLocaleString();
+const fmtPct = (v, d=1) => v == null ? "—" : (v*100).toFixed(d) + "%";
+const fmtInt = v => v == null ? "—" : Math.round(v).toLocaleString();
+const lastNonNull = arr => { for (let i = arr.length-1; i>=0; i--) if (arr[i] != null) return arr[i]; return null; };
+const pctChange = (curr, prev) => (curr==null||prev==null||prev===0) ? null : (curr-prev)/prev;
+
+// Chart.js defaults for light mode
+Chart.defaults.color = "#4a5568";
+Chart.defaults.borderColor = "#e2e8f0";
+Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+Chart.defaults.font.size = 12;
+
+// Header
+document.getElementById("hdrTitle").textContent = "Presales Weekly Report — " + R.reportDate;
+document.getElementById("hdrSubtitle").textContent = R.weekOf + " · Prepared by " + R.preparedBy + " for " + R.audience;
+document.getElementById("genTime").textContent = new Date().toLocaleString();
+
+// ---- Collapsible sections ----
+function toggleSection(h2) {
+  const body = h2.nextElementSibling;
+  const isCollapsed = body.classList.contains("collapsed");
+  if (isCollapsed) {
+    body.classList.remove("collapsed");
+    body.style.maxHeight = body.scrollHeight + "px";
+    h2.classList.remove("collapsed");
+  } else {
+    body.style.maxHeight = body.scrollHeight + "px";
+    requestAnimationFrame(() => { body.classList.add("collapsed"); });
+    h2.classList.add("collapsed");
+  }
+}
+// Initialise max-heights after render
+window.addEventListener("load", () => {
+  document.querySelectorAll(".section-body").forEach(b => {
+    b.style.maxHeight = b.scrollHeight + "px";
+  });
+});
+
+// ---- Brand tab filter ----
+function makeTabs(containerId, gridId, brands) {
+  const container = document.getElementById(containerId);
+  const grid = document.getElementById(gridId);
+  const brandLower = brand => brand.toLowerCase();
+
+  const allBtn = document.createElement("button");
+  allBtn.className = "brand-tab active all";
+  allBtn.textContent = "All Brands";
+  allBtn.dataset.brand = "all";
+  container.appendChild(allBtn);
+
+  brands.forEach(brand => {
+    const btn = document.createElement("button");
+    btn.className = `brand-tab`;
+    btn.textContent = brand;
+    btn.dataset.brand = brand;
+    container.appendChild(btn);
+  });
+
+  container.addEventListener("click", e => {
+    const btn = e.target.closest(".brand-tab");
+    if (!btn) return;
+    container.querySelectorAll(".brand-tab").forEach(b => b.classList.remove("active", "xv","cg","pia","all"));
+    const sel = btn.dataset.brand;
+    btn.classList.add("active", sel.toLowerCase());
+
+    grid.querySelectorAll(".chart-card").forEach(card => {
+      if (sel === "all" || card.dataset.brand === sel) card.classList.remove("hidden");
+      else card.classList.add("hidden");
+    });
+    // Re-expand section height
+    const body = grid.closest(".section-body");
+    if (body) { body.style.maxHeight = "none"; setTimeout(() => { body.style.maxHeight = body.scrollHeight + "px"; }, 10); }
+  });
+}
+
+// ---- KPIs ----
+const xv = R.brands.XV;
+const mtdSales = lastNonNull(xv.grossSalesUSD);
+const mtdProj  = lastNonNull(xv.grossSalesProj);
+const mtdConv  = lastNonNull(xv.conversionRate);
+const mtdVol   = lastNonNull(xv.presaleVolumeZD) || lastNonNull(xv.presaleVolume);
+const prevConv = xv.conversionRate[xv.conversionRate.length-2];
+const prevVol  = (xv.presaleVolumeZD[xv.presaleVolumeZD.length-2] != null)
+                 ? xv.presaleVolumeZD[xv.presaleVolumeZD.length-2]
+                 : xv.presaleVolume[xv.presaleVolume.length-2];
+
+const kpis = [
+  { label: "May MTD Gross Sales",      value: fmtUSD(mtdSales), sub: "Projected run rate: " + fmtUSD(mtdProj), cls: "good", fill: mtdSales && mtdProj ? Math.min(100, (mtdSales/mtdProj)*100) : 60 },
+  { label: "MTD Conversion Rate",      value: fmtPct(mtdConv,2),
+    sub: "Gap to 40% BEU: " + (mtdConv != null ? ((mtdConv-0.40)*100).toFixed(2)+"pp" : "—"),
+    cls: mtdConv!=null && mtdConv<R.thresholds.conversionAlert ? "bad"
+       : mtdConv!=null && mtdConv<R.thresholds.conversionBEU  ? "warn" : "good",
+    fill: mtdConv ? Math.min(100, (mtdConv/0.40)*100) : 0 },
+  { label: "May MTD Presale Volume",   value: fmtInt(mtdVol),
+    sub: pctChange(mtdVol,prevVol)!=null ? "vs prior month: " + fmtPct(pctChange(mtdVol,prevVol),1) : "—",
+    cls: "", fill: 65 },
+  { label: "Outbound Pass Rate",       value: fmtPct(R.pilots.outboundCopilot.aggregatePassRate,2),
+    sub: "Teams Rev MTD: " + fmtUSD(R.pilots.outboundCopilot.teamRevenueMTD), cls: "good", fill: R.pilots.outboundCopilot.aggregatePassRate*100 },
+];
+
+document.getElementById("kpiGrid").innerHTML = kpis.map(k => `
+  <div class="kpi ${k.cls}">
+    <div class="kpi-label">${k.label}</div>
+    <div class="kpi-value">${k.value}</div>
+    <div class="kpi-sub">${k.sub}</div>
+    <div class="kpi-bar"><div class="kpi-bar-fill" style="width:0%" data-fill="${k.fill.toFixed(0)}"></div></div>
+  </div>`).join("");
+
+// Animate KPI bars on load
+window.addEventListener("load", () => {
+  document.querySelectorAll(".kpi-bar-fill").forEach(el => {
+    setTimeout(() => { el.style.width = el.dataset.fill + "%"; }, 100);
+  });
+});
+
+// ---- Alerts ----
+const alerts = [];
+if (mtdConv != null) {
+  if (mtdConv < R.thresholds.conversionAlert) {
+    alerts.push({ cls:"red", badge:"CRITICAL", text:`Conversion ${fmtPct(mtdConv,2)} is below ${fmtPct(R.thresholds.conversionAlert,0)} alert floor.` });
+  } else if (mtdConv < R.thresholds.conversionBEU) {
+    alerts.push({ cls:"orange", badge:"BELOW TARGET", text:`Conversion ${fmtPct(mtdConv,2)} is ${((R.thresholds.conversionBEU-mtdConv)*100).toFixed(2)}pp below the 40% BEU target.` });
+  } else {
+    alerts.push({ cls:"green", badge:"ON TARGET", text:`Conversion ${fmtPct(mtdConv,2)} is at or above the 40% BEU target.` });
+  }
+}
+const volChange = pctChange(mtdVol, prevVol);
+if (volChange!=null && volChange<=-R.thresholds.volumeDropWoW)
+  alerts.push({ cls:"red", badge:"VOLUME DROP", text:`Presale volume down ${fmtPct(Math.abs(volChange),1)} vs prior period.` });
+if (R.pilots.inboundCopilotV3.weeks.length===0)
+  alerts.push({ cls:"orange", badge:"PILOT DATA PENDING", text:R.pilots.inboundCopilotV3.note });
+R.dataQuality.slice(0,2).forEach(n => alerts.push({ cls:"gray", badge:"DATA QUALITY", text:n }));
+
+document.getElementById("alertsList").innerHTML = alerts.length ? alerts.map(a =>
+  `<div class="alert-item ${a.cls}">
+    <span class="alert-badge ${a.cls}">${a.badge}</span>
+    <span>${a.text}</span>
+  </div>`).join("") :
+  `<div class="alert-item green"><span class="alert-badge green">ALL CLEAR</span><span>No alerts firing.</span></div>`;
+
+// ---- Chart factory helpers ----
+const gridColors = { y: { color: "#e2e8f0" }, x: { display: false } };
+
+function makeCard(title, brand) {
+  const card = document.createElement("div");
+  card.className = "chart-card";
+  card.dataset.brand = brand;
+  card.innerHTML = `
+    <div class="chart-title">
+      <span>${title} — ${brand}</span>
+      <span class="brand-tag ${brand.toLowerCase()}">${brand}</span>
+    </div>
+    <div class="chart-wrap"><canvas></canvas></div>
+    <div class="insight"></div>`;
+  return card;
+}
+
+function brandHasData(brand, key) { return R.brands[brand][key].some(v=>v!=null); }
+
+function buildGrid(gridId, tabsId, chartFn, insightFn, title, key) {
+  const grid = document.getElementById(gridId);
+  const brands = ["XV","CG","PIA"];
+  brands.forEach(brand => {
+    const card = makeCard(title, brand);
+    grid.appendChild(card);
+    const canvas = card.querySelector("canvas");
+    const insight = card.querySelector(".insight");
+    if (!brandHasData(brand, key)) {
+      card.querySelector(".chart-wrap").innerHTML =
+        `<div class="placeholder">No ${brand} data yet — populate <code>window.REPORT.brands.${brand}</code></div>`;
+      insight.innerHTML = `<b>Insight:</b> Awaiting Looker export for ${brand}.`;
+      return;
+    }
+    chartFn(canvas, brand);
+    insight.innerHTML = insightFn(brand);
+  });
+  if (tabsId) makeTabs(tabsId, gridId, brands);
+}
+
+// ---- Gross Sales ----
+buildGrid("grossSalesGrid","grossSalesTabs", (canvas, brand) => {
+  const b = R.brands[brand];
+  new Chart(canvas, { type:"bar", data:{
+    labels: R.monthsLabels,
+    datasets:[
+      { label:"Actual",    data:b.grossSalesUSD,  backgroundColor:"rgba(22,163,74,.75)",  borderColor:"#16a34a", borderWidth:1 },
+      { label:"Projected", data:b.grossSalesProj, backgroundColor:"rgba(217,119,6,.45)",  borderColor:"#d97706", borderWidth:1 },
+    ]
+  }, options:{ maintainAspectRatio:false, responsive:true,
+    scales:{ y:{ ticks:{ callback:v=>"$"+(v/1000).toFixed(0)+"k" }, grid:gridColors.y }, x:{ grid:gridColors.x } },
+    plugins:{ legend:{display:false} }
+  }});
+}, brand => {
+  const b = R.brands[brand];
+  const mtd=lastNonNull(b.grossSalesUSD), proj=lastNonNull(b.grossSalesProj);
+  if (!mtd) return `<b>Insight:</b> Historical gross sales pending Edrienne's Looker export.`;
+  return `<b>Insight:</b> May MTD ${fmtUSD(mtd)}, projected run rate ${fmtUSD(proj)}.`;
+}, "Gross Sales", "grossSalesUSD");
+
+// ---- Conversion Rate ----
+buildGrid("conversionGrid","conversionTabs", (canvas, brand) => {
+  const b = R.brands[brand];
+  new Chart(canvas, { type:"line", data:{
+    labels: R.monthsLabels,
+    datasets:[
+      { label:"Conversion", data:b.conversionRate.map(v=>v==null?null:v*100),
+        borderColor:"#2563eb", backgroundColor:"rgba(37,99,235,.1)", tension:0.35, fill:true,
+        pointBackgroundColor:"#2563eb", pointRadius:5, pointHoverRadius:7 },
+      { label:"40% BEU",  data:R.monthsLabels.map(()=>40), borderColor:"#dc2626", borderDash:[6,4], pointRadius:0, borderWidth:1.8, fill:false },
+      { label:"25% Alert",data:R.monthsLabels.map(()=>25), borderColor:"#d97706", borderDash:[2,4], pointRadius:0, borderWidth:1.3, fill:false },
+    ]
+  }, options:{ maintainAspectRatio:false, responsive:true,
+    scales:{ y:{ min:0, max:50, ticks:{ callback:v=>v+"%" }, grid:gridColors.y }, x:{ grid:gridColors.x } },
+    plugins:{ legend:{display:false},
+      tooltip:{ callbacks:{ label: ctx => ctx.dataset.label+": "+ctx.parsed.y.toFixed(1)+"%" } }
+    }
+  }});
+}, brand => {
+  const b = R.brands[brand];
+  const mtd=lastNonNull(b.conversionRate), prev=b.conversionRate[b.conversionRate.length-2];
+  const gap=mtd!=null?(mtd-0.40):null, wow=pctChange(mtd,prev);
+  return `<b>Insight:</b> ${brand} MTD ${fmtPct(mtd,2)} · gap to BEU ${gap!=null?(gap*100).toFixed(2)+"pp":"—"} · vs prior month ${wow!=null?(wow>=0?"+":"")+fmtPct(wow,1):"—"}.`;
+}, "Conversion Rate", "conversionRate");
+
+// ---- Presale Volume ----
+buildGrid("presaleVolumeGrid","presaleVolumeTabs", (canvas, brand) => {
+  const b = R.brands[brand];
+  new Chart(canvas, { type:"bar", data:{
+    labels: R.monthsLabels,
+    datasets:[
+      { label:"Looker",          data:b.presaleVolume,   backgroundColor:"rgba(22,163,74,.7)" },
+      { label:"Zendesk presale_*",data:b.presaleVolumeZD, backgroundColor:"rgba(217,119,6,.7)" },
+    ]
+  }, options:{ maintainAspectRatio:false, responsive:true,
+    scales:{ y:{ grid:gridColors.y }, x:{ grid:gridColors.x } },
+    plugins:{ legend:{display:false} }
+  }});
+}, brand => {
+  const b = R.brands[brand];
+  const lk=lastNonNull(b.presaleVolume), zd=lastNonNull(b.presaleVolumeZD);
+  if (!lk && !zd) return `<b>Insight:</b> Volume data pending.`;
+  if (lk && zd) return `<b>Insight:</b> Definition gap — Looker ${fmtInt(lk)} vs Zendesk ${fmtInt(zd)} (${lk>zd?"+":""}${fmtInt(lk-zd)}). Confirm Looker source.`;
+  return `<b>Insight:</b> Latest: ${fmtInt(lk??zd)} (single source available).`;
+}, "Presale Volume", "presaleVolume");
+
+// ---- BAU ----
+buildGrid("bauGrid","bauTabs", (canvas, brand) => {
+  const b = R.brands[brand];
+  if (!b.bauVolume.some(v=>v!=null)) {
+    canvas.closest(".chart-wrap").innerHTML=`<div class="placeholder">No ${brand} BAU data yet</div>`;
+    return;
+  }
+  new Chart(canvas, { type:"bar", data:{
+    labels: R.monthsLabels,
+    datasets:[
+      { type:"bar",  label:"BAU Volume", data:b.bauVolume, backgroundColor:"rgba(37,99,235,.5)", yAxisID:"y" },
+      { type:"line", label:"BAU Conv%",  data:b.bauConversion.map(v=>v==null?null:v*100),
+        borderColor:"#d97706", backgroundColor:"rgba(217,119,6,.15)", yAxisID:"y2", tension:0.3, pointRadius:4 },
+    ]
+  }, options:{ maintainAspectRatio:false, responsive:true,
+    scales:{
+      y:  { position:"left",  grid:gridColors.y },
+      y2: { position:"right", min:0, max:50, ticks:{callback:v=>v+"%"}, grid:{display:false} },
+      x:  { grid:gridColors.x }
+    },
+    plugins:{ legend:{display:false} }
+  }});
+}, brand => {
+  const b=R.brands[brand];
+  return `<b>Insight:</b> ${brand} BAU MTD vol ${fmtInt(lastNonNull(b.bauVolume))} · conv ${fmtPct(lastNonNull(b.bauConversion),2)}.`;
+}, "BAU Volume & Conv", "bauVolume");
+
+// ---- Outbound Copilot ----
+const ob = R.pilots.outboundCopilot;
+document.getElementById("outboundSection").innerHTML = `
+  <div class="pilot-card">
+    <div class="pilot-head">
+      <div style="display:flex;align-items:center;gap:10px">
+        <b style="font-size:15px">Outbound Copilot Pilot</b>
+        <span class="pilot-status live">${ob.status.toUpperCase()}</span>
+      </div>
+      <span style="color:var(--text-dim);font-size:13px">Teams Revenue MTD: <b style="color:var(--green)">${fmtUSD(ob.teamRevenueMTD)}</b></span>
+    </div>
+    <div class="pilot-grid">
+      <div class="pilot-metric">
+        <div class="l">Aggregate Pass Rate</div>
+        <div class="v" style="color:var(--green)">${fmtPct(ob.aggregatePassRate,2)}</div>
+        <div class="s">Discard rate: ${fmtPct(1-ob.aggregatePassRate,2)}</div>
+      </div>
+      ${ob.agents.map(a=>`
+      <div class="pilot-metric">
+        <div class="l">${a.name}</div>
+        <div class="v" style="color:${a.passRate>=ob.aggregatePassRate?'var(--green)':'var(--orange)'}">${fmtPct(a.passRate,1)}</div>
+        <div class="s">Teams Rev: ${fmtUSD(a.teamRevenue)}</div>
+      </div>`).join("")}
+    </div>
+    <div class="insight" style="margin-top:14px">
+      <b>Insight:</b> Audrey is outperforming the aggregate by ${((ob.agents[0].passRate-ob.aggregatePassRate)*100).toFixed(1)}pp;
+      Mabel is ${((ob.aggregatePassRate-ob.agents[1].passRate)*100).toFixed(1)}pp below.
+      Notably, Mabel's lower pass rate produces higher Teams revenue (${fmtUSD(ob.agents[1].teamRevenue)} vs ${fmtUSD(ob.agents[0].teamRevenue)}) — investigate deal size / qualification thresholds.
+    </div>
+  </div>`;
+
+// ---- Inbound Copilot V3 ----
+const ib = R.pilots.inboundCopilotV3;
+const daysToCheckpoint = Math.ceil((new Date(ib.checkpointDate)-new Date())/(1000*60*60*24));
+document.getElementById("inboundSection").innerHTML = `
+  <div class="pilot-card">
+    <div class="pilot-head">
+      <div style="display:flex;align-items:center;gap:10px">
+        <b style="font-size:15px">Inbound Copilot V3</b>
+        <span class="pilot-status ${ib.status==='live'?'live':'pending'}">${ib.status.toUpperCase()}</span>
+      </div>
+      <span style="color:var(--text-dim);font-size:13px">Checkpoint: <b>${ib.checkpointDate}</b> · <b style="color:var(--accent)">${daysToCheckpoint} days to go</b></span>
+    </div>
+    <div class="pilot-grid">
+      <div class="pilot-metric">
+        <div class="l">Go-Live Date</div>
+        <div class="v" style="font-size:18px;color:var(--green)">${ib.goLiveDate}</div>
+        <div class="s">Brands: ${ib.brandsLive.join(", ")}</div>
+      </div>
+      <div class="pilot-metric">
+        <div class="l">Weeks Tracked</div>
+        <div class="v">${ib.weeks.length}</div>
+        <div class="s">Target: 4 weeks pre-checkpoint</div>
+      </div>
+    </div>
+    ${ib.weeks.length===0 ? `
+      <div class="insight" style="margin-top:14px">
+        <b>Pending:</b> ${ib.note}<br><br>
+        Add weekly entries to <code>window.REPORT.pilots.inboundCopilotV3.weeks</code>:<br>
+        <code>{ label:"Week of May 18", convPre:0.281, convPost:0.XX, lift:0.XX, note:"..." }</code>
+      </div>` : `
+      <table class="weekly">
+        <thead><tr><th>Week</th><th class="num">Pre-V3 Conv</th><th class="num">Post-V3 Conv</th><th class="num">Lift</th><th>Note</th></tr></thead>
+        <tbody>
+        ${ib.weeks.map(w=>`<tr ${w.convPost==null?'class="pending"':''}>
+          <td>${w.label}</td>
+          <td class="num">${fmtPct(w.convPre,2)}</td>
+          <td class="num">${fmtPct(w.convPost,2)}</td>
+          <td class="num" style="color:${w.lift>=0?'var(--green)':'var(--red)'}">${w.lift!=null?(w.lift>=0?'+':'')+( w.lift*100).toFixed(2)+'pp':'—'}</td>
+          <td>${w.note||''}</td>
+        </tr>`).join("")}
+        </tbody>
+      </table>`}
+  </div>`;
+
+// ---- Data Quality ----
+document.getElementById("dataQualityNotes").innerHTML =
+  `<ul>${R.dataQuality.map(n=>`<li>${n}</li>`).join("")}</ul>`;
+</script>
+
+</body>
+</html>
