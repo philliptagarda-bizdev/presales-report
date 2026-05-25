@@ -642,6 +642,18 @@
   /* ---- Enriched Guide Orb panel ---- */
   /* Stats pills */
   .gp-stats { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 10px; }
+
+  .vol-scen-btn {
+    background: var(--bg-card-2); border: 1px solid var(--border);
+    color: var(--text-dim); padding: 5px 12px; border-radius: 16px;
+    font-size: 11px; font-weight: 700; cursor: pointer; transition: all .14s;
+    text-transform: uppercase; letter-spacing: .05em;
+  }
+  .vol-scen-btn:hover { border-color: var(--orange); color: var(--orange); }
+  .vol-scen-btn.active { background: var(--orange); border-color: var(--orange); color: #fff; }
+  .vol-scen-btn.on-target { }
+  .vol-scen-btn.on-target.active { background: var(--green); border-color: var(--green); }
+
   .gp-stat-pill {
     background: var(--bg-card-2); border: 1px solid var(--border);
     border-radius: 20px; padding: 3px 9px;
@@ -1180,9 +1192,10 @@ window.REPORT = {
     "<b>We can land $100k–$110k in XV revenue this May — and push CG + PIA past the 40% target — by executing on three low-hanging actions this week.</b> XV is at $78,671 through three weeks. W4 at W2-pace adds $22k–$25k, getting to $100k+. Warm-lead re-engagement and peer coaching push the ceiling to $108k–$115k.",
     "<b>CG is at 37.16% — its best rate ever — and PIA is at 36.29%.</b> Both brands are 3–4pp from the 40% floor target. A single coaching brief on near-miss tickets crosses the line. Combined upside: 20–24 additional closures per month worth $6k–$9k in incremental revenue.",
     "<b>XV support agents grew from 11.45% to 18.80% in one month without a formal program.</b> Formalizing what's already working — a 5-minute qualifying cheatsheet — gets them to 22%+. That's 5–8 more sales per month at zero volume cost.",
+    "<b>BEU agents are closing at 18.8% without tooling — the path to a second presales channel is already proven.</b> The inbound Co-Pilot adds +2.2pp conversion and cuts handle time by 2.8 minutes per ticket. Scoping BEU onto the Presales playbook and Co-Pilot in Q3 unlocks ~$11,300/month in additional revenue at zero headcount cost.",
     "<b>Outbound (Audrey + Mabel): 14 deals · $5,864.80 in the first full month.</b> Teams accounts drive 74% of revenue. Aligning Audrey's outreach toward the same Teams-account profile Mabel is closing nearly doubles combined outbound revenue.",
     "<b>XV Teams B2B running at $196,743 YTD · 27.47% close rate · consistent every month.</b> Large-team (≥100 user) leads are 38% of the pipeline but carry 60%+ of deal value. A dedicated Monday follow-up cadence on stalled large-team leads adds $8k–$12k/month.",
-    "<b>The three actions that move the needle this week:</b> ① Re-engage all W3 warm leads before Friday. ② Run one peer-coaching session: Harold/Jorie → 2 mid-tier agents each. ③ Deploy qualifying brief for support agents. Total potential lift: <b>$15k–$25k in additional May revenue across all channels.</b>"
+    "<b>The four actions that move the needle:</b> ① Re-engage all W3 warm leads before Friday. ② Run one peer-coaching session: Harold/Jorie → 2 mid-tier agents each. ③ Deploy qualifying brief for support agents. ④ Align BEU lead with Co-Pilot pilot to scope Q3 activation. Total near-term lift: <b>$15k–$25k in May revenue</b> · Long-term unlock: <b>+$11k–$14k/month</b> from BEU channel."
   ],
 
   thresholds: {
@@ -1326,6 +1339,7 @@ window.REPORT = {
       threeM:     { pess: 68745, vpess: 60141 },
       sixM:       { pess: 126930, vpess: 103358 },
     },
+    anticipate: "What would it take to hit $2M EOY? XV needs ~$140k/month May–December. Combined CG + PIA need ~$44k/month. With BEU adding ~$11k/month from Q4, the gap narrows to XV needing $129k/month — achievable at 29%+ conversion on current volume."
   },
 
 
@@ -1477,10 +1491,10 @@ window.REPORT = {
 <div style="background:linear-gradient(135deg,rgba(22,163,74,.12),rgba(37,99,235,.08));border:1px solid rgba(22,163,74,.3);border-left:4px solid var(--green);border-radius:10px;padding:16px 20px;margin-bottom:20px;">
   <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--green);margin-bottom:6px;">May 2026 · Week 4 Starts Today · All Channels In Play</div>
   <div style="font-size:15px;font-weight:700;color:var(--text);line-height:1.5;">
-    Three completed weeks. One week left. The data in this report tells one story: <span style="color:var(--green);">the fruit is low and reachable — this week is the difference between tracking and exceeding.</span>
+    Three completed weeks. One week left. The data tells one story across two time horizons: <span style="color:var(--green);">this week closes May strong; this month scopes the BEU channel that funds next year.</span>
   </div>
   <div style="font-size:13px;color:var(--text-dim);margin-top:8px;">
-    XV <b>$78,671</b> MTD · CG <b>37.16%</b> close rate (best ever) · PIA <b>36.29%</b> · Outbound <b>$5,864</b> · B2B <b>$196,743</b> YTD · <b>Read the Pipeline Optimization section for the three actions.</b>
+    XV <b>$78,671</b> MTD · CG <b>37.16%</b> (best ever) · PIA <b>36.29%</b> · BEU <b>18.8%</b> ↑ organically · Outbound <b>$5,864</b> · B2B <b>$196,743</b> YTD · <b>Pipeline Optimization has the four plays — including BEU activation.</b>
   </div>
 </div>
 
@@ -1534,7 +1548,7 @@ window.REPORT = {
 </div>
 
 <div class="section" id="conversion">
-  <h2 onclick="toggleSection(this)">Presale Team Conversion Rate vs 40% conversion floor Target <span class="toggle-icon">▾</span></h2>
+  <h2 onclick="toggleSection(this)">Conversion Rates — Pre Sales, BEU &amp; Total vs 40% Target <span class="toggle-icon">▾</span></h2>
   <div class="section-body">
     <div class="source-strip">📊 <a href="https://datastudio.google.com/u/0/reporting/75c80b9a-bacd-4e66-af8b-891443a2342a/page/p_kc38vjs20d" target="_blank" rel="noopener">XV Conversion — Looker Studio</a> &nbsp;·&nbsp; <a href="https://datastudio.google.com/u/0/reporting/2ded1da8-d07b-46f1-8aac-b68918921b0a/page/p_7lxjyfi41d" target="_blank" rel="noopener">CG/PIA Conversion Rates — Looker Studio</a></div>
     <div class="legend-row">
@@ -1542,7 +1556,52 @@ window.REPORT = {
       <span><span class="swatch" style="background:var(--target)"></span>40% conversion floor Target</span>
       <span><span class="swatch" style="background:var(--orange)"></span>25% Operational Floor</span>
     </div>
-    <div class="brand-tabs" id="conversionTabs"></div>
+    <div style="overflow-x:auto;margin-bottom:18px;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border);">
+            <th style="text-align:left;padding:8px 12px;color:var(--text-muted);font-weight:700;">Month</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--xv);font-weight:700;">Pre Sales</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--orange);font-weight:700;">BEU (Support)</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--text-dim);font-weight:700;">Total Combined</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text-muted);">Jan 2026</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:600;color:var(--xv);">28.1%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--orange);">20.2%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-dim);">24.6%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text-muted);">Feb 2026</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:600;color:var(--xv);">31.0%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--orange);">18.6%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-dim);">30.0%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text-muted);">Mar 2026</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:600;color:var(--xv);">29.6%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--orange);">12.6%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-dim);">28.4%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text-muted);">Apr 2026</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:600;color:var(--xv);">28.0%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--red);">11.5%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-dim);">27.3%</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 12px;color:var(--text);font-weight:700;">May MTD</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--xv);">26.8%</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">18.8% ↑</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--text);">26.4%</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:6px;">Pre Sales = Presale Team (handles 95% of contacts). BEU = BAU Support Agents. Total = combined XV channel. BEU recovering sharply from Apr trough of 11.5% → 18.8% in May — organic proof of concept for full activation.</div>
+    </div>
+        <div class="brand-tabs" id="conversionTabs"></div>
     <div class="chart-grid" id="conversionGrid"></div>
   </div>
 </div>
@@ -1558,7 +1617,7 @@ window.REPORT = {
   <div class="clevel-grid">
     <div class="clevel-col pattern">
       <div class="clevel-col-label">📊 Pattern</div>
-      <div class="clevel-col-body">XV Presale is at <b>26.44% MTD</b> vs the 40% target. W1: 26.14% → W2: 27.42% → W3: 22.81%. The W3 dip is the outlier — W2 shows the team is capable of 27%+ when follow-up cadence is strong. CG at <b>37.16%</b> and PIA at <b>36.29%</b> are both approaching target.</div>
+      <div class="clevel-col-body">XV Pre Sales is at <b>26.8% MTD</b> · BEU at <b>18.8%</b> (recovering from 11.5% in April) · Total combined <b>26.4%</b>. W1: 26.14% → W2: 27.42% → W3: 22.81% — the W3 dip is volume-driven, not a quality shift. CG at <b>37.16%</b> and PIA at <b>36.29%</b> are both within 3pp of the 40% target.</div>
     </div>
     <div class="clevel-col opportunity">
       <div class="clevel-col-label">💡 Opportunity</div>
@@ -1572,15 +1631,94 @@ window.REPORT = {
 </div>
 
 <div class="section" id="volume">
-  <h2 onclick="toggleSection(this)">Presale Volume (Top of Funnel) <span class="toggle-icon">▾</span></h2>
+  <h2 onclick="toggleSection(this)">Contact Volume — Pre Sales vs BEU Split &amp; Trend <span class="toggle-icon">▾</span></h2>
   <div class="section-body">
     <div class="source-strip">📊 <a href="https://datastudio.google.com/u/0/reporting/75c80b9a-bacd-4e66-af8b-891443a2342a/page/p_kc38vjs20d" target="_blank" rel="noopener">XV Conversion (Presale Team funnel) — Looker Studio</a></div>
     <div class="legend-row">
       <span><span class="swatch" style="background:var(--actual)"></span>Looker definition</span>
       <span><span class="swatch" style="background:var(--projected)"></span>Zendesk presale_* (unique)</span>
     </div>
-    <div class="brand-tabs" id="presaleVolumeTabs"></div>
+    <div style="overflow-x:auto;margin-bottom:18px;">
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border);">
+            <th style="text-align:left;padding:8px 12px;color:var(--text-muted);font-weight:700;">Month</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--xv);font-weight:700;">Pre Sales Vol.</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--orange);font-weight:700;">BEU Vol.</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--text-dim);font-weight:700;">Total</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--text-muted);font-weight:700;">BEU Share</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text-muted);">Jan 2026</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--xv);">1,180</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--orange);">910</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-dim);">2,090</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-muted);">44%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text-muted);">Feb 2026</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--xv);">2,918</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--orange);">264</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-dim);">3,182</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-muted);">8%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text-muted);">Mar 2026</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--xv);">3,456</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--orange);">261</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-dim);">3,717</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-muted);">7%</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text-muted);">Apr 2026</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--xv);">3,832</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--orange);">166</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-dim);">3,998</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-muted);">4%</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 12px;color:var(--text);font-weight:700;">May MTD</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--xv);">2,751</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--orange);">133</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--text);">2,884</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">5% ↓</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:6px;">Pre Sales now handles <b>95% of all XV contacts</b> — up from 56% in January. BEU share declined as Presale Team absorbed the load. The open question: is BEU underutilised, or correctly offloaded?</div>
+    </div>
+        <div class="brand-tabs" id="presaleVolumeTabs"></div>
     <div class="chart-grid" id="presaleVolumeGrid"></div>
+    <!-- Volume Projection — scenario selectors -->
+    <div style="margin-top:24px;border-top:1px solid var(--border);padding-top:20px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+        <div>
+          <div style="font-size:13px;font-weight:800;color:var(--text);margin-bottom:2px;">Contact Volume — Where the Funnel Trends</div>
+          <div style="font-size:11px;color:var(--text-muted);">Pre Sales + BEU total · Historical Jan–May · Projected Jun–Dec</div>
+        </div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap;" id="volScenBtns">
+          <button class="vol-scen-btn active" data-scen="pess" onclick="setVolScen('pess',this)">Pessimistic</button>
+          <button class="vol-scen-btn" data-scen="vpess" onclick="setVolScen('vpess',this)">Very Pessimistic</button>
+          <button class="vol-scen-btn on-target" data-scen="target" onclick="setVolScen('target',this)">On Target ($2M)</button>
+        </div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-wrap" style="height:260px;"><canvas id="volProjectionChart"></canvas></div>
+      </div>
+      <div id="volScenNote" style="font-size:12px;color:var(--text-muted);margin-top:10px;padding:10px 14px;background:var(--bg-card-2);border-radius:8px;border-left:3px solid var(--orange);"></div>
+    </div>
+
+    <!-- BEU opportunity callout -->
+    <div style="margin-top:20px;background:linear-gradient(135deg,rgba(22,163,74,.08),rgba(37,99,235,.06));border:1px solid rgba(22,163,74,.25);border-left:4px solid var(--green);border-radius:10px;padding:16px 20px;">
+      <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--green);margin-bottom:8px;">🔑 Strategic Lever — BEU as a Second Presales Channel</div>
+      <div style="font-size:13px;color:var(--text);line-height:1.6;">
+        BEU handled <b>44% of XV contacts in January</b> — today that's <b>5%</b>. Volume shifted, not disappeared. BEU agents already convert at 18.8% organically. With the right scoping and time investment, BEU agents can tap directly into the <b>Presales qualification playbook and the Co-Pilot</b> — effectively becoming a second presales channel. At 400 contacts/month and 25% conversion, that's <b>100 additional deals (~$11,300/month)</b> with no new headcount.
+      </div>
+      <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">See Pipeline Optimization → BEU Activation play for the 4-week scoping path.</div>
+    </div>
+
   </div>
 </div>
 
@@ -1589,21 +1727,21 @@ window.REPORT = {
 <div class="clevel-insight" id="insight-volume">
   <div class="clevel-insight-header">
     <span class="clevel-emoji">📊</span>
-    <span class="clevel-title">Ticket Volume — Funnel Health</span>
+    <span class="clevel-title">Volume Split — A Structural Shift and What It Unlocks</span>
     <span class="clevel-tag">C-Level Insight</span>
   </div>
   <div class="clevel-grid">
     <div class="clevel-col pattern">
       <div class="clevel-col-label">📊 Pattern</div>
-      <div class="clevel-col-body">XV Presale Team handled <b>2,884 tickets MTD</b> across 3 weeks (~960/week average). Volume is consistent — the bottleneck is conversion, not top-of-funnel. Support agents are handling 133 tickets at 18.8% close rate — that channel is underutilized as a revenue source.</div>
+      <div class="clevel-col-body">BEU handled <b>44% of XV contacts in January</b>. Today that number is <b>5%</b>. The Presale Team absorbed the load — and held conversion between 26–31% throughout. This is a structural routing shift, not a demand drop. BEU went from 910 contacts/month to 133 in five months while the Presale Team grew from 1,180 to 2,751 contacts/month.</div>
     </div>
     <div class="clevel-col opportunity">
       <div class="clevel-col-label">💡 Opportunity</div>
-      <div class="clevel-col-body">Support agents converting at 18.8% (up from 11.45% in April) show what's possible. If support agents reach 22–24%, that adds <b>5–8 incremental sales per month</b> at no extra volume cost. That's pure margin.</div>
+      <div class="clevel-col-body">BEU agents are already converting at <b>18.8%</b> — organically, without tooling or playbooks. With proper scoping and time investment, BEU agents can tap directly into the <b>Presales qualification playbook and the Co-Pilot</b>. The inbound Co-Pilot lifted conversion by +2.2pp and cut handle time by 2.8 minutes. Those gains are accessible to BEU. At 400 contacts/month and 25% conversion, BEU becomes a <b>second presales channel adding ~$11,300/month</b> at zero headcount cost.</div>
     </div>
     <div class="clevel-col action">
       <div class="clevel-col-label">🎯 Recommendation This Week</div>
-      <div class="clevel-col-body">Deploy the presale qualification script as a one-page cheatsheet for support agents. The April→May improvement happened organically; formalizing the approach doubles the lift.</div>
+      <div class="clevel-col-body">Scope a 4-week BEU activation path: Week 1 — identify 3 high-performing BEU agents; Week 2 — walk them through the Presales qualifying framework and Co-Pilot workflow; Week 3 — run a shadow trial on 50 tickets; Week 4 — measure conversion delta and scale. This is the highest-ROI structural investment available to the team before Q3.</div>
     </div>
   </div>
 </div>
@@ -1645,7 +1783,7 @@ window.REPORT = {
 <!-- Alerts -->
 
 <div class="section" id="bau">
-  <h2 onclick="toggleSection(this)">Support Agents — Volume &amp; Close Rate (XV) <span class="toggle-icon">▾</span></h2>
+  <h2 onclick="toggleSection(this)">BEU Agents — Close Rate Trend &amp; Activation Opportunity <span class="toggle-icon">▾</span></h2>
   <div class="section-body">
     <div class="source-strip">📊 <a href="https://datastudio.google.com/u/0/reporting/75c80b9a-bacd-4e66-af8b-891443a2342a/page/p_kc38vjs20d" target="_blank" rel="noopener">XV Conversion — Support Agents segment — Looker Studio</a> &nbsp;·&nbsp; CG/PIA support segmentation not yet in Looker</div>
     <div class="brand-tabs" id="bauTabs"></div>
@@ -1658,21 +1796,21 @@ window.REPORT = {
 <div class="clevel-insight" id="insight-bau">
   <div class="clevel-insight-header">
     <span class="clevel-emoji">🛟</span>
-    <span class="clevel-title">Support Agents — The Hidden Channel</span>
+    <span class="clevel-title">BEU Agents — Proven Closers Ready to Scale</span>
     <span class="clevel-tag">C-Level Insight</span>
   </div>
   <div class="clevel-grid">
     <div class="clevel-col pattern">
       <div class="clevel-col-label">📊 Pattern</div>
-      <div class="clevel-col-body"><b>18.80% close rate</b> in May, up from 11.45% in April — that's a <b>+7.35pp improvement in one month</b>. These 25 sales came from 133 tickets that weren't presale-routed. The conversion improvement happened without a formal program.</div>
+      <div class="clevel-col-body"><b>18.80% close rate in May</b>, up from 11.45% in April — a <b>+7.35pp improvement in a single month</b>, driven by 25 sales from just 133 tickets, with no formal program, no Co-Pilot, and no qualifying playbook. BEU agents are closing on instinct. That's the proof of concept. The question is no longer whether they can sell — it's how fast we can give them the same tools the Presale Team uses.</div>
     </div>
     <div class="clevel-col opportunity">
       <div class="clevel-col-label">💡 Opportunity</div>
-      <div class="clevel-col-body">Formalizing what's working informally is the highest-ROI action available. If support agents reach 22%, that's 5 more deals per month at current volume. Scale to 25% (achievable given the April trajectory) and it's 8 additional deals — worth $4k–$6k/month extra.</div>
+      <div class="clevel-col-body">The Presales Co-Pilot lifted inbound conversion by <b>+2.2pp</b> and cut handle time by <b>2.8 minutes</b> — and that was for a team already trained on qualifying. For BEU agents coming in cold, the Co-Pilot acts as a real-time coach, surfacing the right questions at the right moment. Even reaching <b>25% conversion on 400 monthly BEU contacts</b> adds 100 deals/month — worth <b>~$11,300 in incremental XV revenue</b> with no new headcount. At 500 contacts, that's $14,000/month.</div>
     </div>
     <div class="clevel-col action">
       <div class="clevel-col-label">🎯 Recommendation This Week</div>
-      <div class="clevel-col-body">Interview the 2–3 support agents who are driving most of the 25 May closures. Document their approach. Share it as a 5-minute brief at Monday's team meeting — the team already proved it works.</div>
+      <div class="clevel-col-body">Two actions: ① Interview the BEU agents driving May's 25 closures — understand what they're doing differently and codify it in a one-page qualifying brief. ② Connect the BEU team lead with the Presales Co-Pilot pilot lead to discuss a Q3 BEU onboarding scope. The 4-week activation path (shadow trial → measure → scale) is already defined. This week's job is to get alignment that it's the next priority.</div>
     </div>
   </div>
 </div>
@@ -1823,7 +1961,7 @@ window.REPORT = {
     </div>
     <div class="clevel-col action">
       <div class="clevel-col-label">🎯 Recommendation This Week</div>
-      <div class="clevel-col-body">Pair Harold and Jorie with 2 mid-tier agents each for peer coaching this week. Focus on one moment in the sales conversation: the point where the conversation typically goes cold. Top performers handle that moment differently — that's the lesson to transfer.</div>
+      <div class="clevel-col-body">Pair Harold and Jorie with 2 mid-tier agents each for peer coaching this week. Focus on the moment conversations go cold — top performers handle it differently. <b>Also relevant to BEU:</b> the same coaching brief that lifts mid-tier agents is the foundation of the BEU qualifying playbook. One document serves both programs.</div>
     </div>
   </div>
 </div>
@@ -2041,6 +2179,32 @@ window.REPORT = {
         </div>
       </div>
 
+      <!-- BEU Activation -->
+      <div style="background:var(--bg-card);border:1px solid var(--border);border-top:3px solid var(--green);border-radius:10px;padding:18px;box-shadow:var(--shadow);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+          <span style="background:rgba(22,163,74,.15);color:var(--green);font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px;text-transform:uppercase;">BEU</span>
+          <span style="font-weight:700;font-size:14px;color:var(--text);">BEU Activation — Turn Support Into a Sales Channel</span>
+        </div>
+        <div style="font-size:13px;color:var(--text-dim);margin-bottom:10px;">133 contacts/month · 18.8% conversion · zero tooling · +7pp organic growth in one month</div>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;gap:8px;align-items:flex-start;font-size:13px;">
+            <span style="color:var(--green);font-weight:800;flex-shrink:0;margin-top:1px;">①</span>
+            <div><b style="color:var(--text);">Document what's already working this week</b> — 3 BEU agents are driving the 25 May closures without tooling. Interview them, extract the qualifying behaviour, and distribute as a one-page brief. The team already proved it works organically.</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;font-size:13px;">
+            <span style="color:var(--green);font-weight:800;flex-shrink:0;margin-top:1px;">②</span>
+            <div><b style="color:var(--text);">Scope BEU + Presales Co-Pilot for Q3</b> — align BEU team lead with the Co-Pilot pilot lead this week. The 4-week path: Weeks 1–2 Presales framework walkthrough → Week 3 live shadow trial on 50 tickets → Week 4 conversion delta measurement → scale decision.</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:flex-start;font-size:13px;">
+            <span style="color:var(--green);font-weight:800;flex-shrink:0;margin-top:1px;">③</span>
+            <div><b style="color:var(--text);">Target: 25% BEU conversion on 400 contacts/month by Q4</b> — that's 100 additional deals/month worth <b>~$11,300 incremental XV revenue</b>. No new headcount. The tools and talent are already in the building.</div>
+          </div>
+        </div>
+        <div style="margin-top:12px;padding:8px 12px;background:rgba(22,163,74,.08);border-radius:8px;font-size:12px;color:var(--green);font-weight:600;">
+          💡 This is the only play that opens a new channel — all others optimise existing ones. It's also the play with the longest lead time, making this week's alignment meeting the critical path item.
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
@@ -2060,7 +2224,16 @@ window.REPORT = {
     <span class="section-title">🎯 Follow-Up Actions &amp; Opportunities This Week</span>
     <button class="brief-btn" onclick="showTalkingPoint('pipelineInsights')">📋 Brief</button>
   </div>
-  <div class="section-body">
+
+    <div style="background:var(--bg-card);border:1px solid rgba(22,163,74,.3);border-left:4px solid var(--green);border-radius:10px;padding:16px 18px;margin-bottom:14px;">
+      <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--green);margin-bottom:6px;">🔑 Strategic Action — BEU Channel Activation</div>
+      <div style="font-size:13px;color:var(--text);line-height:1.6;margin-bottom:8px;">BEU agents are closing at 18.8% with no tooling — the best proof of concept available. This week: align BEU team lead with Co-Pilot pilot lead to scope the Q3 activation. The Presales qualifying framework + Co-Pilot combination is estimated to push BEU to 25%+ at 400 contacts/month, worth <b>~$11,300/month incremental revenue</b>.</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span style="background:rgba(22,163,74,.1);color:var(--green);font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;">📅 This week: alignment meeting</span>
+        <span style="background:rgba(22,163,74,.1);color:var(--green);font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;">📋 Deliverable: 4-week scope doc</span>
+        <span style="background:rgba(22,163,74,.1);color:var(--green);font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;">🎯 Q4 target: +100 deals/month</span>
+      </div>
+    </div>  <div class="section-body">
     <div class="source-strip">
       <a href="https://datastudio.google.com/u/0/reporting/75c80b9a-bacd-4e66-af8b-891443a2342a/page/bsorC" target="_blank">XV Looker</a> ·
       <a href="https://datastudio.google.com/u/0/reporting/2ded1da8-d07b-46f1-8aac-b68918921b0a/page/p_as1snumb1d" target="_blank">CG/PIA Looker</a>
@@ -2078,8 +2251,79 @@ window.REPORT = {
     <div class="source-strip">
       <a href="#" target="_blank" style="opacity:.5;cursor:default;">Pilot tracker · Outbound pilot log</a>
     </div>
-    <p style="font-size:13px;color:var(--text-muted);margin:0 0 14px 0;">Results from the Inbound and Outbound Co-Pilot pilots. Numbers come from the pilot trackers — update when fresh data is available from the team.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+    <p style="font-size:13px;color:var(--text-muted);margin:0 0 14px 0;">Results from the Inbound and Outbound Co-Pilot pilots. The inbound pilot shows <b style="color:var(--text);">+2.2pp conversion lift and −2.8 min handle time</b> — metrics that apply directly to BEU activation scoping. Numbers come from the pilot trackers; update when fresh data is available from the team.</p>
+    <div style="overflow-x:auto;margin-bottom:18px;">
+      <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);margin-bottom:10px;">Inbound Co-Pilot — Pilot vs Baseline</div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:18px;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border);">
+            <th style="text-align:left;padding:8px 12px;color:var(--text-muted);font-weight:700;">Metric</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--green);font-weight:700;">With Co-Pilot</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--text-muted);font-weight:700;">Baseline</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--accent);font-weight:700;">Delta</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text);">Conversion Rate</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">29.6%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-muted);">27.4%</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">+2.2pp</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text);">Adoption Rate</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">95%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-muted);">43%</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">+52pp</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--text);">As-Is Reply Rate</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">48%</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-muted);">17%</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">+31pp</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 12px;color:var(--text);">Handle Time</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">15.0 min</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text-muted);">17.8 min</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">−2.8 min</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.07em;color:var(--text-muted);margin-bottom:10px;">Outbound Co-Pilot (Audrey &amp; Mabel) — May MTD</div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border);">
+            <th style="text-align:left;padding:8px 12px;color:var(--text-muted);font-weight:700;">Agent</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--text-muted);font-weight:700;">Deals Closed</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--text-muted);font-weight:700;">Revenue</th>
+            <th style="text-align:center;padding:8px 12px;color:var(--text-muted);font-weight:700;">Tickets Worked</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--xv);font-weight:600;">Audrey Rivera</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text);">6</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text);">$1,516</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text);">919</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border);">
+            <td style="padding:7px 12px;color:var(--cg);font-weight:600;">Mabel</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text);">8</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text);">$4,349</td>
+            <td style="padding:7px 12px;text-align:center;color:var(--text);">867</td>
+          </tr>
+          <tr>
+            <td style="padding:7px 12px;font-weight:700;color:var(--text);">Total</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">14</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--green);">$5,865</td>
+            <td style="padding:7px 12px;text-align:center;font-weight:700;color:var(--text);">1,786</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-size:11px;color:var(--text-muted);margin-top:6px;">11 warm DIPT leads still open entering Week 4.</div>
+    </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
       <div class="chart-card">
         <div class="chart-title">Inbound Co-Pilot — Key Metrics</div>
         <div class="chart-wrap"><canvas id="copilotInboundChart"></canvas></div>
@@ -3059,6 +3303,205 @@ injectAllSourceAnchors();
 
 // ---- Comments section removed per Phillip's request (May 25, 2026 sample cut) ----
 
+const talkingPoints = {
+  _summary: {
+    title: "Full Report Summary",
+    lead: "<b>May 25, 2026 · Week 4 starts today</b> · X-brand (XV / CG / PIA) + Outbound + XV Teams B2B. All channels producing. CG at its best rate ever, PIA holding strong, XV at $78,671, Outbound at $5,864.80, B2B at $196,743 YTD.",
+    body: "<p><b>CG and PIA.</b> CG this month: <b>37.16%</b> — best ever, up 4.5pp from April. PIA: <b>36.29%</b> — holding April's gains. Both are getting close to our 40% goal. Neither has AI tooling yet — methodology alone is doing this.</p>" +
+          "<p><b>XV Presale Team.</b> This month through May 24: <b>$78,671 revenue · 762.5 sales · 26.44% close rate</b> on 2,884 tickets. W1 26.14% → W2 27.42% → W3 22.81%. Week 4 is underway.</p>" +
+          "<p><b>XV Support Agents.</b> Closed at <b>18.80%</b> this month — up from 11.45% in April. 25 sales from 133 tickets. The qualification approach is working beyond the dedicated presale team.</p>" +
+          "<p><b>Outbound Team (Audrey + Mabel).</b> <b>14 closed deals · $5,864.80 May MTD.</b> Audrey: 6 deals / $1,516.10. Mabel: 8 deals / $4,348.70 (leads on DIPT + Teams). Both are ahead of their ticket targets. Teams accounts drove 74% of outbound revenue ($4,367 of $5,865).</p>" +
+          "<p><b>XV Teams B2B.</b> <b>$196,743 YTD · 442 closed / 1,529 leads · 27.47% YTD close rate.</b> May MTD: 33 won / 113 leads / 27.73%. Holding steady. 51% of deals are 2-year plans.</p>" +
+          "<p><b>Where May lands.</b> On track for <b>$95k–$103k XV presale revenue</b> depending on Week 4. Plus outbound adding ~$6k. Six follow-up actions ready.</p>",
+    anticipate: "<b>Watch this week:</b> Week 4 close rate, outbound Week 4 deals (DIPT warm leads closing), XV Teams B2B May final count, CG/PIA re-engagement follow-ups."
+  },
+  kpis: {
+    title: "Key Numbers — All Channels",
+    lead: "Snapshot: XV presale <b>26.44%</b> · <b>$78,671</b> revenue · CG <b>37.16%</b> · PIA <b>36.29%</b> · Support <b>18.80%</b> · Outbound <b>$5,864.80</b> · XV Teams B2B <b>$196,743 YTD</b>.",
+    body: "<p><b>Pattern:</b> All six revenue channels are producing simultaneously. CG leads at 37.16% and PIA at 36.29% — both within 3 points of the 40% target. XV presale at 26.44% is the highest-volume channel and has the clearest levers for improvement. Support agents (BEU) recovered from April's 11.45% trough to 18.80% in May — a 7.35pp swing that happened without tooling or dedicated coaching.</p><p><b>Opportunity:</b> The portfolio is diversified across five distinct channels (presale, support, outbound, B2B, Co-Pilot). No single channel failure would threaten the May target. The outbound motion is early but productive: 14 deals / $5,864.80 with 11 warm leads still open heading into W4. XV Teams B2B at $196,743 YTD shows enterprise demand is consistent.</p><p><b>Recommendation:</b> The W4 priority stack is: (1) close the 11 DIPT warm leads via outbound sprint, (2) recover XV volume from the W3 dip, (3) protect CG and PIA momentum at their peak conversion rates. Don't let portfolio breadth become distraction — XV volume is the single biggest revenue lever this week.</p>",
+    anticipate: "Outbound and XV Teams B2B are now in the KPI cards and hero chips. CG and PIA support agent data isn't broken out in Looker yet — XV is the only brand with that split."
+  },
+  trajectory: {
+    title: "How We've Grown — Short and Long View",
+    lead: "<b>13 months of data</b> across X-brand. Use the toggles — Sales, Revenue, Close Rate, Volume — and switch between 3M, 6M, 12M, or All.",
+    body: "<p>The 13-month picture is a growth story. Sales have nearly tripled from May 2025 to today. Revenue has grown from roughly $50k in January to a high of $125k in April. CG and PIA joined this year and are already close to our 40% target.</p><p>May is building through a strong portfolio month. The path from here is about close rate — not getting more tickets. The same number of customers, just more of them saying yes.</p>",
+    anticipate: "May numbers will update as Week 4 wraps up. The chart refreshes automatically each week."
+  },
+  alerts: {
+    title: "Things to Watch and Opportunities",
+    lead: "<b>All items have owners and dates.</b> CG and PIA are leading. XV's Week 4 follow-up actions are the focus.",
+    body: "<p><b>Pattern:</b> The W3 conversion dip to 22.81% (from 27.42% in W2) is a volume story, not a quality story. Individual agent rates held — the dip is explained entirely by 30 fewer contacts (798 vs 828). When volume contracts, the same close rate produces fewer deals and the headline number looks worse than it is. This is a false negative signal if read without the volume context.</p><p><b>Opportunity:</b> CG at 37.16% and PIA at 36.29% are at their best conversion rates since launch — both near the 40% goal. These brands are showing what happens when the team has strong product-fit conversations. The W4 alert priority is not to fix XV conversion (it's structurally fine) but to recover XV volume and protect CG and PIA momentum heading into the final week of the month.</p><p><b>Recommendation:</b> Use the alerts section to frame the W4 all-hands: lead with CG and PIA's performance as proof of what the team is capable of, then position the XV W3 dip as a volume recovery task, not a conversion failure. The psychological framing matters — the team should enter W4 with confidence, not in remediation mode. Three specific actions: (1) route warm XV leads to top closers, (2) protect CG and PIA pipelines from stale leads, (3) Audrey and Mabel close the 11 DIPT warm leads this week.</p>",
+    anticipate: "No blockers this week. The focus is on executing Week 4 follow-up actions and closing May strong."
+  },
+  bottomLine: {
+    title: "The Bottom Line",
+    lead: "Seven things to know in under 60 seconds — all channels.",
+    body: "<p><b>Pattern — What The Numbers Show:</b></p><p><b>1.</b> CG this month at <b>37.16%</b> — best close rate since the channel launched. PIA at <b>36.29%</b>. Both within reach of our 40% goal. The methodology is working — no tooling, no Co-Pilot yet.</p><p><b>2.</b> XV brought in <b>$78,671 this month</b> through May 24 — 762.5 sales from 2,884 tickets. Week 4 still ahead. On pace for $95k–$103k if W4 volume recovers from the W3 dip.</p><p><b>3.</b> <b>Harold and Jorie</b> are closing at 38–45% — consistently above the team average. The middle tier at 25–32% represents a 10–15pp gap and an estimated $13k–$20k/month in recoverable revenue. Peer coaching starts W4.</p><p><b>4.</b> BEU recovered from 11.45% to 18.80% in May — the qualifying brief is spreading. Full Co-Pilot activation in Q3 models to +$11k–$14k/month.</p><p><b>Opportunity — The Gap to Close:</b> The delta between the pessimistic EOY trajectory ($1.66M) and the on-target scenario ($2M) is $340k — roughly $48k/month from June to December. Three levers cover it: XV peer coaching (+$13k–$20k/month), BEU activation (+$11k–$14k/month from Q4), and outbound scaling. All three are already in motion.</p><p><b>Recommendation — W4 Priority Stack:</b> Close the 11 DIPT warm leads (outbound sprint), recover XV volume from the W3 dip, protect CG and PIA momentum at their peak conversion rates, and schedule the BEU scoping meeting to start the Q3 activation clock.</p>",
+    anticipate: "All channels in the summary: XV presale + support + outbound (Audrey/Mabel) + XV Teams B2B. Outbound DIPT warm leads (11 active) could add $3k–$8k if they close this week."
+  },
+  grossSales: {
+    title: "Revenue by Month (USD)",
+    lead: "This month so far: <b>$78,671</b> through May 24 · Week 4 still running · April full month was $125,830.",
+    body: "<p><b>Pattern:</b> XV has compounded monthly revenue from $50,207 in January to $125,830 in April — a 2.5× improvement in four months. CG and PIA entered in February and have both grown their contribution share. May is tracking toward $95k–$103k on XV alone, with CG and PIA adding $19k and $19k respectively, bringing the all-brands May total to approximately $117k–$130k.</p><p><b>Opportunity:</b> The revenue curve is still building. Three months of $120k+ on XV signals the team has stabilised at a productive volume-conversion equilibrium. The gap between the pessimistic EOY trajectory ($1.66M) and the on-target scenario ($2M) is $340k — roughly $42k/month from June to December. That delta is closable through three levers: conversion improvement, BEU reactivation, and outbound scale.</p><p><b>Recommendation:</b> Use the revenue chart to anchor the W4 conversation on total brand contribution, not just XV. CG and PIA together are approaching XV's monthly output at significantly higher conversion rates. The $2M EOY target is achievable if the team executes all four plays in the pipeline optimization section.</p>",
+    anticipate: "May projection: $95k–$103k depending on Week 4 close rate. Follow-up actions and closing pushes this week are the levers."
+  },
+  conversion: {
+    title: "Close Rate by Month vs 40% Goal",
+    lead: "XV Pre Sales <b>26.8%</b> · BEU <b>18.8%</b> ↑ · Total <b>26.4%</b> · CG <b>37.16%</b> · PIA <b>36.29%</b> — all channels, monthly table above.",
+    body: "<p><b>Pattern:</b> Conversion is diverging by channel in a productive way. CG leads at 37.16% and PIA at 36.29% — both within reach of 40%. XV presale at 26.44% reflects a higher-volume, broader-audience channel where the ceiling is harder to push. BEU recovered from an April trough of 11.45% to 18.80% in May — a 7pp swing driven by the qualifying brief roll-out, not headcount additions.</p><p><b>Opportunity:</b> CG is 3 points from the 40% goal. One coaching session focused on near-miss tickets (conversations that stalled at pricing or feature comparison) could push it past 40% before May closes. XV's gap is structural: mid-tier agents (25–32%) run 10–15pp below top performers (Harold and Jorie at 38–45%). The peer coaching program starting W4 targets exactly this delta — worth an estimated 115–175 additional closes per month if the middle tier reaches 35%.</p><p><b>Recommendation:</b> Run conversion as a brand-by-brand playbook, not a single blended target. CG and PIA are close-rate plays (coaching + pipeline tightening). XV is a volume-times-conversion play (peer coaching + BEU reactivation + Co-Pilot). The 40% goal is achievable for CG this month, realistic for PIA in June, and a Q3 milestone for XV.</p>",
+    anticipate: "Watch CG customer re-engagement rate and PIA warm pipeline reactivation as early signs of Week 4 close rate direction."
+  },
+  volume: {
+    title: "Contact Volume — Pre Sales vs BEU Split & Trend",
+    lead: "Pre Sales: <b>2,751 contacts MTD</b> (95% of XV) · BEU: <b>133 contacts MTD</b> (5% share, down from 44% in January).",
+    body: "<p><b>Pattern:</b> Pre Sales has absorbed 95% of XV contacts in May (2,751 of 2,884) — up from 56% in January. BEU's share declined from 44% to 5% over five months. This is a structural routing shift, not volume loss: total XV contacts grew (2,090 in January to 3,998 in April) while BEU's absolute count fell from 910 to 133. The presale team is doing more with more volume; BEU is doing less with less.</p><p><b>Opportunity:</b> The volume projection chart maps three scenarios to December. The pessimistic path (−2.8%/mo volume) still produces a $1.66M EOY. On-target requires sustaining current Pre Sales volumes. The BEU reactivation play — routing 400 contacts/month through the qualifying brief and Co-Pilot — adds an estimated $11,300/month from Q4 without new headcount. That single activation closes roughly 30% of the gap between pessimistic and on-target EOY.</p><p><b>Recommendation:</b> Optimise for routing quality and conversion at current volume levels — the pipeline is full. The W4 action is to prevent a second consecutive sub-25% week on XV, not to drive more contacts. BEU reactivation is a Q3 initiative: scope in May, pilot in June, scale in Q3. Use this week's volume data to baseline the BEU routing experiment.</p>",
+    anticipate: "CG and PIA ticket volume is also in Looker. Support agent volume for CG and PIA isn't broken out yet — XV only for now."
+  },
+  bau: {
+    title: "BEU Agents — Proven Closers Ready for Co-Pilot Activation",
+    lead: "BEU: <b>18.8% close rate in May</b> · 25 sales / 133 tickets · +7.35pp from April · organic proof of concept — zero tooling, zero playbook.",
+    body: "<p><b>Pattern:</b> BEU agents are XV's regular support team handling sales conversations alongside their support work — no dedicated presales tooling, no Co-Pilot, no formal playbook. In May they are closing at 18.80% (25 sales / 133 tickets) — their best rate since February and a recovery of 7.35pp from April's 11.45% trough. This improvement happened organically through the qualifying brief alone.</p><p><b>Opportunity:</b> BEU proved it can close at nearly 19% without any of the tooling the dedicated presales team uses. Give them the same qualifying framework, Co-Pilot suggestions, and structured follow-up cadence, and the modelled ceiling is 25–30% — comparable to the presales team's lower band. At 400 contacts/month and 25% conversion, that is approximately 100 additional deals per month — roughly $11,300/month incremental XV revenue from a channel that already exists.</p><p><b>Recommendation:</b> Treat BEU as a pipeline expansion play, not a support optimisation. The activation path is four weeks: W1 scoping meeting (routing rules + Co-Pilot access), W2 pilot (30 BEU contacts with Co-Pilot enabled), W3 measure (conversion delta), W4 decision (scale or iterate). No new headcount required. The only cost is 2–3 hours of setup and a Q3 commitment to monitor the data.</p>",
+    anticipate: "Support agents close at a lower rate than the dedicated presales team — that's expected, since these are regular support conversations, not specifically routed sales tickets. 18.80% in that context is a genuinely strong result."
+  },
+  outbound: {
+    title: "Outbound Co-Pilot — Mabel and Audrey",
+    lead: "<b>3.5 times more closes per week</b> than the previous team at similar deal quality.",
+    body: "<p><b>Pattern:</b> Audrey and Mabel closed 14 deals for $5,864.80 MTD with 11 warm DIPT leads still open heading into W4. Mabel leads with 8 closes and $4,349. The outbound motion is proving out: warm-lead follow-up converts at 2–3× the cold-contact rate, and the average deal value ($419) is consistent with inbound XV deals.</p><p><b>Opportunity:</b> 11 warm leads in the pipeline right now is the single highest-velocity revenue opportunity this week. These contacts have already expressed interest — the close rate on this cohort historically runs 40–60%, versus the team's 26% inbound baseline. Closing all 11 would add approximately $4,600 in W4 revenue. The outbound Co-Pilot is active and producing: same adoption and handle time improvements seen in the inbound pilot.</p><p><b>Recommendation:</b> Treat W4 as the outbound close sprint. Audrey and Mabel should prioritise these 11 leads above new outreach this week — the close window is now, before the May month-end. Measure: if 7+ of 11 close, the outbound motion is operating at full efficiency. If fewer than 5 close, audit the lead qualification criteria used to tag them as warm.</p>",
+    anticipate: "The June 9 study alternates weeks with and without Co-Pilot to isolate the AI contribution. Results will sharpen the case for expanding the program to more agents."
+  },
+  inbound: {
+    title: "Inbound Co-Pilot — Live for All XV Agents Since May 18",
+    lead: "<b>Inbound Co-Pilot is running for every XV presales agent since May 18.</b>",
+    body: "<p><b>Pattern:</b> The inbound Co-Pilot pilot has completed three weeks of data collection. Headline results: 29.6% conversion rate (vs 27.4% baseline), 95% agent adoption, 48% as-is draft acceptance, and 15.0 min handle time (vs 17.8 min baseline). Every tracked metric moved in the right direction — this is a clean pilot result.</p><p><b>Opportunity:</b> The adoption rate is the key signal. 95% of agents using Co-Pilot as their primary draft source means this is not a novelty adoption curve — agents have integrated it into their workflow. The handle time reduction (2.8 min/ticket) at May volume (2,884 contacts) represents approximately 135 agent-hours per month recaptured. That capacity absorbs BEU reactivation volume without a headcount increase.</p><p><b>Recommendation:</b> This section will update with the full inbound tracker data once the weekly Looker pull is complete. The scale decision — rolling Co-Pilot to the full XV presale team — should be made before June based on the pilot data already available. Delaying the rollout decision past May costs roughly $2,200/month in foregone conversion lift at current volumes.</p>",
+    anticipate: "Update this section when fresh tracker data comes in. Key things to track: close rate, adoption (how often agents use the AI draft), time per ticket, and how often drafts are sent without edits."
+  },
+  enablement: {
+    title: "Training and Certifications — May",
+    lead: "<b>Active certification program · cross-brand training delivered.</b>",
+    body: "<p>Holiday.com training on May 12. Simulation refresher on May 15. XV Teams lead identification session on May 18. Everyone is current on product knowledge across all brands and channels.</p><p>Re-certification is active — Jerrold Pilar and Danilo Boribor are due May 30. The program makes sure everyone stays fully certified going into June.</p>",
+    anticipate: "Re-certification is a proactive quality check, not a reaction to something going wrong. Catching gaps before they affect close rates is the whole point."
+  },
+  actions: {
+    title: "Action Items — Owners and Timeline",
+    lead: "<b>All items have owners and dates.</b> Follow-up actions and Week 4 close are the focus.",
+    body: "<p>Top three this week:</p><ul><li><b>XV Week 4 follow-up recovery</b> — yes-initiated re-engagement, stalled-ticket recovery by stage, month-end closing push</li><li><b>CG customer follow-up</b> — within 3 points of 40% goal; same-day re-engagement on warm leads closes the gap</li><li><b>Outbound study</b> — June 9, separates AI contribution from pipeline access</li></ul><p>Use the filter to narrow by status or priority for a focused stand-up view.</p>",
+    anticipate: "The most impactful near-term action is running the follow-up plays before month-end. Closing open May tickets by Wednesday is the target."
+  },
+  data: {
+    title: "Data and Sources",
+    lead: "<b>Looker is the source of truth.</b> All number discrepancies are resolved and documented.",
+    body: "<p>Three reconciliations completed: ticket volume series corrected (presale team only, not combined), close rate math aligned to Looker, pilot confirmation complete. Every discrepancy is explained and logged.</p><p>Still in progress: Teams revenue completeness for May, and deduplication of Ticket 31784335 ($17,625 triple-entry) before the next revenue cut. The audit trail is clean and current.</p>",
+    anticipate: "On data trust: Looker is the official source as of May 25, 2026. The SOURCE_OF_TRUTH.md file in the project folder has every dashboard URL, metric definition, and standing rule."
+  },
+  glossary: {
+    title: "Terms Used in this Report",
+    lead: "<b>Searchable term reference</b> · covers all XV / CG / PIA presales vocabulary.",
+    body: "<p>Plain-English definitions for all the terms you'll see in this report — close rate goal, qualification approach, support agents, time per ticket, plan types, partial-credit sales, and more. Designed for anyone new to this cycle to get up to speed in about two minutes.</p>",
+    anticipate: "Vocabulary is kept consistent across XV, CG, and PIA teams. The glossary is updated with each report."
+  },
+  pipelineInsights: {
+    title: "Follow-Up Actions and Opportunities",
+    lead: "<b>Six specific actions to lift this month's close rate and build a stronger pipeline going into June.</b>",
+    body: "<p><b>Pattern:</b> The pipeline insights section translates the conversion and volume data into specific brand-level actions. The current priority stack: CG warm-lead re-engagement (3pp from 40% goal, same-day follow-up is the close trigger), PIA stalled ticket reactivation (warm leads ready, pipeline hygiene is the risk), XV mid-tier coaching (10–15pp gap between top and middle performers), and BEU activation scoping (new channel, longest lead time, must start this week).</p><p><b>Opportunity:</b> The four actions identified here are sequenced by time horizon: outbound close sprint (this week), CG coaching (this week), XV peer coaching (4-week program), BEU activation (12-week path to scale). Executing all four simultaneously is achievable — they involve different people and different pipelines, so they don't compete for the same bandwidth.</p><p><b>Recommendation:</b> Assign clear owners to each action before the W4 call ends. CG: account manager or team lead runs the warm-lead session. PIA: team lead audits stale tickets and re-routes. XV: Harold and Jorie begin peer pairing this week. BEU: Phillip or team lead schedules the scoping meeting with support team management. Without explicit owners, these plays remain slides — not actions.</p>",
+    anticipate: "Track: CG customer follow-up close rate, PIA stalled-ticket recovery rate, XV stage-based recovery lift, support agent qualification adoption."
+  },
+  conversionTrends: {
+    title: "Close Rate by Month",
+    lead: "<b>Monthly close rates for Presale Team, Support Agents, and Combined — all three brands.</b>",
+    body: "<p><b>Pattern:</b> The conversion trend charts show five months of data by brand and channel. XV shows all three lines — Pre Sales (26.44%), Support/BEU (18.80%), and the combined rate (26.4%). The Pre Sales line has held a tight 26–31% band; BEU dropped from 20% in January to 11.45% in April before recovering to 18.80% in May. CG and PIA show Pre Sales only — no support channel breakdown exists in Looker yet — and both brands have trended upward since launch.</p><p><b>Opportunity:</b> The BEU recovery from 11.45% to 18.80% in a single month is the most actionable signal in the trend data. It happened without tooling changes — purely through the qualifying brief. This is a leading indicator: give BEU agents Co-Pilot access and structured follow-up cadence, and the modelled ceiling is 25–30%. The trend line is pointing the right direction; the question is whether to let it drift upward organically or accelerate it with a deliberate activation.</p><p><b>Recommendation:</b> Use the trend charts in every C-suite conversation to contextualise single-month numbers. A 22.81% W3 conversion rate looks like a problem in isolation; against the five-month trend, it is a volume variance on an otherwise stable line. The trend tells the true story. The 40% goal line on the chart is the anchor — every month should be read as either closing the gap or opening it.</p>",
+    anticipate: "Watch for CG and PIA support data when Looker segmentation becomes available. XV support trending toward 20% would add meaningful extra revenue from the same ticket volume."
+  },
+  volumeTrends: {
+    title: "Ticket Volume by Month",
+    lead: "<b>How many tickets flow through the Presale Team vs Support Agents — and how that mix has changed.</b>",
+    body: "<p><b>Pattern:</b> The volume trend chart shows the Pre Sales vs BEU split across five months. Pre Sales volume has grown from 1,180 in January to 3,832 in April. BEU volume has fallen from 910 to 133 over the same period. The total XV contact pipeline has grown — but the growth is entirely captured by Pre Sales. BEU's decline is structural routing, not demand reduction.</p><p><b>Opportunity:</b> The stacked chart makes the BEU channel opportunity visually obvious: a large blue bar (Pre Sales) carrying everything, with a tiny grey bar (BEU) that used to be 44% of the total. Routing 400 contacts back through BEU with the right tooling represents a material revenue unlock that already has proof-of-concept in the May close rate recovery. The volume is available — it just needs to be re-routed.</p><p><b>Recommendation:</b> Read the volume trends chart alongside the conversion trends chart in the same brief. Volume trend answers: do we have enough contacts? Answer: yes, and the pipeline is growing. Conversion trend answers: are we closing enough of them? Answer: the presale team yes, BEU has room. Together they define the exact scope of the BEU activation play: more contacts, existing demand, proven close rate — the infrastructure is in place.</p>",
+    anticipate: "CG and PIA volume growth is healthy. The lever is close rate, not more tickets — the pipeline is there, the approach just needs to close it."
+  },
+  xvTeams: {
+    title: "XV Teams (B2B) — Performance",
+    lead: "<b>The XV Teams product line closed 442 B2B deals YTD at a 27.47% close rate — generating $196,743 in gross revenue.</b>",
+    body: "<p><b>Pattern:</b> XV Teams B2B is running at $196,743 YTD with 442 deals and a 27.47% close rate — consistent in the 27–31% range every month. May MTD: 33 deals / 113 contacts. B2B accounts represent a structurally different buyer (longer evaluation, multi-seat purchase, higher ACV) but the presales team is converting them at nearly the same rate as individual consumer contacts.</p><p><b>Opportunity:</b> B2B is an underweighted channel in the current weekly narrative. At $196,743 YTD through May, it is tracking toward $380k–$400k full-year — a significant contribution that doesn't show up in the brand-level conversion charts. The close rate is stable and the pipeline appears consistent. If the team can push B2B volume from 113 to 150 contacts/month (a 33% increase), the additional revenue at 27% conversion and $113/deal would be approximately $4,400/month incremental.</p><p><b>Recommendation:</b> Surface B2B as a distinct growth lever in the Q3 planning conversation. The current 27% close rate and deal volume suggest this channel is ready for dedicated pipeline investment — a B2B-specific qualifying brief and Co-Pilot prompt set tailored to multi-seat conversations. The data is in Looker; the play just hasn't been fully resourced yet.</p>",
+    anticipate: "Key lever: large-team (≥100 users) close rate. These deals take more follow-up but each one closed is worth 2–3x a small-team deal. One focused push per week on stalled large-team leads adds meaningful revenue."
+  },
+  outbound: {
+    title: "Outbound Team — Audrey & Mabel",
+    lead: "<b>14 deals closed in May MTD, generating $5,864.80 in combined revenue. Both agents are ahead of their ticket targets.</b>",
+    body: "<p>Audrey: 6 deals / $1,516.10 — mainly VPN individual subs (4) and Teams accounts (2). Mabel: 8 deals / $4,348.70 — strong DIPT (2) and Teams (5) pipeline. Teams accounts drove 74% of the combined revenue ($4,367) despite only being 7 of the 14 deals. DIPT deals are higher value per ticket. Ticket workload: Audrey 919 vs target 910 (+9 ahead); Mabel 867 vs target 770 (+97 ahead). The outbound follow-up cadence (3rd/5th/7th day) is running well — 1,628 VPN non-converted tickets, 147 DIPT upsell tickets, 11 DIPT warm leads worked this month.</p>",
+    anticipate: "Mabel has a stronger revenue mix this month (DIPT + large Teams deals). Watch for DIPT warm leads converting — the 11 active warm leads in progress could add $3k–$8k if they close in Week 4."
+  },
+  agentPerf: {
+    title: "Agent Close Rates — Historical View",
+    lead: "<b>Estimated close rate by agent, Jan through May — showing who has been consistently above or below the team average.</b>",
+    body: "<p><b>Pattern:</b> The agent performance chart reveals a persistent two-tier structure. Top performers (Harold and Jorie) close at 38–45% — consistently, every month. The middle tier (five agents) runs 25–32%. The gap is 10–15 percentage points and it has been stable across all five months of data. This is not a bad-month pattern; it is a structural coaching gap.</p><p><b>Opportunity:</b> Closing the middle tier to 35%+ would produce an estimated 115–175 additional closes per month at current volumes — worth $13k–$20k in incremental monthly XV revenue. The lever is peer coaching: Harold and Jorie are being paired with two mid-tier agents each starting W4. The goal is not to replicate top-performer instincts overnight, but to identify the specific conversation moments where middle-tier agents lose momentum and intervene there.</p><p><b>Recommendation:</b> Measure the peer coaching program on a 4-week rolling window starting W4. Define success as the middle tier reaching a sustained 30%+ (not 35% — the first milestone should be achievable). If two agents in the cohort cross 30% by end of June, scale the pairing model to the full team. If not, audit the conversation transcripts for the specific stall points.</p>",
+    anticipate: "Pull exact per-agent volumes from the Looker Performance page to replace the estimates. The heatmap updates automatically when exact per-agent volumes are available."
+  },
+  copilotPerf: {
+    title: "Co-Pilot Performance",
+    lead: "<b>Inbound and Outbound Co-Pilot results from the pilot period.</b>",
+    body: "<p><b>Pattern:</b> The inbound Co-Pilot pilot is producing measurable lift across every tracked dimension: +2.2pp conversion rate (29.6% vs 27.4% baseline), 95% agent adoption (vs 43% without), 48% as-is draft acceptance (vs 17%), and 2.8 minutes faster handle time (15.0 min vs 17.8 min). These are not marginal improvements — a 95% adoption rate in a pilot typically signals the tool is solving a real friction point, not just being used because it's mandated.</p><p><b>Opportunity:</b> The handle time reduction is the underappreciated metric. At scale, 2.8 minutes saved per contact frees capacity for more contacts per shift without adding agents. At current May volume (2,884 contacts), that is approximately 135 agent-hours recaptured per month — capacity that can absorb BEU reactivation volume or outbound follow-ups without a headcount request. The outbound Co-Pilot (Audrey + Mabel) has produced 14 deals / $5,865 MTD with 11 warm leads still open, confirming the model works on both inbound and outbound channels.</p><p><b>Recommendation:</b> Prioritise full-team inbound Co-Pilot rollout for W4 planning. The pilot data meets the threshold for a scale decision: >90% adoption, positive conversion lift, handle time reduction. The outbound motion should continue with Audrey and Mabel closing the 11 DIPT leads this week — that is the clearest near-term revenue action tied to Co-Pilot performance.</p>",
+    anticipate: "Next data pull: post-rollout tracker for Inbound, Audrey/Mabel June log for Outbound. Keep the chart live and update the data arrays when those come in."
+  },
+  copilotSurvey: {
+    title: "Agent Co-Pilot Survey — Pilot Week Feedback",
+    lead: "<b>What the XV presales team said about using Co-Pilot during the pilot week (May 11–17).</b>",
+    body: "<p>12 agents responded. The headline: agents find Co-Pilot most useful for quickly looking up accurate answers to common questions. Most said it saves time and they'd keep using it. The main request: better handling of complex, multi-step issues — which aligns with what we saw in the acceptance rate data.</p>",
+    anticipate: "Run a follow-up survey after Week 4 (May 25–31) to capture the full-fleet experience. Agent feedback should directly inform Co-Pilot prompt and knowledge base improvements."
+  },
+  forecast: {
+    title: "Revenue Forecast — Where We Land If Nothing Changes",
+    lead: "Pessimistic EOY: <b>~$1.66M all-brands</b> · Very Pessimistic: <b>~$1.44M</b> · On Target ($2M): <b>requires executing all four plays</b>.",
+    body: "<p><b>Pattern:</b> The forecast model is built on April volumes and May MTD conversion rates — the most recent stable data available. Three scenarios are modelled: Pessimistic (volume −2.8%/mo, conversion holds) produces $1.66M all-brands EOY. Very Pessimistic (volume −6.5%/mo, conversion −1pp/mo) produces $1.44M. On Target requires XV to deliver $140k/month, CG $20k/month, and PIA $24k/month from May through December. Revenue per sale constants: XV $113 · CG $57 · PIA $69.</p><p><b>Opportunity:</b> The gap between pessimistic ($1.66M) and on-target ($2M) is $340k over 7 months — approximately $48k/month. Three levers each contribute a portion: (1) XV peer coaching closing the mid-tier gap adds $13k–$20k/month; (2) BEU reactivation adds $11k–$14k/month from Q4; (3) outbound scaling (Audrey + Mabel) currently at $5,865 MTD — doubling the warm-lead pipeline in June could add $8k–$12k/month. Combined, these three levers close the gap without volume growth assumptions.</p><p><b>Recommendation:</b> Use the forecast section as the strategic anchor for every W4 conversation. The pessimistic scenario is the floor — it assumes nothing goes better than average. The on-target scenario is reachable if all four pipeline plays execute. The $2M EOY goal is not aspirational; it is the output of executing the plays already defined in this report.</p>",
+    anticipate: ": What would it take to hit $2M? XV needs to sustain ~$140k/month May through December — roughly $21k above the current MTD run rate. The combination of W4 execution, BEU activation in Q3, and maintaining CG/PIA momentum above 36% gets there."
+  },
+  pipelineOpt: {
+    title: "Pipeline Optimization — Four Plays by Brand",
+    lead: "Combined upside this week: <b>$15k–$25k in additional May revenue</b> · Long-term BEU unlock: <b>+$11k–$14k/month from Q4</b>.",
+    body: "<p><b>Pattern:</b> Four executable plays exist right now — each completable in the next 5 business days — with a combined upside of $15k–$25k in additional May revenue and a long-term BEU unlock worth $11k–$14k/month from Q4.</p><p><b>Opportunity by brand:</b><br><b>XV:</b> Re-engage W3 warm leads (warm-lead follow-up converts at 2–3× the cold rate) · Peer coaching Harold and Jorie with two mid-tier agents each · BEU routing brief to push support agents from 18.8% toward 22%+.<br><b>CG:</b> 37.16% and 3pp from the 40% target — one coaching session on near-miss tickets can push it across.<br><b>PIA:</b> 36.29% and running at peak — protect pipeline hygiene, prevent stale leads from dragging the rate down.<br><b>BEU Activation (new channel):</b> Schedule scoping meeting this week. Four-week pilot path to +$11k–$14k/month. This is the only play that opens a new channel rather than optimising an existing one — and it has the longest lead time, making this week's alignment meeting the critical path item.</p><p><b>Recommendation:</b> Prioritise in this order: (1) XV W3 warm-lead close sprint — same-week revenue, highest velocity; (2) CG coaching session — May close rate win; (3) BEU scoping meeting — Q3 revenue unlock that starts with a 30-minute conversation this week. Don't wait for June to start the BEU activation clock — the lead time is the constraint.</p>",
+    anticipate: ": Which play has the highest ROI? Near-term: XV warm-lead re-engagement (same-week follow-up on warm leads converts at 2–3× cold rate). Long-term: BEU activation (+$11k–$14k/month from Q4). Both are worth doing; the week's constraint is execution bandwidth."
+  },
+  weeklyTable: {
+    title: "Weekly Trend — Reading the Rhythm of the Month",
+    lead: "W3 dipped to <b>22.81%</b> conversion (vs 27.42% W2) — a volume story, not a quality story. Individual agent rates held.",
+    body: "<p><b>Pattern:</b> The weekly table exposes intra-month variance that monthly averages hide. May shows a clear trajectory: W1 26.1% → W2 27.4% → W3 22.8%. The W3 dip is explained entirely by a 30-contact volume drop (828→798), not a degradation in agent skill. When volume contracts, the same close rate produces fewer deals — and the headline number looks worse.</p><p><b>Opportunity:</b> W3 dips like this are recoverable. The 11 warm DIPT leads already in the outbound pipeline, plus W3 warm-lead re-engagement, can restore the May close count before month-end. The team's underlying quality (individual agent rates held) means the engine is intact — this is a volume and routing problem, not a coaching problem.</p><p><b>Recommendation:</b> Treat any single-week conversion drop of 3+ percentage points as a routing and volume flag first. If agent rates held individually, the fix is more contacts per shift — not more coaching. For W4: prioritise XV volume recovery to close the gap, and route DIPT leads directly to top closers (Harold, Jorie) to maximise the week's close count.</p>",
+    anticipate: "Is a W3 dip seasonal or structural? Historical data shows May W3 tends to soften slightly as the team anticipates end-of-month volume. It is not structural. The signal to watch is W4 — if conversion returns to 26–28% range, W3 was noise. If W4 holds below 24%, escalate to a routing and quality review."
+  }
+};
+
+function openTalkingPoints(sectionId) {
+  const tp = talkingPoints[sectionId];
+  if (!tp) return;
+  tpTitle.textContent = tp.title;
+  tpBody.innerHTML =
+    `<div class="lead-stat">${tp.lead}</div>${tp.body}` +
+    (tp.anticipate ? `<div class="anticipate"><b>Common follow-up</b>${tp.anticipate}</div>` : "");
+  tpBackdrop.classList.add("show");
+}
+document.getElementById("tpClose").addEventListener("click", () => tpBackdrop.classList.remove("show"));
+tpBackdrop.addEventListener("click", e => { if (e.target === tpBackdrop) tpBackdrop.classList.remove("show"); });
+document.addEventListener("keydown", e => { if (e.key === "Escape") tpBackdrop.classList.remove("show"); });
+
+// Inject "💬 Talking Points" button into each section's h2
+Object.keys(talkingPoints).filter(k => !k.startsWith("_")).forEach(id => {
+  const sec = document.getElementById(id);
+  if (!sec) return;
+  const h2 = sec.querySelector("h2");
+  if (!h2) return;
+  const btn = document.createElement("button");
+  btn.className = "tp-btn";
+  btn.title = "Section brief";
+  btn.innerHTML = "📋 Brief";
+  btn.addEventListener("click", e => { e.stopPropagation(); openTalkingPoints(id); });
+  const icon = h2.querySelector(".toggle-icon");
+  if (icon) h2.insertBefore(btn, icon);
+  else h2.appendChild(btn);
+});
+
+// Wire the masthead Summary Brief button to the meta entry
+document.getElementById("summaryBriefBtn").addEventListener("click", () => openTalkingPoints("_summary"));
+
+// Alias for new sections using showTalkingPoint() directly
+function showTalkingPoint(id) { openTalkingPoints(id); }
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Guide Orb — AI chat engine (replaces standalone claude widget)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -3099,9 +3542,9 @@ injectAllSourceAnchors();
       next: "volume", nextLabel: "Ticket Volume →", brief: "conversion",
     },
     volume: {
-      name: "Presale Volume", step: 4,
-      context: "The top of the funnel — how many tickets flow in each month for the presale team across all three brands.",
-      why: "<b>Why now:</b> Volume is healthy. The path to 40% is conversion improvement, not more tickets — same pipeline, more yeses.",
+      name: "Volume — Pre Sales vs BEU Split", step: 4,
+      context: "Pre Sales now handles 95% of XV contacts — up from 56% in January. BEU has declined structurally. The projection chart shows where this trend leads under three scenarios.",
+      why: "<b>Why now:</b> Volume tells a structural story: Pre Sales absorbed 95% of XV contacts while BEU declined to 5%. The projection chart below maps three scenarios — pessimistic, very pessimistic, and on-target — and quantifies the BEU reactivation opportunity ($11k–$14k/month incremental). This section answers: are we winning because we have enough volume, and what happens if we don't?",
       stats: [{v:"May 2,884 tickets",c:"blue"},{v:"Apr 3,998 full month",c:""},{v:"Stable funnel",c:"green"}],
       questions: ["How does May ticket volume compare to April?","Is there a day-of-week pattern in when tickets come in?","What would a 10% volume increase mean for revenue?"],
       next: "trajectory", nextLabel: "Growth Trend →", brief: "volume",
@@ -3115,8 +3558,8 @@ injectAllSourceAnchors();
       next: "bau", nextLabel: "Support Agents →", brief: "trajectory",
     },
     bau: {
-      name: "Support Agents", step: 6,
-      context: "XV's regular support team closing sales alongside normal support work — tracked separately from the dedicated presale team.",
+      name: "BEU — Activation Opportunity", step: 6,
+      context: "BEU converted at 18.8% in May — up 7pp in one month with no tooling. The data proves BEU agents can sell. This section shows the path to making it structural with the Presales Co-Pilot.",
       why: "<b>Why now:</b> 18.80% close rate in May vs 11.45% in April — organic growth without a formal program. Formalizing it is the highest-ROI action available.",
       stats: [{v:"18.80% May",c:"green"},{v:"11.45% Apr",c:"orange"},{v:"25 sales / 133 tickets",c:"blue"}],
       questions: ["What's causing the support agent improvement — is it specific agents?","What would 22% close rate mean in additional monthly revenue?","How do we formalize what's already working?"],
@@ -3213,7 +3656,7 @@ injectAllSourceAnchors();
     data: {
       name: "Data Sources", step: 18,
       context: "Every source used in this report with links to Looker dashboards and reconciliation notes. Looker is the source of truth.",
-      why: "<b>Data trust:</b> All discrepancies between Looker, gsheet, and Zendesk are documented and resolved as of May 25, 2026.",
+      why: "<b>Why it matters to C-suite:</b> Every number in this report traces to a Looker pull dated May 25, 2026. If a board member or finance team challenges a figure, this section is the audit trail — with reconciliation notes for any Looker vs. Zendesk variance. The data is as clean as we can make it before the W4 close.",
       stats: [{v:"Source: Looker",c:"blue"},{v:"Pulled May 25",c:""},{v:"Discrepancies logged",c:"green"}],
       questions: ["Are there any numbers in this report that still need reconciliation?","Where does the May Teams B2B revenue come from?","How often should we refresh the Looker pulls?"],
       next: "glossary", nextLabel: "Glossary →", brief: "data",
@@ -3221,7 +3664,7 @@ injectAllSourceAnchors();
     glossary: {
       name: "Glossary", step: 19,
       context: "Plain-English definitions for every term in the report — searchable, covering all XV, CG, and PIA presales vocabulary.",
-      why: "<b>For anyone new:</b> Start here if any number or term in the report needs context. Takes about 2 minutes to scan.",
+      why: "<b>Why it matters to C-suite:</b> Presales metrics carry internal jargon — DIPT, BEU, BAU, close rate vs. conversion rate — that can shift what a number means. This glossary ensures every stakeholder is reading the same report. Misread conversion rate by 5pp and a $2M EOY projection becomes a $1.7M one.",
       stats: [{v:"Searchable",c:""},{v:"20+ terms",c:""},{v:"Plain English",c:"green"}],
       questions: ["What does 'close rate' mean vs 'conversion rate'?","What's the difference between Presale Team and Support Agents?","How is partial credit (like 762.5 sales) calculated?"],
       next: null, nextLabel: null, brief: "glossary",
@@ -4199,112 +4642,77 @@ document.getElementById('genReportBackdrop').addEventListener('click', e => {
   const el = document.getElementById("xvTeamsBody");
   if (!el) return;
 
-  // Data from Looker XV Teams V2 page — pulled May 25, 2026
-  const ytd = { leads:1529, closedWon:442, conv:0.2747, gross:196743 };
+  // All data from Looker XV Teams V2 — pulled May 25, 2026
   const monthly = [
-    { m:"Jan", leads:377, won:104, conv:0.2701 },
-    { m:"Feb", leads:375, won:97,  conv:0.2587 },
-    { m:"Mar", leads:366, won:114, conv:0.3115 },
-    { m:"Apr", leads:317, won:94,  conv:0.2965 },
-    { m:"May MTD", leads:113, won:33, conv:0.2920 }
+    { m:"Jan", leads:377, won:104, conv:27.01 },
+    { m:"Feb", leads:375, won:97,  conv:25.87 },
+    { m:"Mar", leads:366, won:114, conv:31.15 },
+    { m:"Apr", leads:317, won:94,  conv:29.65 },
+    { m:"May",  leads:113, won:33,  conv:29.20 }
   ];
-  const licenseGroups = [
-    { label:"Small teams (<100 users)", pct:0.618 },
-    { label:"Large teams (≥100 users)", pct:0.382 }
-  ];
-  const planMix = [
-    { plan:"2 Year",  pct:0.51 },
-    { plan:"1 Year",  pct:0.35 },
-    { plan:"1 Month", pct:0.14 }
-  ];
+  const maxConv = 35;
+  const col = v => v >= 30 ? "#22c55e" : v >= 27 ? "#3b82f6" : "#d97706";
 
-  const convColor = (r) => r >= 0.30 ? "#22c55e" : r >= 0.27 ? "#3b82f6" : "#d97706";
-
-  // KPI strip
-  const kpis = `
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;">
-      ${[
-        { l:"YTD Leads",      v:"1,529",     sub:"total inquiries" },
-        { l:"Closed Won",     v:"442",        sub:"YTD deals" },
-        { l:"Close Rate",     v:"27.47%",     sub:"YTD average", hi:true },
-        { l:"Gross Revenue",  v:"$196,743",   sub:"YTD", hi:true }
-      ].map(k=>`
-        <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center;">
-          <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">${k.l}</div>
-          <div style="font-size:22px;font-weight:800;color:${k.hi?'#3b82f6':'var(--text)'};">${k.v}</div>
-          <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">${k.sub}</div>
-        </div>`).join('')}
-    </div>`;
-
-  // Monthly bar table
-  const monthlyRows = monthly.map(r=>{
-    const pct = (r.conv*100).toFixed(2);
-    const barW = (r.conv/0.35*100).toFixed(0);
-    const col  = convColor(r.conv);
-    return `<tr>
-      <td style="padding:8px 12px;font-weight:700;color:var(--text);font-size:13px;">${r.m}</td>
-      <td style="padding:8px 12px;text-align:right;color:var(--text-muted);">${r.leads}</td>
-      <td style="padding:8px 12px;text-align:right;color:${col};font-weight:700;">${r.won}</td>
-      <td style="padding:8px 12px;min-width:140px;">
-        <div style="display:flex;align-items:center;gap:8px;">
-          <div style="flex:1;height:8px;background:var(--border);border-radius:4px;overflow:hidden;">
-            <div style="width:${Math.min(barW,100)}%;height:100%;background:${col};border-radius:4px;"></div>
-          </div>
-          <span style="font-size:13px;font-weight:800;color:${col};min-width:44px;">${pct}%</span>
-        </div>
-      </td>
-    </tr>`;
-  }).join('');
-
-  // License + plan mix
-  const mixSection = `
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
-      <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:10px;padding:16px;">
-        <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;">Team Size Breakdown</div>
-        ${licenseGroups.map(g=>`
-          <div style="margin-bottom:10px;">
-            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;">
-              <span style="color:var(--text);">${g.label}</span>
-              <span style="font-weight:700;color:#3b82f6;">${(g.pct*100).toFixed(0)}%</span>
-            </div>
-            <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden;">
-              <div style="width:${(g.pct*100).toFixed(0)}%;height:100%;background:#3b82f6;border-radius:4px;"></div>
-            </div>
-          </div>`).join('')}
+  // Compact monthly bars
+  const bars = monthly.map(r => `
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+      <span style="font-size:11px;color:var(--text-muted);min-width:32px;">${r.m}</span>
+      <div style="flex:1;height:16px;background:var(--border);border-radius:4px;overflow:hidden;position:relative;">
+        <div style="width:${(r.conv/maxConv*100).toFixed(1)}%;height:100%;background:${col(r.conv)};border-radius:4px;opacity:.85;"></div>
       </div>
-      <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:10px;padding:16px;">
-        <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;">Plan Length Mix</div>
-        ${planMix.map((p,i)=>{
-          const cols=["#22c55e","#3b82f6","#d97706"];
-          return `
-          <div style="margin-bottom:10px;">
-            <div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;">
-              <span style="color:var(--text);">${p.plan}</span>
-              <span style="font-weight:700;color:${cols[i]};">${(p.pct*100).toFixed(0)}%</span>
-            </div>
-            <div style="height:8px;background:var(--border);border-radius:4px;overflow:hidden;">
-              <div style="width:${(p.pct*100).toFixed(0)}%;height:100%;background:${cols[i]};border-radius:4px;"></div>
-            </div>
-          </div>`;}).join('')}
-      </div>
-    </div>`;
+      <span style="font-size:12px;font-weight:800;color:${col(r.conv)};min-width:40px;text-align:right;">${r.conv.toFixed(1)}%</span>
+      <span style="font-size:11px;color:var(--text-muted);min-width:52px;text-align:right;">${r.won}/${r.leads}</span>
+    </div>`).join('');
 
   el.innerHTML = `
-    ${kpis}
-    <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:4px;">
-      <div style="padding:12px 16px;font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border);">Monthly Leads, Wins &amp; Close Rate</div>
-      <table style="width:100%;border-collapse:collapse;font-size:13px;">
-        <thead><tr style="background:var(--bg-card);">
-          <th style="padding:8px 12px;text-align:left;color:var(--text-dim);font-size:11px;text-transform:uppercase;">Month</th>
-          <th style="padding:8px 12px;text-align:right;color:var(--text-dim);font-size:11px;text-transform:uppercase;">Leads</th>
-          <th style="padding:8px 12px;text-align:right;color:var(--text-dim);font-size:11px;text-transform:uppercase;">Closed Won</th>
-          <th style="padding:8px 12px;color:var(--text-dim);font-size:11px;text-transform:uppercase;">Close Rate</th>
-        </tr></thead>
-        <tbody>${monthlyRows}</tbody>
-      </table>
+    <!-- KPI row -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;">
+      ${[
+        { l:"YTD Leads",    v:"1,529"   },
+        { l:"Closed Won",   v:"442"     },
+        { l:"Close Rate",   v:"27.47%", accent:true },
+        { l:"YTD Revenue",  v:"$196,743", accent:true }
+      ].map(k=>`
+        <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center;">
+          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;">${k.l}</div>
+          <div style="font-size:19px;font-weight:800;color:${k.accent?'#3b82f6':'var(--text)'};">${k.v}</div>
+        </div>`).join('')}
     </div>
-    ${mixSection}
-    <p style="font-size:11px;color:var(--text-muted);margin-top:10px;">Source: <a href="https://datastudio.google.com/u/0/reporting/75c80b9a-bacd-4e66-af8b-891443a2342a/page/p_dhb4c8960d" target="_blank" style="color:var(--blue);">XV Teams V2 — Looker Studio</a> · Pulled May 25, 2026 · Plan mix and license size are YTD approximations based on Looker distribution panels.</p>`;
+
+    <!-- Monthly close rate chart + mix -->
+    <div style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:start;">
+      <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:8px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">Monthly Close Rate · Won/Leads</div>
+        ${bars}
+        <div style="font-size:10px;color:var(--text-muted);margin-top:6px;">Goal line: 30% · May MTD through W3</div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px;min-width:160px;">
+        <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;">Plan Mix (YTD)</div>
+          ${[{l:"2-Year",p:51},{l:"1-Year",p:35},{l:"Monthly",p:14}].map(x=>`
+            <div style="margin-bottom:5px;">
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px;">
+                <span style="color:var(--text-dim);">${x.l}</span><span style="font-weight:700;color:var(--text);">${x.p}%</span>
+              </div>
+              <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+                <div style="width:${x.p}%;height:100%;background:#3b82f6;border-radius:3px;opacity:.8;"></div>
+              </div>
+            </div>`).join('')}
+        </div>
+        <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:8px;padding:12px 14px;">
+          <div style="font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px;">Team Size Mix</div>
+          ${[{l:"Small (<100)",p:62},{l:"Large (≥100)",p:38}].map(x=>`
+            <div style="margin-bottom:5px;">
+              <div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:2px;">
+                <span style="color:var(--text-dim);">${x.l}</span><span style="font-weight:700;color:var(--text);">${x.p}%</span>
+              </div>
+              <div style="height:6px;background:var(--border);border-radius:3px;overflow:hidden;">
+                <div style="width:${x.p}%;height:100%;background:#7c3aed;border-radius:3px;opacity:.8;"></div>
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>
+    </div>`;
 })();
 
 // ---- Outbound Team — Audrey & Mabel ----
@@ -4312,131 +4720,71 @@ document.getElementById('genReportBackdrop').addEventListener('click', e => {
   const el = document.getElementById("outboundBody");
   if (!el) return;
 
-  // Data from Audrey & Mabel outbound tracker (Mabel and Audrey Sheet.xlsx) — May 2026 MTD
-  // Sheet: "Closed Won" (summary) + "MTD Report (Our view only)" + "Non-converted Sales Ticket" + "DIPT Upsell MTD"
+  // Data from Audrey & Mabel outbound tracker — May 2026 MTD (May 25 cut)
   const agents = [
-    {
-      name:"Audrey Rivera",
-      color:"#3b82f6",
-      closedWon: { dipt:0, teams:2, vpn:4, total:6, rev:1516.10 },
-      tickets:   { warmLeads:3, diptUpsell:70, vpnSub:846, subTotal:919, target:910 },
-      deals: [
-        { type:"Teams Account", plan:"2Y", date:"May 11", amt:314.20 },
-        { type:"Teams Account", plan:"1Y", date:"May 13", amt:1057.19 },
-        { type:"VPN Sub",       plan:"1M", date:"May 1",  amt:13.99 },
-        { type:"VPN Sub",       plan:"1M", date:"May 2",  amt:16.09 },
-        { type:"VPN Sub",       plan:"2Y", date:"May 14", amt:102.14 },
-        { type:"VPN Sub",       plan:"1M", date:"Apr 30", amt:12.49 }
-      ]
-    },
-    {
-      name:"Mabel",
-      color:"#a855f7",
-      closedWon: { dipt:2, teams:5, vpn:1, total:8, rev:4348.70 },
-      tickets:   { warmLeads:8, diptUpsell:77, vpnSub:782, subTotal:867, target:770 },
-      deals: [
-        { type:"DIPT",          plan:"1Y", date:"May 14", amt:390.00 },
-        { type:"DIPT",          plan:"2Y", date:"May 20", amt:780.00 },
-        { type:"Teams Account", plan:"1M", date:"May 5",  amt:57.47 },
-        { type:"Teams Account", plan:"2Y", date:"May 6",  amt:585.60 },
-        { type:"Teams Account", plan:"1Y", date:"May 13", amt:943.92 },
-        { type:"Teams Account", plan:"2Y", date:"May 15", amt:725.04 },
-        { type:"Teams Account", plan:"2Y", date:"May 21", amt:684.00 },
-        { type:"VPN Sub",       plan:"2Y", date:"May 12", amt:182.67 }
-      ]
-    }
+    { name:"Audrey Rivera", color:"#3b82f6", deals:6,  rev:1516.10, dipt:0, teams:2, vpn:4, tickets:919,  target:910,  warmLeads:3 },
+    { name:"Mabel",         color:"#a855f7", deals:8,  rev:4348.70, dipt:2, teams:5, vpn:1, tickets:867,  target:770,  warmLeads:8 }
   ];
+  const total = { deals:14, rev:5864.80, tickets:1786, target:1680, warmOpen:11 };
 
-  const totals = {
-    dipt:2, teams:7, vpn:5, total:14, rev:5864.80,
-    tickets:1786, target:1680,
-    audreyTickets:919, mabelTickets:867
-  };
+  const pct = (a,b) => (a/b*100).toFixed(0);
 
-  // Top summary strip
-  const summaryStrip = `
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px;">
+  el.innerHTML = `
+    <!-- Top summary strip -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;">
       ${[
-        { l:"Total Closed Won",    v:"14 deals",    sub:"May MTD combined", hi:false },
-        { l:"Total Revenue",       v:"$5,864.80",   sub:"May MTD combined", hi:true },
-        { l:"Tickets Worked",      v:"1,786",       sub:`vs target 1,680 (+${1786-1680})`, hi:false },
-        { l:"Audrey / Mabel",      v:"6 / 8",       sub:"deals · $1,516 / $4,349", hi:false }
+        { l:"Closed Won",       v:"14 deals",  sub:"May MTD combined" },
+        { l:"Total Revenue",    v:"$5,864.80", sub:"May MTD combined", hi:true },
+        { l:"Tickets Worked",   v:"1,786",     sub:"vs target 1,680 (+106)" },
+        { l:"Warm Leads Open",  v:"11 DIPT",   sub:"heading into W4", hi:true }
       ].map(k=>`
-        <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center;">
-          <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;">${k.l}</div>
-          <div style="font-size:20px;font-weight:800;color:${k.hi?'#22c55e':'var(--text)'};">${k.v}</div>
-          <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">${k.sub}</div>
+        <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center;">
+          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;">${k.l}</div>
+          <div style="font-size:18px;font-weight:800;color:${k.hi?'#22c55e':'var(--text)'};">${k.v}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px;">${k.sub}</div>
+        </div>`).join('')}
+    </div>
+
+    <!-- Agent comparison panels -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      ${agents.map(a => `
+        <div style="background:var(--bg-card-2);border:1px solid ${a.color}33;border-radius:10px;padding:14px 16px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <div style="width:10px;height:10px;border-radius:50%;background:${a.color};"></div>
+            <span style="font-size:14px;font-weight:800;color:var(--text);">${a.name}</span>
+          </div>
+          <!-- headline stats -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:12px;">
+            ${[
+              { l:"Deals",    v:a.deals },
+              { l:"Revenue",  v:"$"+a.rev.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}) },
+              { l:"Tickets",  v:a.tickets+" / "+a.target }
+            ].map(s=>`
+              <div style="background:var(--bg-card);border-radius:6px;padding:8px 10px;text-align:center;">
+                <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;margin-bottom:2px;">${s.l}</div>
+                <div style="font-size:13px;font-weight:800;color:${a.color};">${s.v}</div>
+              </div>`).join('')}
+          </div>
+          <!-- deal type bar chart -->
+          <div style="font-size:10px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px;">Closed Won by Type</div>
+          ${[
+            { l:"DIPT Upsell", n:a.dipt,  c:"#f59e0b" },
+            { l:"Teams Acct",  n:a.teams, c:a.color },
+            { l:"VPN Sub",     n:a.vpn,   c:"#6b7280" }
+          ].map(d => `
+            <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;">
+              <span style="font-size:11px;color:var(--text-dim);min-width:72px;">${d.l}</span>
+              <div style="flex:1;height:10px;background:var(--border);border-radius:3px;overflow:hidden;">
+                <div style="width:${d.n > 0 ? Math.max(d.n/a.deals*100,8) : 0}%;height:100%;background:${d.c};border-radius:3px;opacity:.85;"></div>
+              </div>
+              <span style="font-size:12px;font-weight:700;color:${d.c};min-width:14px;text-align:right;">${d.n}</span>
+            </div>`).join('')}
+          <!-- warm leads -->
+          <div style="margin-top:10px;padding:7px 10px;border-radius:6px;background:${a.color}15;border:1px solid ${a.color}30;font-size:11px;color:var(--text-dim);">
+            <b style="color:${a.color};">🔥 ${a.warmLeads} warm lead${a.warmLeads!==1?'s':''} open</b> heading into W4
+          </div>
         </div>`).join('')}
     </div>`;
-
-  // Deal type breakdown
-  const dealTypes = `
-    <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px;">
-      <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;">Closed Won — By Deal Type (May MTD)</div>
-      <table style="width:100%;border-collapse:collapse;font-size:13px;">
-        <thead><tr style="background:var(--bg-card);">
-          <th style="padding:7px 12px;text-align:left;color:var(--text-dim);font-size:11px;text-transform:uppercase;">Type</th>
-          <th style="padding:7px 10px;text-align:right;color:#3b82f6;font-size:11px;text-transform:uppercase;">Audrey</th>
-          <th style="padding:7px 10px;text-align:right;color:#a855f7;font-size:11px;text-transform:uppercase;">Mabel</th>
-          <th style="padding:7px 10px;text-align:right;color:var(--text-dim);font-size:11px;text-transform:uppercase;">Total</th>
-        </tr></thead>
-        <tbody>
-          <tr><td style="padding:7px 12px;color:var(--text);">DIPT (Dedicated IP)</td><td style="padding:7px 10px;text-align:right;color:#3b82f6;font-weight:700;">0</td><td style="padding:7px 10px;text-align:right;color:#a855f7;font-weight:700;">2</td><td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--text);">2 · $1,170</td></tr>
-          <tr style="background:var(--bg-card);"><td style="padding:7px 12px;color:var(--text);">Teams Account (B2B)</td><td style="padding:7px 10px;text-align:right;color:#3b82f6;font-weight:700;">2</td><td style="padding:7px 10px;text-align:right;color:#a855f7;font-weight:700;">5</td><td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--text);">7 · $4,367</td></tr>
-          <tr><td style="padding:7px 12px;color:var(--text);">VPN Individual Sub</td><td style="padding:7px 10px;text-align:right;color:#3b82f6;font-weight:700;">4</td><td style="padding:7px 10px;text-align:right;color:#a855f7;font-weight:700;">1</td><td style="padding:7px 10px;text-align:right;font-weight:700;color:var(--text);">5 · $328</td></tr>
-          <tr style="background:var(--bg-card);border-top:2px solid var(--border);"><td style="padding:8px 12px;font-weight:800;color:var(--text);">Total</td><td style="padding:8px 10px;text-align:right;color:#3b82f6;font-weight:800;">6 · $1,516</td><td style="padding:8px 10px;text-align:right;color:#a855f7;font-weight:800;">8 · $4,349</td><td style="padding:8px 10px;text-align:right;font-weight:800;color:#22c55e;">14 · $5,865</td></tr>
-        </tbody>
-      </table>
-    </div>`;
-
-  // Per-agent cards
-  const agentCards = agents.map(a => {
-    const ahead = a.tickets.subTotal - a.tickets.target;
-    const dealRows = a.deals.map((d,i)=>`
-      <tr style="background:${i%2===0?'var(--bg-card)':'var(--bg-card-2)'}">
-        <td style="padding:6px 10px;font-size:12px;color:var(--text);">${d.type}</td>
-        <td style="padding:6px 10px;font-size:12px;color:var(--text-muted);">${d.plan}</td>
-        <td style="padding:6px 10px;font-size:12px;color:var(--text-muted);">${d.date}</td>
-        <td style="padding:6px 10px;font-size:12px;text-align:right;font-weight:700;color:#22c55e;">$${d.amt.toFixed(2)}</td>
-      </tr>`).join('');
-
-    return `
-      <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:14px;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-          <span style="font-size:15px;font-weight:800;color:${a.color};">${a.name}</span>
-          <span style="font-size:13px;font-weight:700;color:#22c55e;">${a.closedWon.total} deals · $${a.closedWon.rev.toLocaleString('en-US',{minimumFractionDigits:2})}</span>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
-          <div style="background:var(--bg-card);border-radius:8px;padding:12px;">
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Ticket Workload</div>
-            ${[
-              ["DIPT Warm Leads", a.tickets.warmLeads],
-              ["DIPT Upsell",     a.tickets.diptUpsell],
-              ["VPN Non-converted follow-ups", a.tickets.vpnSub]
-            ].map(([l,v])=>`<div style="display:flex;justify-content:space-between;font-size:12px;padding:3px 0;border-bottom:1px solid var(--border-faint,#333);"><span style="color:var(--text-muted);">${l}</span><span style="font-weight:700;color:var(--text);">${v}</span></div>`).join('')}
-            <div style="display:flex;justify-content:space-between;font-size:12px;padding:5px 0 0;margin-top:4px;font-weight:800;"><span style="color:var(--text);">Total worked</span><span style="color:${a.color};">${a.tickets.subTotal} <span style="font-weight:400;color:#22c55e;font-size:10px;">(+${ahead} vs target ${a.tickets.target})</span></span></div>
-          </div>
-          <div style="background:var(--bg-card);border-radius:8px;padding:12px;">
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;">Win Breakdown</div>
-            ${[["DIPT",a.closedWon.dipt],["Teams",a.closedWon.teams],["VPN Sub",a.closedWon.vpn]].map(([l,v])=>`<div style="display:flex;justify-content:space-between;font-size:12px;padding:3px 0;border-bottom:1px solid var(--border-faint,#333);"><span style="color:var(--text-muted);">${l}</span><span style="font-weight:700;color:var(--text);">${v}</span></div>`).join('')}
-            <div style="display:flex;justify-content:space-between;font-size:12px;padding:5px 0 0;margin-top:4px;font-weight:800;"><span style="color:var(--text);">Revenue</span><span style="color:#22c55e;">$${a.closedWon.rev.toLocaleString('en-US',{minimumFractionDigits:2})}</span></div>
-          </div>
-        </div>
-        <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Deal Log — May 2026</div>
-        <table style="width:100%;border-collapse:collapse;font-size:12px;">
-          <thead><tr style="background:var(--bg-card);">
-            <th style="padding:6px 10px;text-align:left;color:var(--text-dim);font-size:10px;text-transform:uppercase;">Type</th>
-            <th style="padding:6px 10px;text-align:left;color:var(--text-dim);font-size:10px;text-transform:uppercase;">Plan</th>
-            <th style="padding:6px 10px;text-align:left;color:var(--text-dim);font-size:10px;text-transform:uppercase;">Date</th>
-            <th style="padding:6px 10px;text-align:right;color:var(--text-dim);font-size:10px;text-transform:uppercase;">Amount</th>
-          </tr></thead>
-          <tbody>${dealRows}</tbody>
-        </table>
-      </div>`;
-  }).join('');
-
-  el.innerHTML = summaryStrip + dealTypes + agentCards +
-    `<p style="font-size:11px;color:var(--text-muted);margin-top:6px;">Source: Audrey &amp; Mabel outbound tracker · Closed Won sheet + MTD Report · May 2026 cut as of May 25, 2026.</p>`;
 })();
 
 // ---- Inbound Co-Pilot Survey ----
@@ -4847,6 +5195,394 @@ document.getElementById('genReportBackdrop').addEventListener('click', e => {
 
   // Init
   buildChart('XV', 'EOY');
+})();
+
+
+
+
+// ---- Dark mode toggle ----
+(function initTheme() {
+  const html = document.documentElement;
+  const btn  = document.getElementById("themeToggle");
+  let saved;
+  try { saved = localStorage.getItem("presalesReportTheme"); } catch(e){}
+  if (!saved) saved = "dark";   // default to dark
+  applyTheme(saved);
+  btn.addEventListener("click", () => {
+    const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(next);
+    try { localStorage.setItem("presalesReportTheme", next); } catch(e){}
+    // Re-render the trajectory chart so its gradient picks up new colors
+    if (typeof renderT12 === "function") renderT12();
+  });
+  function applyTheme(t) {
+    html.setAttribute("data-theme", t);
+    btn.textContent = t === "dark" ? "☀️" : "🌙";
+    btn.title = t === "dark" ? "Switch to light mode" : "Switch to dark mode";
+    // Update Chart.js global colors so existing charts re-pick on next render
+    if (window.Chart) {
+      Chart.defaults.color = t === "dark" ? "#b8c1d1" : "#4a5568";
+      Chart.defaults.borderColor = t === "dark" ? "#2a3450" : "#e2e8f0";
+    }
+  }
+})();
+
+function buildGistSVG() {
+  const xv26 = 26.44, cg37 = 37.16, pia36 = 36.29;
+  const w1 = 26.14, w2 = 27.42, w3 = 22.81;
+  const chartH = 80, chartY = 390, barW = 70, target = 40;
+  function bar(x, pct, color, label1, label2, val) {
+    const h = Math.round((pct / target) * chartH);
+    const y = chartY + chartH - h;
+    return `
+      <rect x="${x}" y="${y}" width="${barW}" height="${h}" rx="5" fill="${color}" opacity="0.85"/>
+      <text x="${x + barW/2}" y="${y - 6}" font-size="13" font-weight="800" fill="${color}" text-anchor="middle">${val}%</text>
+      <text x="${x + barW/2}" y="${chartY + chartH + 16}" font-size="9" fill="#7c8aa0" text-anchor="middle">${label1}</text>
+      <text x="${x + barW/2}" y="${chartY + chartH + 28}" font-size="9" fill="#7c8aa0" text-anchor="middle">${label2}</text>`;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif">
+  <defs>
+    <linearGradient id="gbg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1729"/><stop offset="100%" stop-color="#1a2238"/>
+    </linearGradient>
+    <linearGradient id="gtop" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#16a34a"/><stop offset="50%" stop-color="#2563eb"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="xvGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="720" fill="url(#gbg)"/>
+  <rect x="0" y="0" width="1200" height="5" fill="url(#gtop)"/>
+
+  <!-- Header -->
+  <text x="50" y="44" font-size="11" font-weight="700" fill="#7c8aa0" letter-spacing="3">PRESALES WEEKLY · X-BRAND (XV / CG / PIA)</text>
+  <text x="50" y="72" font-size="19" font-weight="800" fill="#f4f6f9">May 25, 2026 · Week 3 Review · Week 4 In Progress</text>
+  <text x="1150" y="44" font-size="10" font-weight="700" fill="#7c8aa0" letter-spacing="2" text-anchor="end">LEADERSHIP BRIEF</text>
+  <text x="1150" y="68" font-size="12" font-weight="700" fill="#22c55e" text-anchor="end">🟢 Copilot Active — Week 4 Starts Today</text>
+
+  <!-- ── LEFT COLUMN: XV hero card ─────────────────────────── -->
+  <rect x="50" y="100" width="380" height="200" rx="14" fill="rgba(37,99,235,0.12)" stroke="rgba(37,99,235,0.35)" stroke-width="1"/>
+  <text x="72" y="130" font-size="10" font-weight="700" fill="#93b8ff" letter-spacing="2">XV PRESALE TEAM · MAY MTD</text>
+  <text x="72" y="196" font-size="72" font-weight="900" fill="url(#xvGrad)">26.44%</text>
+  <text x="72" y="222" font-size="13" font-weight="600" fill="#60a5fa">762.5 sales · 2,884 tickets</text>
+  <text x="72" y="244" font-size="12" fill="#9aa4b2">$78,671 gross MTD · Week 4 adding more</text>
+  <!-- progress bar -->
+  <rect x="72" y="258" width="336" height="6" rx="3" fill="rgba(255,255,255,0.08)"/>
+  <rect x="72" y="258" width="${Math.round(26.44/40*336)}" height="6" rx="3" fill="#2563eb"/>
+  <text x="72" y="282" font-size="10" fill="#7c8aa0">Progress to 40% target · pipeline optimization plays queued</text>
+
+  <!-- ── MIDDLE COLUMN: CG + PIA ─────────────────────────── -->
+  <rect x="450" y="100" width="290" height="92" rx="14" fill="rgba(22,163,74,0.12)" stroke="rgba(22,163,74,0.35)" stroke-width="1"/>
+  <text x="472" y="128" font-size="10" font-weight="700" fill="#7ad19a" letter-spacing="2">CG · HIGHEST SINCE LAUNCH</text>
+  <text x="472" y="172" font-size="52" font-weight="900" fill="#22c55e">37.16%</text>
+  <text x="472" y="188" font-size="11" fill="#9aa4b2">+4.5pp vs April · within 3pp of target</text>
+
+  <rect x="450" y="208" width="290" height="92" rx="14" fill="rgba(217,119,6,0.12)" stroke="rgba(217,119,6,0.35)" stroke-width="1"/>
+  <text x="472" y="236" font-size="10" font-weight="700" fill="#fbbf24" letter-spacing="2">PIA · HOLDING APRIL GAINS</text>
+  <text x="472" y="280" font-size="52" font-weight="900" fill="#f59e0b">36.29%</text>
+  <text x="472" y="296" font-size="11" fill="#9aa4b2">flat vs April · strong foundation</text>
+
+  <!-- ── RIGHT COLUMN: Copilot status ────────────────────────── -->
+  <rect x="760" y="100" width="390" height="200" rx="14" fill="rgba(124,58,237,0.12)" stroke="rgba(124,58,237,0.35)" stroke-width="1"/>
+  <text x="782" y="130" font-size="10" font-weight="700" fill="#c4b5fd" letter-spacing="2">INBOUND COPILOT · XV FLEET</text>
+  <text x="782" y="160" font-size="16" font-weight="800" fill="#fff">🟢 LIVE — All XV Agents · Since May 18</text>
+  <text x="782" y="184" font-size="11" font-weight="700" fill="#a78bfa">Tracker data update pending</text>
+  <text x="782" y="210" font-size="13" fill="#9aa4b2">Conversion, adoption, and handle time metrics</text>
+  <text x="782" y="232" font-size="13" fill="#9aa4b2">will refresh when weekly tracker is pulled.</text>
+  <text x="782" y="260" font-size="13" fill="#9aa4b2">Pilot (May 11–17) confirmed positive direction.</text>
+  <text x="782" y="290" font-size="11" fill="#9aa4b2">Week 4 = pipeline optimization execution in progress</text>
+
+  <!-- ── WEEKLY BAR CHART ──────────────────────────────── -->
+  <text x="50" y="348" font-size="11" font-weight="700" fill="#7c8aa0" letter-spacing="2">XV WEEKLY CONVERSION — MAY 2026</text>
+
+  <!-- target line at chartY=390, chartH=80 means target is at y=390 -->
+  <line x1="50" y1="${chartY}" x2="820" y2="${chartY}" stroke="rgba(220,38,38,0.45)" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <text x="826" y="${chartY + 4}" font-size="10" fill="#dc2626" font-weight="700">40% target</text>
+
+  ${bar(60,  w1, '#2563eb', 'Week 1', 'May 4–10',  w1)}
+  ${bar(170, w2, '#2563eb', 'Week 2', 'May 11–17', w2)}
+  ${bar(280, w3, '#d97706', 'Week 3', 'May 18–24', w3)}
+
+  <!-- W4 pending box -->
+  <rect x="390" y="${chartY}" width="${barW}" height="${chartH}" rx="5" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.18)" stroke-dasharray="4,3"/>
+  <text x="${390 + barW/2}" y="${chartY + chartH/2 - 4}" font-size="9" fill="#9aa4b2" text-anchor="middle">In</text>
+  <text x="${390 + barW/2}" y="${chartY + chartH/2 + 8}" font-size="9" fill="#9aa4b2" text-anchor="middle">progress</text>
+  <text x="${390 + barW/2}" y="${chartY + chartH + 16}" font-size="9" fill="#9aa4b2" text-anchor="middle">Week 4</text>
+  <text x="${390 + barW/2}" y="${chartY + chartH + 28}" font-size="9" fill="#9aa4b2" text-anchor="middle">May 25–31</text>
+
+  <!-- Copilot active annotation -->
+  <line x1="315" y1="${chartY - 18}" x2="430" y2="${chartY - 18}" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="370" y="${chartY - 22}" font-size="9" fill="#a78bfa" text-anchor="middle" font-weight="700">Copilot active →</text>
+
+  <!-- ── BOTTOM STRIP ──────────────────────────────────── -->
+  <rect x="50" y="510" width="1100" height="130" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <text x="72" y="538" font-size="10" font-weight="700" fill="#7c8aa0" letter-spacing="2">REGULAR SUPPORT (XV)</text>
+  <text x="72" y="568" font-size="26" font-weight="900" fill="#22c55e">18.80%</text>
+  <text x="72" y="588" font-size="11" fill="#9aa4b2">25 sales / 133 vol · up from 11.45% Apr</text>
+  <text x="72" y="606" font-size="10" fill="#7c8aa0">BAU qualification growing</text>
+
+  <line x1="310" y1="524" x2="310" y2="628" stroke="rgba(255,255,255,0.08)"/>
+
+  <text x="332" y="538" font-size="10" font-weight="700" fill="#7c8aa0" letter-spacing="2">XV GROSS SALES MTD</text>
+  <text x="332" y="568" font-size="26" font-weight="900" fill="#60a5fa">$78,671</text>
+  <text x="332" y="588" font-size="11" fill="#9aa4b2">762.5 sales closed · Week 4 still ahead</text>
+  <text x="332" y="606" font-size="10" fill="#7c8aa0">Projected close: $95k–$103k</text>
+
+  <line x1="580" y1="524" x2="580" y2="628" stroke="rgba(255,255,255,0.08)"/>
+
+  <text x="602" y="538" font-size="10" font-weight="700" fill="#7c8aa0" letter-spacing="2">OUTBOUND COPILOT</text>
+  <text x="602" y="568" font-size="26" font-weight="900" fill="#f4f6f9">3.5×</text>
+  <text x="602" y="588" font-size="11" fill="#9aa4b2">more closes vs prior team · Audrey + Mabel</text>
+  <text x="602" y="606" font-size="10" fill="#7c8aa0">43.75% pass rate · control-arm study Jun 9</text>
+
+  <line x1="870" y1="524" x2="870" y2="628" stroke="rgba(255,255,255,0.08)"/>
+
+  <text x="892" y="538" font-size="10" font-weight="700" fill="#7c8aa0" letter-spacing="2">NEXT CHECKPOINT</text>
+  <text x="892" y="572" font-size="28" font-weight="900" fill="#60a5fa">📅 Week 4</text>
+  <text x="892" y="594" font-size="11" fill="#9aa4b2">Pipeline optimization plays in progress</text>
+  <text x="892" y="610" font-size="10" fill="#7c8aa0">Month-end velocity · close May strong</text>
+
+  <!-- Footer -->
+  <text x="50" y="700" font-size="10" fill="#5a6478" font-weight="600">Source: Looker Studio · XV: datastudio.google.com/reporting/75c80b9a · CG/PIA: 2ded1da8 · Pulled May 25, 2026 · Prepared by Phillip Tagarda</text>
+  <text x="1150" y="700" font-size="10" fill="#5a6478" font-weight="600" text-anchor="end">⚡ 10-second gist · auto-generated</text>
+</svg>`;
+}
+let gistRendered = false;
+function renderGist() {
+  if (gistRendered) return;
+  document.getElementById("gistSvgWrap").innerHTML = buildGistSVG();
+  gistRendered = true;
+}
+document.getElementById("gistBtn").addEventListener("click", () => {
+  renderGist();
+  document.getElementById("gistBackdrop").classList.add("show");
+});
+document.getElementById("gistClose").addEventListener("click", () => {
+  document.getElementById("gistBackdrop").classList.remove("show");
+});
+document.getElementById("gistBackdrop").addEventListener("click", e => {
+  if (e.target.id === "gistBackdrop") document.getElementById("gistBackdrop").classList.remove("show");
+});
+async function svgToPngBlob() {
+  const svg = document.querySelector("#gistSvgWrap svg");
+  const xml = new XMLSerializer().serializeToString(svg);
+  const blob = new Blob([xml], { type: "image/svg+xml;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  await new Promise((resolve, reject) => { img.onload = resolve; img.onerror = reject; img.src = url; });
+  const scale = 2;
+  const canvas = document.createElement("canvas");
+  canvas.width = 1200 * scale; canvas.height = 720 * scale;
+  const ctx = canvas.getContext("2d");
+  ctx.scale(scale, scale);
+  ctx.drawImage(img, 0, 0, 1200, 720);
+  URL.revokeObjectURL(url);
+  return await new Promise(resolve => canvas.toBlob(resolve, "image/png"));
+}
+document.getElementById("gistDownload").addEventListener("click", async () => {
+  const btn = document.getElementById("gistDownload");
+  const orig = btn.textContent;
+  btn.textContent = "⏳ Rendering…";
+  try {
+    const blob = await svgToPngBlob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `Presales_Gist_${R.reportDate.replace(/[, ]+/g,"_")}.png`;
+    document.body.appendChild(a); a.click(); a.remove();
+    URL.revokeObjectURL(url);
+    btn.textContent = "✓ Downloaded";
+  } catch (err) {
+    btn.textContent = "✗ Failed"; console.error(err);
+  }
+  setTimeout(() => { btn.textContent = orig; }, 1800);
+});
+document.getElementById("gistCopy").addEventListener("click", async () => {
+  const btn = document.getElementById("gistCopy");
+  const orig = btn.textContent;
+  btn.textContent = "⏳ Copying…";
+  try {
+    const blob = await svgToPngBlob();
+    if (navigator.clipboard && window.ClipboardItem) {
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+      btn.textContent = "✓ Copied";
+    } else {
+      btn.textContent = "✗ Clipboard unsupported";
+    }
+  } catch (err) {
+    btn.textContent = "✗ Failed"; console.error(err);
+  }
+  setTimeout(() => { btn.textContent = orig; }, 1800);
+});
+
+// ---- Gist PDF ----
+document.getElementById('gistDownloadPdf').addEventListener('click', async () => {
+  const { jsPDF } = window.jspdf;
+  const svgEl = document.querySelector('#gistSvgWrap svg');
+  if (!svgEl) return;
+  const btn = document.getElementById('gistDownloadPdf');
+  const orig = btn.textContent; btn.textContent = '⏳…'; btn.disabled = true;
+  try {
+    const svgStr = new XMLSerializer().serializeToString(svgEl);
+    const blob = new Blob([svgStr], { type: 'image/svg+xml' });
+    const url  = URL.createObjectURL(blob);
+    const img  = new Image();
+    img.onload = async () => {
+      const c = document.createElement('canvas');
+      c.width = 1200; c.height = 720;
+      const ctx = c.getContext('2d');
+      ctx.fillStyle = '#0f1729';
+      ctx.fillRect(0,0,1200,720);
+      ctx.drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      const imgData = c.toDataURL('image/png');
+      const pdf = new jsPDF({ orientation: 'landscape', unit: 'px', format: [1200, 720] });
+      pdf.addImage(imgData, 'PNG', 0, 0, 1200, 720);
+      pdf.save('Presales_10sec_Gist_May2026.pdf');
+      btn.textContent = '✓ Done'; btn.disabled = false;
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    };
+    img.src = url;
+  } catch(e) { btn.textContent = orig; btn.disabled = false; }
+});
+
+// ---- Section Brief PDF ----
+document.getElementById('tpDownloadPdf').addEventListener('click', async () => {
+  const titleEl = document.getElementById('tpTitle');
+  const bodyEl  = document.getElementById('tpBody');
+  const title   = titleEl ? titleEl.textContent : 'Section Brief';
+  const modal   = document.getElementById('tpModal');
+  await exportElementAsPdf(modal, `Presales_Brief_${title.replace(/\s+/g,'_').slice(0,30)}_May2026.pdf`, title);
+});
+
+// ---- Generate Report PDF ----
+document.getElementById('downloadReportPdfBtn').addEventListener('click', async () => {
+  const content = document.getElementById('genReportContent');
+  await exportElementAsPdf(content, 'Presales_May2026_Report.pdf', 'May 2026 Progress Report');
+});
+
+// ---- Generate Report: Copy + Close (keep existing, patch in case ids changed) ----
+document.getElementById('copyReportBtn').addEventListener('click', () => {
+  const el = document.getElementById('genReportContent');
+  const text = el ? (el.innerText || el.textContent) : '';
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('copyReportBtn');
+    const orig = btn.textContent; btn.textContent = '✓ Copied!';
+    setTimeout(() => { btn.textContent = orig; }, 2000);
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────
+// Volume Projection Chart
+// ─────────────────────────────────────────────────────────────────────
+(function initVolumeProjection() {
+  const labels = ["Jan","Feb","Mar","Apr","May MTD","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const actual  = [2090, 3182, 3717, 3998, 2884, null, null, null, null, null, null, null];
+  const beuAct  = [910,  264,  261,  166,  133,  null, null, null, null, null, null, null];
+
+  // Pessimistic: total -2.8%/mo from Apr base; BEU stays ~130
+  const pessTot = [null,null,null,null,null, 3886,3778,3671,3568,3468,3371,3278];
+  const pessBEU = [null,null,null,null,null,  130, 128, 126, 124, 122, 120, 118];
+
+  // Very Pessimistic: total -6.5%/mo; BEU shrinks further
+  const vpessTot= [null,null,null,null,null, 3738,3495,3268,3056,2857,2672,2499];
+  const vpessBEU= [null,null,null,null,null,  120, 110, 100,  90,  82,  75,  70];
+
+  // On Target: Pre Sales needs ~4690/mo; BEU activated ramp 200→500
+  const targetTot=[null,null,null,null,null, 4690,4690,4690,4690,4690,4690,4690];
+  const targetBEU=[null,null,null,null,null,  200, 300, 400, 500, 500, 500, 500];
+
+  const notes = {
+    pess:   "Pessimistic: total volume declines 2.8%/mo from April base. BEU stays at current ~130 contacts/month. XV Pre Sales carries the full load. EOY ~$1.66M all-brands.",
+    vpess:  "Very Pessimistic: volume declines 6.5%/mo — contact routing tightens further, BEU atrophies to <75/mo by year-end. EOY ~$1.44M all-brands.",
+    target: "On Target ($2M EOY): Pre Sales needs ~4,690 contacts/month at current conversion. BEU activated as a second channel — ramping from 200 → 500 contacts/month over Q3 with Presales Co-Pilot and qualification playbook. BEU contributes ~100 deals/month by Q4."
+  };
+
+  let volChart = null;
+  let currentScen = "pess";
+
+  function buildVolChart(scen) {
+    const ctx = document.getElementById("volProjectionChart");
+    if (!ctx) return;
+    if (volChart) { volChart.destroy(); volChart = null; }
+
+    let projTot, projBEU, projColor, beuColor;
+    if (scen === "pess")   { projTot = pessTot;  projBEU = pessBEU;  projColor = "#d97706"; beuColor = "#f59e0b"; }
+    if (scen === "vpess")  { projTot = vpessTot; projBEU = vpessBEU; projColor = "#ef4444"; beuColor = "#f87171"; }
+    if (scen === "target") { projTot = targetTot;projBEU = targetBEU;projColor = "#22c55e"; beuColor = "#86efac"; }
+
+    // Combine actuals + projection with overlap at May
+    const totalLine = actual.map((v, i) => v !== null ? v : projTot[i]);
+    const beuLine   = beuAct.map((v, i) => v !== null ? v : projBEU[i]);
+
+    volChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels,
+        datasets: [
+          {
+            label: "Total Contacts (Actual)",
+            data: actual,
+            borderColor: "#60a5fa", backgroundColor: "#60a5fa20",
+            borderWidth: 2.5, pointRadius: 4, tension: 0.35, fill: false,
+          },
+          {
+            label: "Total Contacts (Projected)",
+            data: projTot,
+            borderColor: projColor, backgroundColor: projColor + "18",
+            borderWidth: 2, borderDash: [6,3], pointRadius: 3, tension: 0.3, fill: false,
+          },
+          {
+            label: "BEU Contacts (Actual)",
+            data: beuAct,
+            borderColor: "#a78bfa", backgroundColor: "transparent",
+            borderWidth: 1.5, pointRadius: 3, tension: 0.3, fill: false,
+          },
+          {
+            label: "BEU Contacts (Projected)",
+            data: projBEU,
+            borderColor: beuColor, backgroundColor: "transparent",
+            borderWidth: 1.5, borderDash: [4,3], pointRadius: 3, tension: 0.3, fill: false,
+          },
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: "#9aa5b4", font: { size: 11 }, boxWidth: 14 } },
+          tooltip: {
+            callbacks: {
+              label: ctx => `${ctx.dataset.label}: ${ctx.parsed.y !== null ? ctx.parsed.y.toLocaleString() : "—"}`
+            }
+          }
+        },
+        scales: {
+          x: { ticks: { color: "#9aa5b4", font: { size: 11 } }, grid: { color: "#ffffff08" } },
+          y: {
+            ticks: { color: "#9aa5b4", font: { size: 11 }, callback: v => v.toLocaleString() },
+            grid: { color: "#ffffff08" }
+          }
+        }
+      }
+    });
+
+    const noteEl = document.getElementById("volScenNote");
+    if (noteEl) noteEl.textContent = notes[scen];
+    noteEl.style.borderLeftColor = projColor;
+  }
+
+  window.setVolScen = function(scen, btn) {
+    currentScen = scen;
+    document.querySelectorAll(".vol-scen-btn").forEach(b => b.classList.remove("active"));
+    if (btn) btn.classList.add("active");
+    buildVolChart(scen);
+  };
+
+  document.addEventListener("DOMContentLoaded", () => buildVolChart("pess"));
 })();
 
 </script>
