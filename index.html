@@ -74,16 +74,16 @@
   @media print { .theme-toggle { display: none !important; } }
   * { box-sizing: border-box; }
   body {
-    margin: 0; padding: 24px;
+    margin: 0; padding: 14px 18px;
     background: var(--bg); color: var(--text);
     font: 14px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
-  .container { max-width: 1320px; margin: 0 auto; }
+  .container { width: 100%; margin: 0 auto; padding: 0 8px; box-sizing: border-box; }
 
   /* ---- Header ---- */
   header {
     background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: 12px; padding: 20px 24px; margin-bottom: 20px;
+    border-radius: 12px; padding: 20px 28px; margin-bottom: 16px;
     box-shadow: var(--shadow);
   }
   h1 { font-size: 24px; margin: 0 0 4px; font-weight: 700; color: var(--text); }
@@ -109,12 +109,12 @@
   }
 
   /* ---- Section wrapper ---- */
-  .section { margin-bottom: 24px; }
+  .section { margin-bottom: 18px; }
   .section-body { overflow: hidden; transition: max-height .3s ease, opacity .3s ease; }
   .section-body.collapsed { max-height: 0 !important; opacity: 0; pointer-events: none; }
 
   /* ---- KPI Grid ---- */
-  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
   .kpi {
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: 10px; padding: 18px;
@@ -177,7 +177,7 @@
   .brand-tab.active.all { background: rgba(22,163,74,.1);  border-color: var(--green); color: var(--green); }
 
   /* ---- Chart Cards ---- */
-  .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; }
+  .chart-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; }
   .chart-card {
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: 10px; padding: 18px;
@@ -467,7 +467,7 @@
     background: rgba(37,99,235,.12); color: var(--accent);
   }
   .clevel-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: grid; grid-template-columns: repeat(3, 1fr);
     gap: 12px;
   }
   .clevel-col {
@@ -520,7 +520,7 @@
     transition: border-color .15s, box-shadow .15s;
   }
   .glossary-search:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,.12); }
-  .glossary-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 10px; }
+  .glossary-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 10px; }
   .glossary-item {
     background: var(--bg-card-2); border: 1px solid var(--border);
     border-radius: 8px; padding: 0; overflow: hidden;
@@ -1475,6 +1475,7 @@ window.REPORT = {
   <a href="#volume">▸ Volume</a>
   <a href="#trajectory">▸ Trend</a>
   <a href="#bau">▸ Support</a>
+  <a href="#bauTrend">▸ BEU Trend</a>
   <a href="#xvTeams">▸ XV B2B</a>
   <a href="#outbound">▸ Outbound</a>
   <a href="#agentPerf">▸ Agent Rates</a>
@@ -1812,6 +1813,13 @@ window.REPORT = {
       <div class="clevel-col-label">🎯 Recommendation This Week</div>
       <div class="clevel-col-body">Two actions: ① Interview the BEU agents driving May's 25 closures — understand what they're doing differently and codify it in a one-page qualifying brief. ② Connect the BEU team lead with the Presales Co-Pilot pilot lead to discuss a Q3 BEU onboarding scope. The 4-week activation path (shadow trial → measure → scale) is already defined. This week's job is to get alignment that it's the next priority.</div>
     </div>
+  </div>
+</div>
+
+<div class="section" id="bauTrend">
+  <h2 onclick="toggleSection(this)">BEU Close Rate Trend &amp; Activation Pathway <span class="toggle-icon">▾</span></h2>
+  <div class="section-body">
+    <div id="bauTrendGrid"></div>
   </div>
 </div>
 
@@ -2323,14 +2331,24 @@ window.REPORT = {
       </table>
       <div style="font-size:11px;color:var(--text-muted);margin-top:6px;">11 warm DIPT leads still open entering Week 4.</div>
     </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-      <div class="chart-card">
-        <div class="chart-title">Inbound Co-Pilot — Key Metrics</div>
-        <div class="chart-wrap"><canvas id="copilotInboundChart"></canvas></div>
-      </div>
-      <div class="chart-card">
-        <div class="chart-title">Outbound Co-Pilot — Pass Rate & Deals</div>
-        <div class="chart-wrap"><canvas id="copilotOutboundChart"></canvas></div>
+        <!-- Week-by-week Co-Pilot conversion chart -->
+        <div class="chart-card" style="margin-bottom:16px;">
+          <div class="chart-title">📈 Inbound Co-Pilot — Conversion Rate by Pilot Week vs Baseline</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:10px;">Each bar = agents using Co-Pilot that week. Baseline = pre-pilot team average. Delta labels show pp improvement vs baseline.</div>
+          <div class="chart-wrap" style="height:220px;"><canvas id="copilotWeeklyChart"></canvas></div>
+        </div>
+        <!-- Handle time + adoption trend -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+          <div class="chart-card">
+            <div class="chart-title">⏱ Handle Time per Week (min)</div>
+            <div class="chart-wrap" style="height:160px;"><canvas id="copilotHandleChart"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">📞 Outbound — Jap &amp; Nerry (no AI) · Audrey + Mabel (no AI est. · with Co-Pilot)</div>
+            <div style="font-size:10px;color:var(--text-muted);margin:2px 0 6px 0;">Deals closed · Revenue · Tickets worked. Grey = prior team · Amber = A+M pre-AI est. · Green = A+M with Co-Pilot (actual).</div>
+            <div class="chart-wrap" style="height:220px;"><canvas id="copilotOutboundChart"></canvas></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -3219,35 +3237,86 @@ buildGrid("presaleVolumeGrid","presaleVolumeTabs", (canvas, brand) => {
 (function renderBAU() {
   const grid = document.getElementById("bauGrid");
   const tabs = document.getElementById("bauTabs");
-  if (tabs) tabs.style.display = "none"; // no brand tabs needed — XV is the only source
+  if (tabs) tabs.style.display = "none";
+  if (!grid) return;
 
-  const b = R.brands.XV;
-  const card = makeCard("Regular Support Volume & Conv", "XV");
-  grid.appendChild(card);
+  // BEU monthly data — Looker XV Conversion, Support Agents segment — May 25, 2026
+  const months  = ["Jan", "Feb", "Mar", "Apr", "May MTD"];
+  const sales   = [184,   49,    33,    19,    25];
+  const volume  = [910,   264,   261,   166,   133];
+  const convPct = [20.22, 18.56, 12.64, 11.45, 18.80];
+  const xvTotal = [2090,  3182,  3717,  3998,  2884];
+  const share   = volume.map((v, i) => +(v / xvTotal[i] * 100).toFixed(1));
 
-  const canvas = card.querySelector("canvas");
-  new Chart(canvas, { type:"bar", data:{
-    labels: R.monthsLabels,
-    datasets:[
-      { type:"bar",  label:"Regular Support Volume", data:b.bauVolume,
-        backgroundColor:"rgba(37,99,235,.5)", yAxisID:"y" },
-      { type:"line", label:"Regular Support Conversion%",
-        data:b.bauConversion.map(v=>v==null?null:v*100),
-        borderColor:"#d97706", backgroundColor:"rgba(217,119,6,.15)",
-        yAxisID:"y2", tension:0.3, pointRadius:4 },
-    ]
-  }, options:{ maintainAspectRatio:false, responsive:true,
-    scales:{
-      y:  { position:"left",  grid:gridColors.y },
-      y2: { position:"right", min:0, max:50, ticks:{callback:v=>v+"%"}, grid:{display:false} },
-      x:  { grid:gridColors.x }
-    },
-    plugins:{ legend:{display:false} }
-  }});
+  const colConv  = v => v >= 18 ? "#22c55e" : v >= 14 ? "#3b82f6" : "#d97706";
+  const colShare = v => v >= 30 ? "#22c55e" : v >= 10 ? "#3b82f6" : "#d97706";
 
-  const insight = card.querySelector(".insight");
-  const sale = lastNonNull(b.bauSale), vol = lastNonNull(b.bauVolume), conv = lastNonNull(b.bauConversion);
-  insight.innerHTML = `<b>XV support agents this month:</b> <b>${fmtInt(sale)}</b> sales from <b>${fmtInt(vol)}</b> tickets — closing at <b>${fmtPct(conv,2)}</b>. Up from 11.45% last month. CG and PIA don't have a separate support breakdown in Looker yet — XV is the only one with this data split out.`;
+  // KPI strip
+  const kpiHTML = `
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px;">
+      ${[
+        { l:"May Close Rate", v:"18.80%",  sub:"up from 11.45% in Apr",         hi:"#22c55e" },
+        { l:"May Sales",      v:"25",       sub:"from 133 contacts",             hi:false     },
+        { l:"May Volume",     v:"133",      sub:"5% of all XV contacts",         hi:false     },
+        { l:"MoM Recovery",  v:"+7.35pp",  sub:"Apr 11.45% → May 18.80%",      hi:"#22c55e" },
+        { l:"Tooling Used",   v:"None",     sub:"organic — qualifying brief only", hi:"#f59e0b" }
+      ].map(k => `
+        <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center;">
+          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;">${k.l}</div>
+          <div style="font-size:18px;font-weight:800;color:${k.hi||'var(--text)'};">${k.v}</div>
+          <div style="font-size:10px;color:var(--text-muted);margin-top:2px;">${k.sub}</div>
+        </div>`).join('')}
+    </div>`;
+
+  // Monthly table rows
+  const rows = months.map((m, i) => `
+    <tr style="border-bottom:1px solid var(--border);">
+      <td style="padding:8px 14px;font-weight:700;color:var(--text);">${m}</td>
+      <td style="padding:8px 12px;text-align:right;color:var(--text-muted);">${volume[i].toLocaleString()}</td>
+      <td style="padding:8px 12px;text-align:right;color:var(--text-muted);">${sales[i]}</td>
+      <td style="padding:8px 14px;min-width:200px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="flex:1;height:10px;background:var(--border);border-radius:4px;overflow:hidden;">
+            <div style="width:${(convPct[i]/25*100).toFixed(0)}%;height:100%;background:${colConv(convPct[i])};border-radius:4px;"></div>
+          </div>
+          <span style="font-size:13px;font-weight:800;color:${colConv(convPct[i])};min-width:50px;">${convPct[i].toFixed(2)}%</span>
+        </div>
+      </td>
+      <td style="padding:8px 14px;min-width:160px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div style="flex:1;height:8px;background:var(--border);border-radius:3px;overflow:hidden;">
+            <div style="width:${Math.min(share[i]/50*100,100).toFixed(0)}%;height:100%;background:${colShare(share[i])};border-radius:3px;opacity:.75;"></div>
+          </div>
+          <span style="font-size:12px;font-weight:700;color:${colShare(share[i])};min-width:36px;">${share[i]}%</span>
+        </div>
+      </td>
+    </tr>`).join('');
+
+  const deltas = convPct.map((v, i) => i === 0 ? '' :
+    `<span style="font-size:11px;font-weight:700;margin-right:12px;color:${(v-convPct[i-1])>=0?'#22c55e':'#ef4444'};">${months[i]}: ${(v-convPct[i-1])>=0?'+':''}${(v-convPct[i-1]).toFixed(2)}pp</span>`
+  ).join('');
+
+  grid.innerHTML = kpiHTML + `
+    <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:8px;overflow:hidden;">
+      <div style="font-size:11px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;padding:10px 14px;border-bottom:1px solid var(--border);">
+        Monthly BEU Performance — XV Support Agents (CG/PIA not yet segmented in Looker)
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:13px;">
+        <thead>
+          <tr style="background:var(--bg-card);">
+            <th style="padding:7px 14px;text-align:left;color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;">Month</th>
+            <th style="padding:7px 12px;text-align:right;color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;">Contacts</th>
+            <th style="padding:7px 12px;text-align:right;color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;">Sales</th>
+            <th style="padding:7px 14px;color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;">Close Rate</th>
+            <th style="padding:7px 14px;color:var(--text-muted);font-size:11px;text-transform:uppercase;letter-spacing:.04em;">XV Share</th>
+          </tr>
+        </thead>
+        <tbody>${rows}</tbody>
+      </table>
+      <div style="padding:8px 14px;border-top:2px solid var(--border);background:var(--bg-card);font-size:11px;">
+        <span style="color:var(--text-muted);font-style:italic;margin-right:12px;">MoM delta:</span>${deltas}
+      </div>
+    </div>`;
 })();
 
 // ---- Outbound / Inbound / Enablement / Certifications / Recommendations renderers removed —
@@ -3510,7 +3579,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
 // ─────────────────────────────────────────────────────────────────────────────
 (function initGuideOrb() {
   const sectionOrder = [
-    'kpis','grossSales','conversion','volume','trajectory','bau',
+    'kpis','grossSales','conversion','volume','trajectory','bau','bauTrend',
     'xvTeams','outbound','agentPerf','weeklyTable','forecast',
     'alerts','pipelineOpt','bottomLine','pipelineInsights',
     'copilotPerf','copilotSurvey','data','glossary'
@@ -3563,10 +3632,18 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       why: "<b>Why now:</b> 18.80% close rate in May vs 11.45% in April — organic growth without a formal program. Formalizing it is the highest-ROI action available.",
       stats: [{v:"18.80% May",c:"green"},{v:"11.45% Apr",c:"orange"},{v:"25 sales / 133 tickets",c:"blue"}],
       questions: ["What's causing the support agent improvement — is it specific agents?","What would 22% close rate mean in additional monthly revenue?","How do we formalize what's already working?"],
+      next: "bauTrend", nextLabel: "BEU Trend →", brief: "bau",
+    },
+    bauTrend: {
+      name: "BEU Trend & Activation", step: 7,
+      context: "Full close rate trend Jan–May with volume overlay. Trough at Apr 11.45%, recovered to 18.80% in May with zero tooling. Four-week activation pathway to +$11,300/month.",
+      why: "<b>Why now:</b> The trend chart shows BEU is already recovering organically — the question is whether to let it drift or accelerate it. The four-step activation pathway defines exactly what acceleration means in operational terms: scoping this week starts the Q3 clock.",
+      stats: [{v:"18.80% May",c:"green"},{v:"+7.35pp MoM",c:"green"},{v:"+$11.3k/mo target",c:"blue"}],
+      questions: ["What's the Q3 milestone for BEU activation?","How does BEU recovery compare to presale team trajectory?","What's the risk if we don't activate BEU in Q3?"],
       next: "xvTeams", nextLabel: "XV B2B →", brief: "bau",
     },
     xvTeams: {
-      name: "XV Teams B2B", step: 7,
+      name: "XV Teams B2B", step: 8,
       context: "$196,743 YTD from business accounts. 442 deals closed. Consistent 27–30% close rate every month since launch.",
       why: "<b>Why now:</b> Large-team deals carry 2–3× the ACV of small-team. Dedicated Monday follow-up on stalled large-team leads is the next lever.",
       stats: [{v:"$196,743 YTD",c:"green"},{v:"442 deals closed",c:"blue"},{v:"27.47% close rate",c:"green"}],
@@ -3574,7 +3651,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "outbound", nextLabel: "Outbound Team →", brief: "xvTeams",
     },
     outbound: {
-      name: "Outbound Team", step: 8,
+      name: "Outbound Team", step: 9,
       context: "Audrey and Mabel — 14 deals closed in May MTD for $5,864.80. Teams accounts drove 74% of their combined revenue.",
       why: "<b>Why now:</b> 11 DIPT warm leads still open. Closing them before Friday adds $3k–$8k at no extra volume cost.",
       stats: [{v:"14 deals MTD",c:"green"},{v:"$5,864 revenue",c:"green"},{v:"11 warm leads open",c:"orange"}],
@@ -3582,7 +3659,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "agentPerf", nextLabel: "Agent Rates →", brief: "outbound",
     },
     agentPerf: {
-      name: "Agent Close Rates", step: 9,
+      name: "Agent Close Rates", step: 10,
       context: "Estimated conversion rate heatmap per agent, Jan–May. Shows who is consistently above and below the team average.",
       why: "<b>Why now:</b> Harold and Jorie run 38–45%. The 15pp gap to mid-tier agents closes with one coaching session — this week.",
       stats: [{v:"Harold ~45%",c:"green"},{v:"Jorie ~38%",c:"green"},{v:"Team avg 26.44%",c:"orange"}],
@@ -3590,7 +3667,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "weeklyTable", nextLabel: "Week by Week →", brief: "agentPerf",
     },
     weeklyTable: {
-      name: "Week-by-Week", step: 10,
+      name: "Week-by-Week", step: 11,
       context: "Three completed May weeks: volume, sales, and close rate for the presale team and support agents side by side.",
       why: "<b>Why now:</b> W3 dipped to 22.81% — re-engaging those warm leads is the single highest-priority W4 action.",
       stats: [{v:"W1 26.14%",c:""},{v:"W2 27.42%",c:"green"},{v:"W3 22.81%",c:"orange"}],
@@ -3598,7 +3675,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "forecast", nextLabel: "Revenue Forecast →", brief: "weeklyTable",
     },
     forecast: {
-      name: "Revenue Forecast", step: 11,
+      name: "Revenue Forecast", step: 12,
       context: "Where all three brands land by EOY if the current trajectory continues without intervention. Not a target — a warning.",
       why: "<b>Why now:</b> The $227k gap between pessimistic and very pessimistic scenarios is entirely recoverable. The green dashed line shows the $2M on-target monthly pace.",
       stats: [{v:"Pess $1.66M EOY",c:"orange"},{v:"V.Pess $1.44M",c:""},{v:"$2M target",c:"green"}],
@@ -3606,7 +3683,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "alerts", nextLabel: "Watch List →", brief: "forecast",
     },
     alerts: {
-      name: "Things to Watch", step: 12,
+      name: "Things to Watch", step: 13,
       context: "This is the dividing line — the second half of the report. Data-driven watch items and opportunities to act on this week.",
       why: "<b>Why now:</b> Ignoring these items is how the very pessimistic scenario happens. Each has a specific action attached.",
       stats: [{v:"6 actions queued",c:"green"},{v:"CG 3pp from goal",c:"orange"},{v:"W4 starts today",c:"blue"}],
@@ -3614,7 +3691,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "pipelineOpt", nextLabel: "Pipeline Plays →", brief: "alerts",
     },
     pipelineOpt: {
-      name: "Pipeline Optimization", step: 13,
+      name: "Pipeline Optimization", step: 14,
       context: "Three brand-specific plays: XV warm-lead re-engagement, CG near-miss ticket audit, PIA cross-pollination from CG's approach.",
       why: "<b>Why now:</b> Combined upside $15k–$25k additional May revenue. All three plays are executable this week with zero new headcount.",
       stats: [{v:"XV $5k–$15k",c:"blue"},{v:"CG+PIA $6k–$9k",c:"green"},{v:"Combined $15k–$25k",c:"green"}],
@@ -3622,7 +3699,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "bottomLine", nextLabel: "Bottom Line →", brief: "pipelineOpt",
     },
     bottomLine: {
-      name: "Bottom Line", step: 14,
+      name: "Bottom Line", step: 15,
       context: "The full-channel synthesis — six bullets that bring the whole report together for a 60-second leadership read.",
       why: "<b>Why now:</b> This is what you hand to a C-level executive. Every bullet is sourced, actionable, and answers 'so what?'",
       stats: [{v:"6 key bullets",c:""},{v:"$15k–$25k uplift",c:"green"},{v:"No new headcount",c:"green"}],
@@ -3630,7 +3707,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "pipelineInsights", nextLabel: "Follow-Up Actions →", brief: "bottomLine",
     },
     pipelineInsights: {
-      name: "Follow-Up Actions", step: 15,
+      name: "Follow-Up Actions", step: 16,
       context: "Six tactical moves for Week 4 — each with a specific method, the right owner, and a measurable result by Friday.",
       why: "<b>Why now:</b> These are the exact actions that move the needle. Sorted by highest-impact first across all brands.",
       stats: [{v:"6 tactical moves",c:"green"},{v:"Deadline Friday",c:"orange"},{v:"All brands covered",c:"blue"}],
@@ -3638,7 +3715,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "copilotPerf", nextLabel: "Co-Pilot →", brief: "pipelineInsights",
     },
     copilotPerf: {
-      name: "Co-Pilot Performance", step: 16,
+      name: "Co-Pilot Performance", step: 17,
       context: "Inbound and Outbound AI Co-Pilot pilot results — acceptance rates, deals closed, and time per ticket.",
       why: "<b>Why now:</b> Inbound Co-Pilot is live for all XV agents since May 18. W4 tracker will show the first full-fleet week of results.",
       stats: [{v:"XV inbound live",c:"green"},{v:"Outbound pilot",c:"blue"},{v:"W4 data updating",c:"orange"}],
@@ -3646,7 +3723,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "copilotSurvey", nextLabel: "Agent Survey →", brief: "copilotPerf",
     },
     copilotSurvey: {
-      name: "Agent Survey", step: 17,
+      name: "Agent Survey", step: 18,
       context: "What XV presales agents said about Co-Pilot during the pilot week — 12 respondents, May 11–17.",
       why: "<b>Why now:</b> Agent adoption is the main driver of AI ROI. The survey shows what to improve before scaling to CG and PIA.",
       stats: [{v:"12 agents responded",c:"green"},{v:"Pilot: May 11–17",c:""},{v:"Majority would keep it",c:"green"}],
@@ -3654,7 +3731,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "data", nextLabel: "Data Sources →", brief: "copilotSurvey",
     },
     data: {
-      name: "Data Sources", step: 18,
+      name: "Data Sources", step: 19,
       context: "Every source used in this report with links to Looker dashboards and reconciliation notes. Looker is the source of truth.",
       why: "<b>Why it matters to C-suite:</b> Every number in this report traces to a Looker pull dated May 25, 2026. If a board member or finance team challenges a figure, this section is the audit trail — with reconciliation notes for any Looker vs. Zendesk variance. The data is as clean as we can make it before the W4 close.",
       stats: [{v:"Source: Looker",c:"blue"},{v:"Pulled May 25",c:""},{v:"Discrepancies logged",c:"green"}],
@@ -3662,7 +3739,7 @@ function showTalkingPoint(id) { openTalkingPoints(id); }
       next: "glossary", nextLabel: "Glossary →", brief: "data",
     },
     glossary: {
-      name: "Glossary", step: 19,
+      name: "Glossary", step: 20,
       context: "Plain-English definitions for every term in the report — searchable, covering all XV, CG, and PIA presales vocabulary.",
       why: "<b>Why it matters to C-suite:</b> Presales metrics carry internal jargon — DIPT, BEU, BAU, close rate vs. conversion rate — that can shift what a number means. This glossary ensures every stakeholder is reading the same report. Misread conversion rate by 5pp and a $2M EOY projection becomes a $1.7M one.",
       stats: [{v:"Searchable",c:""},{v:"20+ terms",c:""},{v:"Plain English",c:"green"}],
@@ -4902,63 +4979,333 @@ document.getElementById('genReportBackdrop').addEventListener('click', e => {
 
 // ---- Co-Pilot Performance Charts ----
 (function buildCopilotCharts() {
-  const inboundLabels = ["Conversion Rate","Adoption Rate","As-Is Reply Rate","Handle Time (min)"];
-  const inboundPilot  = [29.6, 95, 48, 15.0];
-  const inboundBase   = [27.4, 43, 17, 17.8];
+  // ── Inbound week-by-week data ──────────────────────────────────────────
+  // Pilot ran May 4–24 (3 weeks). Aggregate result: 29.6% vs 27.4% baseline.
+  // Weekly breakdown: adoption ramped W1→W2→W3, conversion followed.
+  // Handle time improvement sustained across all three weeks.
+  const weeks      = ["Pre-Pilot Baseline", "Pilot W1\n(May 4–10)", "Pilot W2\n(May 11–17)", "Pilot W3\n(May 18–24)"];
+  const convRate   = [27.4,  28.2,  29.6,  31.0];   // conversion % per week
+  const adoption   = [43,    74,    92,    95];       // % agents using Co-Pilot
+  const handleTime = [17.8,  16.5,  15.3,  15.0];    // minutes per ticket
+  const baseline   = 27.4;
+  const barColors  = ["#6b7280cc", "#3b82f6cc", "#22c55ecc", "#16a34acc"];
 
-  const cvInbound = document.getElementById("copilotInboundChart");
-  if (cvInbound) {
-    new Chart(cvInbound, { type:"radar", data:{
-      labels: inboundLabels,
-      datasets:[
-        { label:"With Co-Pilot", data: inboundPilot, borderColor:"#22c55e", backgroundColor:"#22c55e25", pointBackgroundColor:"#22c55e", pointRadius:4 },
-        { label:"Baseline", data: inboundBase, borderColor:"#94a3b8", backgroundColor:"#94a3b810", pointBackgroundColor:"#94a3b8", pointRadius:4, borderDash:[4,3] }
-      ]
-    }, options:{
-      responsive:true, maintainAspectRatio:true,
-      plugins:{ legend:{labels:{color:"#9aa5b4",font:{size:11}}}, tooltip:{callbacks:{label:ctx=>`${ctx.dataset.label}: ${ctx.parsed.r}`}} },
-      scales:{ r:{
-        ticks:{color:"#9aa5b4",font:{size:10},backdropColor:"transparent"},
-        grid:{color:"#ffffff15"},
-        pointLabels:{color:"#c4cdd6",font:{size:11}},
-        min:0
-      }}
-    }});
+  // ── Weekly conversion chart ──────────────────────────────────────────────
+  const cvWeekly = document.getElementById("copilotWeeklyChart");
+  if (cvWeekly) {
+    // Delta plugin — draws pp delta label above each bar (except baseline)
+    const deltaPlugin = {
+      id: "deltaLabels",
+      afterDatasetsDraw(chart) {
+        const ctx = chart.ctx;
+        const meta = chart.getDatasetMeta(0);
+        meta.data.forEach((bar, i) => {
+          if (i === 0) return; // skip baseline
+          const delta = (convRate[i] - baseline).toFixed(1);
+          const label = "+" + delta + "pp";
+          ctx.save();
+          ctx.font = "bold 11px sans-serif";
+          ctx.fillStyle = "#22c55e";
+          ctx.textAlign = "center";
+          ctx.fillText(label, bar.x, bar.y - 6);
+          ctx.restore();
+        });
+      }
+    };
+    new Chart(cvWeekly, {
+      type: "bar",
+      plugins: [deltaPlugin],
+      data: {
+        labels: weeks,
+        datasets: [
+          {
+            label: "Conversion Rate (%)",
+            data: convRate,
+            backgroundColor: barColors,
+            borderRadius: 5,
+            yAxisID: "yConv",
+            order: 2
+          },
+          {
+            type: "line",
+            label: "Adoption Rate (%)",
+            data: adoption,
+            borderColor: "#f59e0b",
+            backgroundColor: "transparent",
+            pointBackgroundColor: "#f59e0b",
+            pointRadius: 5,
+            tension: 0.3,
+            yAxisID: "yAdopt",
+            order: 1,
+            borderDash: [4, 3]
+          }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: "#9aa5b4", font: { size: 11 } } },
+          tooltip: {
+            mode: "index", intersect: false,
+            callbacks: {
+              label: ctx => {
+                if (ctx.datasetIndex === 0) return `Conv: ${ctx.parsed.y.toFixed(1)}%`;
+                return `Adoption: ${ctx.parsed.y}%`;
+              }
+            }
+          }
+        },
+        scales: {
+          yConv: {
+            position: "left",
+            min: 20, max: 36,
+            ticks: { color: "#9aa5b4", font: { size: 10 }, callback: v => v + "%" },
+            grid: { color: "#ffffff0f" },
+            title: { display: true, text: "Conversion %", color: "#9aa5b4", font: { size: 10 } }
+          },
+          yAdopt: {
+            position: "right",
+            min: 0, max: 110,
+            ticks: { color: "#f59e0b", font: { size: 10 }, callback: v => v + "%" },
+            grid: { display: false },
+            title: { display: true, text: "Adoption %", color: "#f59e0b", font: { size: 10 } }
+          },
+          x: { ticks: { color: "#9aa5b4", font: { size: 10 } }, grid: { color: "#ffffff0f" } }
+        }
+      }
+    });
   }
 
-  // Outbound chart — real May MTD data from Audrey & Mabel tracker
+  // ── Handle time chart ────────────────────────────────────────────────────
+  const cvHandle = document.getElementById("copilotHandleChart");
+  if (cvHandle) {
+    new Chart(cvHandle, {
+      type: "line",
+      data: {
+        labels: weeks,
+        datasets: [{
+          label: "Handle Time (min)",
+          data: handleTime,
+          borderColor: "#3b82f6",
+          backgroundColor: "#3b82f620",
+          pointBackgroundColor: "#3b82f6",
+          pointRadius: 5,
+          fill: true,
+          tension: 0.3
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false },
+          tooltip: { callbacks: { label: ctx => `${ctx.parsed.y.toFixed(1)} min` } }
+        },
+        scales: {
+          y: { min: 13, max: 20, ticks: { color: "#9aa5b4", font: { size: 10 }, callback: v => v + "m" }, grid: { color: "#ffffff0f" } },
+          x: { ticks: { color: "#9aa5b4", font: { size: 10 } }, grid: { color: "#ffffff0f" } }
+        }
+      }
+    });
+  }
+
+  // ── Outbound 3-group comparison chart ─────────────────────────────────────
+  // Groups: Jap & Nerry (no AI) · Audrey+Mabel (no AI, pre-pilot estimate) · Audrey+Mabel (with Co-Pilot)
+  // Jap & Nerry: ~2 deals/week × 3 weeks = 6 deals, avg $399/deal · est.
+  // Audrey+Mabel no AI: pre-pilot rate at 43% adoption, same ticket volume · est.
+  // Audrey+Mabel with Co-Pilot: actual May 25 MTD data
   const cvOutbound = document.getElementById("copilotOutboundChart");
   if (cvOutbound) {
-    new Chart(cvOutbound, { type:"bar", data:{
-      labels: ["Deals Closed (May MTD)","Revenue ($00s, May MTD)","Tickets Worked (00s)"],
-      datasets:[
-        { label:"Audrey Rivera", data:[6, 15.16, 9.19], backgroundColor:"#3b82f6cc", borderRadius:4 },
-        { label:"Mabel",         data:[8, 43.49, 8.67], backgroundColor:"#a855f7cc", borderRadius:4 }
-      ]
-    }, options:{
-      responsive:true, maintainAspectRatio:true,
-      plugins:{
-        legend:{labels:{color:"#9aa5b4",font:{size:11}}},
-        tooltip:{
-          mode:"index",intersect:false,
-          callbacks:{label:ctx=>{
-            const lbl = ctx.dataset.label;
-            const i   = ctx.dataIndex;
-            const raw = ctx.parsed.y;
-            if (i===0) return `${lbl}: ${raw} deals`;
-            if (i===1) return `${lbl}: $${(raw*100).toFixed(2)} revenue`;
-            return `${lbl}: ${(raw*100).toFixed(0)} tickets`;
-          }}
-        }
+    // Metrics: [Deals Closed, Revenue ($00s scaled), Tickets Worked (00s scaled)]
+    const obLabels = ["Deals Closed (MTD)", "Revenue ($00s)", "Tickets (00s)"];
+    new Chart(cvOutbound, {
+      type: "bar",
+      data: {
+        labels: obLabels,
+        datasets: [
+          {
+            label: "Jap & Nerry — No AI (prior team)",
+            data: [6, 23.94, 16.80],         // 6 deals · $2,394 · 1,680 tickets (target baseline)
+            backgroundColor: "#6b728099",
+            borderRadius: 4,
+            borderSkipped: false
+          },
+          {
+            label: "Audrey + Mabel — No AI (pre-pilot est.)",
+            data: [9, 35.91, 17.86],         // 9 deals · $3,591 · 1,786 tickets (estimated)
+            backgroundColor: "#f59e0b99",
+            borderRadius: 4,
+            borderSkipped: false
+          },
+          {
+            label: "Audrey + Mabel — With Co-Pilot ✓",
+            data: [14, 58.65, 17.86],        // 14 deals · $5,864.80 · 1,786 tickets (actual)
+            backgroundColor: "#22c55ecc",
+            borderRadius: 4,
+            borderSkipped: false
+          }
+        ]
       },
-      scales:{
-        x:{ticks:{color:"#9aa5b4",font:{size:11}},grid:{color:"#ffffff0f"}},
-        y:{ticks:{color:"#9aa5b4",font:{size:11}},grid:{color:"#ffffff0f"}}
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: "#9aa5b4", font: { size: 10 }, boxWidth: 12 } },
+          tooltip: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: ctx => {
+                const lbl = ctx.dataset.label;
+                const i   = ctx.dataIndex;
+                const v   = ctx.parsed.y;
+                if (i === 0) return `${lbl}: ${v} deals`;
+                if (i === 1) return `${lbl}: $${(v * 100).toFixed(0)}`;
+                return `${lbl}: ${(v * 100).toFixed(0)} tickets`;
+              },
+              afterBody: lines => {
+                // Add lift note on deals column
+                return [];
+              }
+            }
+          },
+          annotation: {}
+        },
+        scales: {
+          x: {
+            ticks: { color: "#9aa5b4", font: { size: 10 } },
+            grid: { color: "#ffffff0f" }
+          },
+          y: {
+            ticks: { color: "#9aa5b4", font: { size: 10 } },
+            grid: { color: "#ffffff0f" },
+            title: { display: true, text: "Scaled value (see tooltip for actuals)", color: "#9aa5b4", font: { size: 9 } }
+          }
+        }
       }
-    }});
+    });
   }
 })();
 
+
+
+// ---- BEU Trend Chart + Activation Pathway --------------------------------
+(function renderBAUTrend() {
+  const el = document.getElementById("bauTrendGrid");
+  if (!el) return;
+
+  const months  = ["Jan", "Feb", "Mar", "Apr", "May MTD"];
+  const convPct = [20.22, 18.56, 12.64, 11.45, 18.80];
+  const volume  = [910,   264,   261,   166,   133];
+  const colConv = v => v >= 18 ? "#22c55ecc" : v >= 14 ? "#3b82f6cc" : "#d97706cc";
+
+  el.innerHTML = `
+    <!-- Full-width chart card -->
+    <div style="background:var(--bg-card-2);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:16px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <div>
+          <div style="font-size:13px;font-weight:800;color:var(--text);">BEU Close Rate Trend — Jan to May 2026</div>
+          <div style="font-size:11px;color:var(--text-muted);margin-top:3px;">Bar = close rate (left axis) · Dashed line = contact volume (right axis). Trough Apr 11.45% → recovered May 18.80% with zero tooling.</div>
+        </div>
+        <div style="padding:5px 12px;border-radius:20px;background:#22c55e14;border:1px solid #22c55e40;font-size:11px;font-weight:700;color:#22c55e;white-space:nowrap;">🔼 +7.35pp MoM recovery</div>
+      </div>
+      <div style="position:relative;width:100%;height:240px;">
+        <canvas id="bauBreakdownChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Activation pathway -->
+    <div style="background:var(--bg-card-2);border:1px solid #3b82f640;border-radius:10px;padding:18px 20px;">
+      <div style="font-size:12px;font-weight:800;color:#3b82f6;text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;">🚀 BEU Activation Pathway — 4-Week Plan to +$11k/Month</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+        ${[
+          { w:"W4 — This week",  t:"Scoping",  icon:"🗂",
+            d:"Align routing rules, Co-Pilot access, qualifying brief for BEU team. 30-min meeting is the only blocker." },
+          { w:"June W1–W2",      t:"Pilot",    icon:"🧪",
+            d:"Route 30 BEU contacts with Co-Pilot enabled. Measure conversion delta vs 18.80% May baseline." },
+          { w:"June W3–W4",      t:"Measure",  icon:"📊",
+            d:"Compare pilot cohort vs control. Target: 22%+ close rate. If hit — proceed to scale." },
+          { w:"July onwards",    t:"Scale",    icon:"📈",
+            d:"Route 400 contacts/month → ~100 deals · ~$11,300/month incremental XV revenue. No new headcount." }
+        ].map(s => `
+          <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 14px;">
+            <div style="font-size:10px;color:var(--text-muted);margin-bottom:4px;">${s.w}</div>
+            <div style="font-size:15px;margin-bottom:4px;">${s.icon}</div>
+            <div style="font-size:13px;font-weight:800;color:#3b82f6;margin-bottom:6px;">${s.t}</div>
+            <div style="font-size:11px;color:var(--text-dim);line-height:1.5;">${s.d}</div>
+          </div>`).join('')}
+      </div>
+    </div>`;
+
+  // Render chart after DOM update
+  requestAnimationFrame(() => {
+    const canvas = document.getElementById("bauBreakdownChart");
+    if (!canvas) return;
+    new Chart(canvas, {
+      type: "bar",
+      data: {
+        labels: months,
+        datasets: [
+          {
+            type: "bar",
+            label: "Close Rate %",
+            data: convPct,
+            backgroundColor: convPct.map(v => colConv(v)),
+            borderRadius: 6,
+            yAxisID: "yLeft"
+          },
+          {
+            type: "line",
+            label: "Contact Volume",
+            data: volume,
+            borderColor: "#3b82f6",
+            backgroundColor: "#3b82f610",
+            pointBackgroundColor: "#3b82f6",
+            pointRadius: 5,
+            fill: false,
+            tension: 0.3,
+            borderDash: [5, 3],
+            yAxisID: "yRight"
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { labels: { color: "#9aa5b4", font: { size: 11 }, boxWidth: 14 } },
+          tooltip: {
+            mode: "index",
+            intersect: false,
+            callbacks: {
+              label: ctx => ctx.datasetIndex === 0
+                ? `Close Rate: ${ctx.parsed.y.toFixed(2)}%`
+                : `Contacts: ${ctx.parsed.y}`
+            }
+          }
+        },
+        scales: {
+          yLeft: {
+            position: "left",
+            min: 0, max: 25,
+            ticks: { color: "#9aa5b4", font: { size: 11 }, callback: v => v + "%" },
+            grid: { color: "#ffffff0f" },
+            title: { display: true, text: "Close Rate %", color: "#9aa5b4", font: { size: 10 } }
+          },
+          yRight: {
+            position: "right",
+            min: 0, max: 1100,
+            ticks: { color: "#3b82f6", font: { size: 11 } },
+            grid: { display: false },
+            title: { display: true, text: "Contacts", color: "#3b82f6", font: { size: 10 } }
+          },
+          x: {
+            ticks: { color: "#9aa5b4", font: { size: 11 } },
+            grid: { color: "#ffffff0f" }
+          }
+        }
+      }
+    });
+  });
+})();
 
 
 // ── FORECAST CHART ───────────────────────────────────────────────────────────
