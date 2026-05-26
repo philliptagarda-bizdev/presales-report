@@ -1,0 +1,6813 @@
+[
+  {
+    "i": 1,
+    "shapes": [
+      {
+        "kind": "sp",
+        "x": 114,
+        "y": 39,
+        "w": 1714,
+        "h": 51,
+        "sz": 28,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "HOLIDAY.COM\t",
+              "sz": "2100",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "HOLIDAY.COM\t",
+            "sz": "2100",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 91,
+        "y": 39,
+        "w": 6,
+        "h": 67,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 109,
+        "y": 90,
+        "w": 1824,
+        "h": 491,
+        "sz": 100,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "AFTER AN EYE-OPENER, READY FOR A ",
+              "sz": "7500",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": "“KILLER”",
+              "sz": "7500",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": " LEVEL UP?",
+              "sz": "7500",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "AFTER AN EYE-OPENER, READY FOR A ",
+            "sz": "7500",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": "“KILLER”",
+            "sz": "7500",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " LEVEL UP?",
+            "sz": "7500",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "pic",
+        "x": 1252,
+        "y": 293,
+        "w": 539,
+        "h": 708,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image16.jpg",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 128,
+        "y": 450,
+        "w": 1124,
+        "h": 567,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato Light",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Discover your ",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "unique strengths ",
+              "sz": "1900",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "or deadly traits",
+              "sz": "1900",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": ".",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": " ",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "Complete this quick assessment to find your ",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "sales",
+              "sz": "1900",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "-assassin",
+              "sz": "1900",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": " alias &amp; style.",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "Do not close or just minimize the results page &amp; do not tell anyone who you are until session end.",
+              "sz": "1900",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "Start the assessment at:",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "https://oneflow.com/sales-personality/test/",
+              "sz": "1900",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": " ",
+              "sz": "1900",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Discover your ",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "unique strengths ",
+            "sz": "1900",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "or deadly traits",
+            "sz": "1900",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": ".",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": " ",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "Complete this quick assessment to find your ",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "sales",
+            "sz": "1900",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "-assassin",
+            "sz": "1900",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": " alias &amp; style.",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "Do not close or just minimize the results page &amp; do not tell anyone who you are until session end.",
+            "sz": "1900",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "Start the assessment at:",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "https://oneflow.com/sales-personality/test/",
+            "sz": "1900",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": " ",
+            "sz": "1900",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 2,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 330,
+        "y": 176,
+        "w": 1259,
+        "h": 582,
+        "sz": 80,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "What Makes a ",
+              "sz": "6000",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "“Successful”",
+              "sz": "6000",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": " ",
+              "sz": "6000",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "Salesperson?",
+              "sz": "6000",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "What Makes a ",
+            "sz": "6000",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "“Successful”",
+            "sz": "6000",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": " ",
+            "sz": "6000",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "Salesperson?",
+            "sz": "6000",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 867,
+        "y": 398,
+        "w": 150,
+        "h": 8,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 235,
+        "y": 699,
+        "w": 1449,
+        "h": 183,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "B0B0B0",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Beyond being in the right place at the right time.",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": "—",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": "Who said luck has been a factor in success?",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Let’s target the 7 +1  core skills and traits of top ",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": "performers “sales assassins”",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": ".",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Beyond being in the right place at the right time.",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "—",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Who said luck has been a factor in success?",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Let’s target the 7 +1  core skills and traits of top ",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "performers “sales assassins”",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": ".",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "pic",
+        "x": 923,
+        "y": 116,
+        "w": 75,
+        "h": 60,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image7.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 3,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 92,
+        "y": 410,
+        "w": 824,
+        "h": 390,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 1005,
+        "y": 410,
+        "w": 824,
+        "h": 472,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 153,
+        "y": 476,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "OBJECTIVES",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "OBJECTIVES",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 153,
+        "y": 565,
+        "w": 808,
+        "h": 211,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "B0B0B0",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Clearly explain product benefits and features.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Listen actively to uncover true needs and concerns.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Build rapid rapport and establish trust.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Clearly explain product benefits and features.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Listen actively to uncover true needs and concerns.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Build rapid rapport and establish trust.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1067,
+        "y": 476,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "C.l.e.a.r. the smoke",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "C.l.e.a.r. the smoke",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1067,
+        "y": 565,
+        "w": 700,
+        "h": 269,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "C ",
+              "sz": "1500",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "—",
+              "sz": "1300",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": " ",
+              "sz": "1300",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": "Connect (Greet, Build Rapport, Establish Trust)",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "L ",
+              "sz": "1500",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "—",
+              "sz": "1300",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": " ",
+              "sz": "1300",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": "Listen (Active Listening)",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "E ",
+              "sz": "1500",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "—",
+              "sz": "1300",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": " ",
+              "sz": "1300",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": "Explain (",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "Explain",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": " Directly, Easy to Understand)",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "A ",
+              "sz": "1500",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "— ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "Ask (Effective Discovery Questions)",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "R ",
+              "sz": "1500",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "— ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "Resolve",
+              "sz": "1500",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": " (Strong CTA)",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "\t\t\t",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "C ",
+            "sz": "1500",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "—",
+            "sz": "1300",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " ",
+            "sz": "1300",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "Connect (Greet, Build Rapport, Establish Trust)",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "L ",
+            "sz": "1500",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "—",
+            "sz": "1300",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " ",
+            "sz": "1300",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "Listen (Active Listening)",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "E ",
+            "sz": "1500",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "—",
+            "sz": "1300",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " ",
+            "sz": "1300",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "Explain (",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "Explain",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": " Directly, Easy to Understand)",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "A ",
+            "sz": "1500",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "— ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "Ask (Effective Discovery Questions)",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "R ",
+            "sz": "1500",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "— ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "Resolve",
+            "sz": "1500",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": " (Strong CTA)",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "\t\t\t",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 1792,
+        "h": 175,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "1.",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": " Excellent Communication",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "1.",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " Excellent Communication",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 4,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 92,
+        "y": 410,
+        "w": 824,
+        "h": 390,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 1005,
+        "y": 410,
+        "w": 824,
+        "h": 390,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 153,
+        "y": 476,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Objectives",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Objectives",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 153,
+        "y": 565,
+        "w": 867,
+        "h": 211,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "B0B0B0",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Understand sales is tough; rejection is guaranteed.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Handle &quot;no&quot; with resilience.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Treat every rejection as a learning opportunity.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Understand sales is tough; rejection is guaranteed.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Handle &quot;no&quot; with resilience.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Treat every rejection as a learning opportunity.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1067,
+        "y": 476,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "We Need To S.H.A.T.T.E.R. to endure",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "We Need To S.H.A.T.T.E.R. to endure",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1067,
+        "y": 565,
+        "w": 700,
+        "h": 36,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": " ",
+              "sz": "1500",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": " ",
+            "sz": "1500",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 1792,
+        "h": 262,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "2. Persistence &amp; Resilience",
+              "sz": "3600",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "2. Persistence &amp; Resilience",
+            "sz": "3600",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1067,
+        "y": 553,
+        "w": 700,
+        "h": 153,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "B0B0B0",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "In my experience spanning a decade, I have come up with a systematic ",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": "way to shatter and deal with rejection. Let us dissect that in the next slide.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "In my experience spanning a decade, I have come up with a systematic ",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "way to shatter and deal with rejection. Let us dissect that in the next slide.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 5,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": -57,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 99,
+        "y": 343,
+        "w": 525,
+        "h": 525,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image5.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 660,
+        "y": 198,
+        "w": 1010,
+        "h": 94,
+        "sz": 52,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "S.H.A.T.T.E.R.",
+              "sz": "3893",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": " Framework",
+              "sz": "3893",
+              "bold": true,
+              "italic": false,
+              "color": "E0E0E0"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "S.H.A.T.T.E.R.",
+            "sz": "3893",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": " Framework",
+            "sz": "3893",
+            "bold": true,
+            "italic": false,
+            "color": "E0E0E0"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 660,
+        "y": 380,
+        "w": 1237,
+        "h": 504,
+        "sz": 21,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "S —",
+              "sz": "1600",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": " Strategic Mindset: View rejection as a data point in a volume game, not personal.",
+              "sz": "1600",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "H — ",
+              "sz": "1600",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "Hardened Resilience: Develop the &quot;callus&quot; to handle &quot;no&quot; without losing momentum.",
+              "sz": "1600",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "A —",
+              "sz": "1600",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": " Analyze the Interaction: Pinpoint the source of friction (timing, budget, or trust).",
+              "sz": "1600",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "T — ",
+              "sz": "1600",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "Target the Lesson: Isolate one key takeaway for the next lead.",
+              "sz": "1600",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "T — ",
+              "sz": "1600",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "Transform the &quot;No&quot;: Pivot the follow-up strategy based on feedback.",
+              "sz": "1600",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "E —",
+              "sz": "1600",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": " Elevate the Approach: Sharpen your pitch using the learned insight.",
+              "sz": "1600",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "R — Repeat &amp; Refine: Re-engage with a more polished approach.",
+              "sz": "1600",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "S —",
+            "sz": "1600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " Strategic Mindset: View rejection as a data point in a volume game, not personal.",
+            "sz": "1600",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "H — ",
+            "sz": "1600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "Hardened Resilience: Develop the &quot;callus&quot; to handle &quot;no&quot; without losing momentum.",
+            "sz": "1600",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "A —",
+            "sz": "1600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " Analyze the Interaction: Pinpoint the source of friction (timing, budget, or trust).",
+            "sz": "1600",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "T — ",
+            "sz": "1600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "Target the Lesson: Isolate one key takeaway for the next lead.",
+            "sz": "1600",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "T — ",
+            "sz": "1600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "Transform the &quot;No&quot;: Pivot the follow-up strategy based on feedback.",
+            "sz": "1600",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "E —",
+            "sz": "1600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": " Elevate the Approach: Sharpen your pitch using the learned insight.",
+            "sz": "1600",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "R — Repeat &amp; Refine: Re-engage with a more polished approach.",
+            "sz": "1600",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "pic",
+        "x": 105,
+        "y": 349,
+        "w": 513,
+        "h": 513,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image2.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 91,
+        "w": 1792,
+        "h": 87,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "SHATTER",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "SHATTER",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "pic",
+        "x": 1278,
+        "y": 215,
+        "w": 60,
+        "h": 60,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image3.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 27,
+        "y": 0,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 6,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 92,
+        "y": 410,
+        "w": 824,
+        "h": 390,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 1005,
+        "y": 410,
+        "w": 824,
+        "h": 537,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 456,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "OBJECTIVES",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "OBJECTIVES",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 544,
+        "w": 904,
+        "h": 211,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "B0B0B0",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Understand we don't sell products; we solve problems.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Put yourself in the customer’s shoes.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Tailor solutions to specific pain points.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Understand we don't sell products; we solve problems.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Put yourself in the customer’s shoes.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Tailor solutions to specific pain points.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1026,
+        "y": 441,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Play the S.L.O.T. Game",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Play the S.L.O.T. Game",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1026,
+        "y": 533,
+        "w": 782,
+        "h": 252,
+        "sz": 17,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "S — Solve, Not Sell: Product is a tool; solution is the goal.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "L — Look Through Their Lens: Use empathy to understand their obstacles.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "O — Orient to Pain: Map their struggles before proposing a solution.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "T — Tailor the Hit: Customize the solution for their unique situation.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "S — Solve, Not Sell: Product is a tool; solution is the goal.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "L — Look Through Their Lens: Use empathy to understand their obstacles.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "O — Orient to Pain: Map their struggles before proposing a solution.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "T — Tailor the Hit: Customize the solution for their unique situation.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 1792,
+        "h": 87,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "3. Empathy",
+              "sz": "3600",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "3. Empathy",
+            "sz": "3600",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 7,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 92,
+        "y": 410,
+        "w": 824,
+        "h": 390,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 1005,
+        "y": 410,
+        "w": 824,
+        "h": 455,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 456,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "OBJECTIVES",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "OBJECTIVES",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 544,
+        "w": 782,
+        "h": 153,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "B0B0B0",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "K",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": "now the features, benefits, and limitations inside out.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Answer questions with total confidence.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Anticipate concerns before the customer voices them.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "K",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "now the features, benefits, and limitations inside out.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Answer questions with total confidence.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Anticipate concerns before the customer voices them.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1026,
+        "y": 441,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "WE need to A.C.e. it",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "WE need to A.C.e. it",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1026,
+        "y": 533,
+        "w": 814,
+        "h": 252,
+        "sz": 17,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "A — Anticipate Friction: Predict objections. Seeing the &quot;shatter&quot; allows you to control the impact.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "C — Command Details: Master features, benefits, and limitations. Total knowledge defeats customer doubt.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "E — Execute with Confidence: Answer questions with precision. Authority stops customers from looking for the exit.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "A — Anticipate Friction: Predict objections. Seeing the &quot;shatter&quot; allows you to control the impact.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "C — Command Details: Master features, benefits, and limitations. Total knowledge defeats customer doubt.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "E — Execute with Confidence: Answer questions with precision. Authority stops customers from looking for the exit.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 1792,
+        "h": 87,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "4. Deep Product Knowledge",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "4. Deep Product Knowledge",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 8,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 92,
+        "y": 410,
+        "w": 824,
+        "h": 390,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 1005,
+        "y": 410,
+        "w": 824,
+        "h": 634,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 456,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "OBJECTIVES",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "OBJECTIVES",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 544,
+        "w": 824,
+        "h": 269,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "B0B0B0",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "The sales landscape is constantly evolving.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Adjust your approach based on the ",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": "client",
+              "sz": "1500",
+              "bold": true,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": " and the ",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": "situation",
+              "sz": "1500",
+              "bold": true,
+              "italic": false,
+              "color": "B0B0B0"
+            },
+            {
+              "text": ".",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Learn quickly and pivot in real-time.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "The sales landscape is constantly evolving.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Adjust your approach based on the ",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "client",
+            "sz": "1500",
+            "bold": true,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": " and the ",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "situation",
+            "sz": "1500",
+            "bold": true,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": ".",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Learn quickly and pivot in real-time.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1026,
+        "y": 441,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Results V.a.r.y.",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Results V.a.r.y.",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1035,
+        "y": 527,
+        "w": 763,
+        "h": 347,
+        "sz": 17,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "V — Vigilant Observation: Constantly scan the market and client needs; don't focus on the past.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "A — Adaptive Maneuvering: Adjust your pitch in real-time until you find the fracture point.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "R — Rapid Processing: Learn instantly from a &quot;no&quot; or hesitation; pivot immediately.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "Y — Yield to the Facts: Accept the evolved landscape; abandon the old script and move with the new reality.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "V — Vigilant Observation: Constantly scan the market and client needs; don't focus on the past.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "A — Adaptive Maneuvering: Adjust your pitch in real-time until you find the fracture point.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "R — Rapid Processing: Learn instantly from a &quot;no&quot; or hesitation; pivot immediately.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "Y — Yield to the Facts: Accept the evolved landscape; abandon the old script and move with the new reality.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 1792,
+        "h": 87,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "5. Adaptability",
+              "sz": "3600",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "5. Adaptability",
+            "sz": "3600",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 9,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 92,
+        "y": 410,
+        "w": 824,
+        "h": 390,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 1005,
+        "y": 410,
+        "w": 824,
+        "h": 590,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 456,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "OBJECTIVES",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "OBJECTIVES",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 544,
+        "w": 824,
+        "h": 211,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "B0B0B0",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Maintain genuine enthusiasm for what you sell.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Transfer that excitement to the buyer.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Stay motivated through difficult deals.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Maintain genuine enthusiasm for what you sell.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Transfer that excitement to the buyer.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Stay motivated through difficult deals.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1026,
+        "y": 441,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "light the F.U.S.E.",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "light the F.U.S.E.",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1035,
+        "y": 527,
+        "w": 763,
+        "h": 347,
+        "sz": 17,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "F ",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "— ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "Fanatical Belief: Be genuinely sold on your solution; your enthusiasm is contagious.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "U ",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "— ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "Underwrite the Energy: Control the room's emotional climate; be the source of the spark.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "S ",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "— ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "Spark the Buyer: Transfer your excitement and conviction until the buyer sees the value.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "E ",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "— ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "Enduring Drive: Sustain motivation throughout long, challenging deals; the grind requires constant fuel.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "F ",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "— ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "Fanatical Belief: Be genuinely sold on your solution; your enthusiasm is contagious.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "U ",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "— ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "Underwrite the Energy: Control the room's emotional climate; be the source of the spark.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "S ",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "— ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "Spark the Buyer: Transfer your excitement and conviction until the buyer sees the value.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "E ",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "— ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "Enduring Drive: Sustain motivation throughout long, challenging deals; the grind requires constant fuel.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 1792,
+        "h": 87,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "6. Positive Attitude",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "6. Positive Attitude",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 10,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 92,
+        "y": 410,
+        "w": 824,
+        "h": 417,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 1005,
+        "y": 410,
+        "w": 824,
+        "h": 590,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image4.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 456,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "OBJECTIVES",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "OBJECTIVES",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 544,
+        "w": 754,
+        "h": 251,
+        "sz": null,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "B0B0B0",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Prioritize high-value activities that drive revenue.",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Use all available tools to minimize friction and deliver quickly.",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "Dedicate specific time blocks for knowledge enrichment ",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ],
+          [
+            {
+              "text": "and follow-ups.",
+              "bold": false,
+              "italic": false,
+              "color": "B0B0B0"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Prioritize high-value activities that drive revenue.",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Use all available tools to minimize friction and deliver quickly.",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "Dedicate specific time blocks for knowledge enrichment ",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          },
+          {
+            "text": "and follow-ups.",
+            "bold": false,
+            "italic": false,
+            "color": "B0B0B0"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1026,
+        "y": 441,
+        "w": 736,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "use our E.D.G.e.",
+              "sz": "2400",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "use our E.D.G.e.",
+            "sz": "2400",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1035,
+        "y": 527,
+        "w": 777,
+        "h": 347,
+        "sz": 17,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "E — ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "Extract Value: Focus only on high-stakes, revenue-driving activities; ignore the noise.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "D — ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "Deploy Arsenal: Use all available tools (CRM, automation, AI) to reduce friction and deliver fast solutions.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "G — ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "Generate Flow: Schedule &quot;Dark Time&quot; for dedicated, uninterrupted knowledge enrichment and skill sharpening.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "E — ",
+              "sz": "1300",
+              "bold": true,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "En",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            },
+            {
+              "text": "force Follow-up: Maintain a disciplined schedule to ensure no lead goes cold and every detail is examined.",
+              "sz": "1300",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "E — ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "Extract Value: Focus only on high-stakes, revenue-driving activities; ignore the noise.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "D — ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "Deploy Arsenal: Use all available tools (CRM, automation, AI) to reduce friction and deliver fast solutions.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "G — ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "Generate Flow: Schedule &quot;Dark Time&quot; for dedicated, uninterrupted knowledge enrichment and skill sharpening.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "E — ",
+            "sz": "1300",
+            "bold": true,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "En",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "force Follow-up: Maintain a disciplined schedule to ensure no lead goes cold and every detail is examined.",
+            "sz": "1300",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 1792,
+        "h": 87,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "7. Time Management",
+              "sz": "3600",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "7. Time Management",
+            "sz": "3600",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 11,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 47,
+        "y": 470,
+        "w": 824,
+        "h": 327,
+        "sz": 180,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "100%",
+              "sz": "13500",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "100%",
+            "sz": "13500",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 47,
+        "y": 760,
+        "w": 824,
+        "h": 44,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "HIT OUT ON SUCCESS",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "HIT OUT ON SUCCESS",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 111,
+        "y": 441,
+        "w": 734,
+        "h": 163,
+        "sz": 45,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "E0E0E0",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "WE DO WHATEVER IT TAKES TO GET A",
+              "sz": "3354",
+              "bold": true,
+              "italic": false,
+              "color": "E0E0E0"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "WE DO WHATEVER IT TAKES TO GET A",
+            "sz": "3354",
+            "bold": true,
+            "italic": false,
+            "color": "E0E0E0"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 981,
+        "h": 87,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "The DNA of a Top Performer",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "The DNA of a Top Performer",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "pic",
+        "x": 464,
+        "y": 194,
+        "w": 512,
+        "h": 512,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image11.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 720,
+        "y": 68,
+        "w": 298,
+        "h": 218,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image20.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 971,
+        "y": 248,
+        "w": 73,
+        "h": 273,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image9.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 860,
+        "y": 521,
+        "w": 176,
+        "h": 220,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image8.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 581,
+        "y": 740,
+        "w": 280,
+        "h": 34,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image12.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 405,
+        "y": 522,
+        "w": 176,
+        "h": 220,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image19.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 396,
+        "y": 249,
+        "w": 72,
+        "h": 273,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image21.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 467,
+        "y": 127,
+        "w": 252,
+        "h": 123,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image18.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 600,
+        "y": 67,
+        "w": 225,
+        "h": 90,
+        "sz": 20,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Inter",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Communication",
+              "sz": "1513",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Communication",
+            "sz": "1513",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 944,
+        "y": 224,
+        "w": 225,
+        "h": 90,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "ctr",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Inter",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Persistence",
+              "sz": "1513",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Persistence",
+            "sz": "1513",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 990,
+        "y": 492,
+        "w": 225,
+        "h": 90,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "ctr",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Inter",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Empathy",
+              "sz": "1513",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Empathy",
+            "sz": "1513",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 773,
+        "y": 664,
+        "w": 351,
+        "h": 60,
+        "sz": 20,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Inter",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Product Knowledge",
+              "sz": "1513",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Product Knowledge",
+            "sz": "1513",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 225,
+        "y": 488,
+        "w": 225,
+        "h": 90,
+        "sz": 20,
+        "algn": [
+          "algn=\"r\"",
+          "r"
+        ],
+        "anchor": "ctr",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Inter",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Adaptability",
+              "sz": "1513",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Adaptability",
+            "sz": "1513",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 291,
+        "y": 215,
+        "w": 225,
+        "h": 90,
+        "sz": 20,
+        "algn": [
+          "algn=\"r\"",
+          "r"
+        ],
+        "anchor": "ctr",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Inter",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Positive Attitude",
+              "sz": "1513",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Positive Attitude",
+            "sz": "1513",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 450,
+        "y": 435,
+        "w": 540,
+        "h": 60,
+        "sz": 16,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFF7ED",
+        "fontFace": "Inter",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 615,
+        "y": 345,
+        "w": 210,
+        "h": 210,
+        "sz": null,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "FFF7ED",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 630,
+        "y": 405,
+        "w": 180,
+        "h": 90,
+        "sz": 21,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Montserrat ExtraBold",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "HIT",
+              "sz": "1553",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "HIT",
+            "sz": "1553",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 918,
+        "y": 869,
+        "w": 329,
+        "h": 63,
+        "sz": null,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "FFF7ED",
+        "fontFace": "Inter",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Time Management",
+              "bold": true,
+              "italic": false,
+              "color": "FFF7ED"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Time Management",
+            "bold": true,
+            "italic": false,
+            "color": "FFF7ED"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 12,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "pic",
+        "x": 1009,
+        "y": 380,
+        "w": 824,
+        "h": 432,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image13.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 99,
+        "y": 461,
+        "w": 839,
+        "h": 269,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "FFFFFF",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Become an educator, not just a vendor.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "Solve the problems of your &quot;past self.&quot;",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "Earn authority by staying one step ahead of the journey.",
+              "sz": "1500",
+              "bold": false,
+              "italic": false,
+              "color": "FFFFFF"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Become an educator, not just a vendor.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "Solve the problems of your &quot;past self.&quot;",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "Earn authority by staying one step ahead of the journey.",
+            "sz": "1500",
+            "bold": false,
+            "italic": false,
+            "color": "FFFFFF"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 1792,
+        "h": 175,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "the Secret Weapon IN your arsenal is to Become The Educator",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "the Secret Weapon IN your arsenal is to Become The Educator",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 13,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 325,
+        "y": 506,
+        "w": 1380,
+        "h": 502,
+        "sz": 60,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": true,
+        "colorHex": "FFFFFF",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "A man's ambition should never exceed his worth. WE would do well to remember that",
+              "sz": "4500",
+              "bold": false,
+              "italic": true,
+              "color": "FFFFFF"
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "A man's ambition should never exceed his worth. WE would do well to remember that",
+            "sz": "4500",
+            "bold": false,
+            "italic": true,
+            "color": "FFFFFF"
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1130,
+        "y": 777,
+        "w": 627,
+        "h": 44,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": true,
+        "colorHex": "D32F2F",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "— ",
+              "sz": "1800",
+              "bold": true,
+              "italic": true,
+              "color": "D32F2F"
+            },
+            {
+              "text": "The Harbinger, John Wick Chapter 4",
+              "sz": "1800",
+              "bold": true,
+              "italic": true,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "— ",
+            "sz": "1800",
+            "bold": true,
+            "italic": true,
+            "color": "D32F2F"
+          },
+          {
+            "text": "The Harbinger, John Wick Chapter 4",
+            "sz": "1800",
+            "bold": true,
+            "italic": true,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 265,
+        "y": 461,
+        "w": 51,
+        "h": 180,
+        "sz": 100,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": true,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "“",
+              "sz": "7500",
+              "bold": false,
+              "italic": true,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "“",
+            "sz": "7500",
+            "bold": false,
+            "italic": true,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 1792,
+        "h": 87,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "SALES ",
+              "sz": "3600",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": "ASSASSIns Have the utmost integrity",
+              "sz": "3600",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "SALES ",
+            "sz": "3600",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": "ASSASSIns Have the utmost integrity",
+            "sz": "3600",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1022,
+        "y": 236,
+        "w": 51,
+        "h": 34,
+        "sz": null,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 1624,
+        "y": 595,
+        "w": 90,
+        "h": 211,
+        "sz": 100,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": true,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "”",
+              "sz": "7500",
+              "bold": false,
+              "italic": true,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "”",
+            "sz": "7500",
+            "bold": false,
+            "italic": true,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 14,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 122,
+        "y": 92,
+        "w": 786,
+        "h": 87,
+        "sz": 48,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "TIme to wake up “",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "tool master",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            },
+            {
+              "text": "”",
+              "sz": "3600",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "TIme to wake up “",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "tool master",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          },
+          {
+            "text": "”",
+            "sz": "3600",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 92,
+        "w": 8,
+        "h": 86,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "ctr",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Calibri",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 412,
+        "w": 817,
+        "h": 58,
+        "sz": 32,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "E0E0E0",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "The White-Nosed Coatimundi",
+              "sz": "2404",
+              "bold": true,
+              "italic": false,
+              "color": "E0E0E0"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "The White-Nosed Coatimundi",
+            "sz": "2404",
+            "bold": true,
+            "italic": false,
+            "color": "E0E0E0"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 495,
+        "w": 896,
+        "h": 325,
+        "sz": 20,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Organized number cruncher, great at quick calculations. Effective leader; uses tools like CRM and AI to advance deals. Wins through data, collaboration, and versatility. Expert at leveraging resources, using wit and calculation to close deals. ",
+              "sz": "1500",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ],
+          [
+            {
+              "text": "Let's see everyone's ",
+              "sz": "1500",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": "assassin aliases",
+              "sz": "1500",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": " so we can get to know each other better!",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Organized number cruncher, great at quick calculations. Effective leader; uses tools like CRM and AI to advance deals. Wins through data, collaboration, and versatility. Expert at leveraging resources, using wit and calculation to close deals. ",
+            "sz": "1500",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "Let's see everyone's ",
+            "sz": "1500",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "assassin aliases",
+            "sz": "1500",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": " so we can get to know each other better!",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "pic",
+        "x": 1026,
+        "y": 116,
+        "w": 782,
+        "h": 848,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image14.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "i": 15,
+    "shapes": [
+      {
+        "kind": "pic",
+        "x": 0,
+        "y": 0,
+        "w": 1920,
+        "h": 1080,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image1.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 48,
+        "y": 415,
+        "w": 1824,
+        "h": 288,
+        "sz": 140,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "ANY QUESTIONS?",
+              "sz": "10500",
+              "bold": true,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "ANY QUESTIONS?",
+            "sz": "10500",
+            "bold": true,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 79,
+        "y": 204,
+        "w": 1737,
+        "h": 132,
+        "sz": 28,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Lato",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Pieces of the shattered “self” are always there ",
+              "sz": "2100",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": "whether",
+              "sz": "2100",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": " put back ",
+              "sz": "2100",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": "together",
+              "sz": "2100",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": " by gold or mud, we learn to live with the imperfections and appreciate ",
+              "sz": "2100",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": "its",
+              "sz": "2100",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": " beauty.",
+              "sz": "2100",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Pieces of the shattered “self” are always there ",
+            "sz": "2100",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": "whether",
+            "sz": "2100",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": " put back ",
+            "sz": "2100",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": "together",
+            "sz": "2100",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": " by gold or mud, we learn to live with the imperfections and appreciate ",
+            "sz": "2100",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": "its",
+            "sz": "2100",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": " beauty.",
+            "sz": "2100",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 92,
+        "y": 751,
+        "w": 1737,
+        "h": 44,
+        "sz": 24,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "555555",
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "PHILLIP.TAGARDA",
+              "sz": "1800",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": "@kape.",
+              "sz": "1800",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": "COM ",
+              "sz": "1800",
+              "bold": false,
+              "italic": false
+            },
+            {
+              "text": "| ",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "555555"
+            },
+            {
+              "text": "#",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            },
+            {
+              "text": "7deadlytraitsofasalesassasin",
+              "sz": "1800",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "PHILLIP.TAGARDA",
+            "sz": "1800",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "@kape.",
+            "sz": "1800",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "COM ",
+            "sz": "1800",
+            "bold": false,
+            "italic": false
+          },
+          {
+            "text": "| ",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "555555"
+          },
+          {
+            "text": "#",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          },
+          {
+            "text": "7deadlytraitsofasalesassasin",
+            "sz": "1800",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 359,
+        "y": 773,
+        "w": 1203,
+        "h": 284,
+        "sz": 140,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": true,
+        "italic": false,
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "Thank you!",
+              "sz": "10500",
+              "bold": true,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "Thank you!",
+            "sz": "10500",
+            "bold": true,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "pic",
+        "x": 905,
+        "y": 355,
+        "w": 60,
+        "h": 60,
+        "sz": null,
+        "algn": null,
+        "anchor": null,
+        "bold": false,
+        "italic": false,
+        "img": "image15.png",
+        "paras": [],
+        "runs": []
+      },
+      {
+        "kind": "sp",
+        "x": 54,
+        "y": 99,
+        "w": 1737,
+        "h": 145,
+        "sz": 27,
+        "algn": [
+          "algn=\"ctr\"",
+          "ctr"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": true,
+        "fontFace": "Bebas Neue",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "“Wabi-sabi, a Japanese philosophy, involves restoring broken objects and enhancing their value by embracing the inherent beauty of imperfection.”",
+              "sz": "2000",
+              "bold": false,
+              "italic": true
+            }
+          ],
+          [
+            {
+              "text": "",
+              "bold": false,
+              "italic": false
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "“Wabi-sabi, a Japanese philosophy, involves restoring broken objects and enhancing their value by embracing the inherent beauty of imperfection.”",
+            "sz": "2000",
+            "bold": false,
+            "italic": true
+          },
+          {
+            "text": "",
+            "bold": false,
+            "italic": false
+          }
+        ]
+      },
+      {
+        "kind": "sp",
+        "x": 14,
+        "y": 15,
+        "w": 220,
+        "h": 75,
+        "sz": 25,
+        "algn": [
+          "algn=\"l\"",
+          "l"
+        ],
+        "anchor": "t",
+        "bold": false,
+        "italic": false,
+        "colorHex": "D32F2F",
+        "fontFace": "Oswald",
+        "img": null,
+        "paras": [
+          [
+            {
+              "text": "holiday.com",
+              "sz": "1900",
+              "bold": false,
+              "italic": false,
+              "color": "D32F2F"
+            }
+          ]
+        ],
+        "runs": [
+          {
+            "text": "holiday.com",
+            "sz": "1900",
+            "bold": false,
+            "italic": false,
+            "color": "D32F2F"
+          }
+        ]
+      }
+    ]
+  }
+]

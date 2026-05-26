@@ -1,0 +1,329 @@
+/* Activity-slide styling. Activities sit inside <section data-activity="...">
+   that are children of <deck-stage>. Each section is 1920x1080 like a content slide. */
+
+deck-stage > section[data-activity] {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(232,200,122,0.12), transparent 60%),
+    radial-gradient(ellipse at 80% 90%, rgba(232,200,122,0.06), transparent 55%),
+    #0a0a0a;
+  color: #fff;
+  overflow: hidden;
+  font-family: 'Roboto', system-ui, sans-serif;
+}
+
+deck-stage > section[data-activity] .brand {
+  position: absolute;
+  top: 0; left: 0;
+  padding: 19px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 38px;
+  color: rgba(255,255,255,0.85);
+  z-index: 5;
+}
+
+deck-stage > section[data-activity] .activity-root {
+  position: absolute;
+  inset: 110px 120px 80px 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.act-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+  padding: 40px 56px 32px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  transition: box-shadow 600ms, transform 600ms;
+  min-height: 0;
+  overflow: hidden;
+}
+.act-shell.is-pulse {
+  box-shadow: 0 30px 80px rgba(232,200,122,0.35), 0 0 0 2px rgba(232,200,122,0.45) inset;
+}
+
+.act-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #e8c87a;
+}
+
+.act-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 0.95;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+  color: #fff;
+}
+
+.act-sub {
+  font-size: 26px;
+  line-height: 1.4;
+  color: rgba(255,255,255,0.75);
+  max-width: 1400px;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* -------- Match the Move -------- */
+.act-board {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  margin-top: 4px;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+.act-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  overflow: hidden;
+}
+.act-col-h {
+  font-family: 'Oswald', sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+.act-snippets, .act-moves {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 0;
+  overflow: auto;
+}
+
+.act-snip {
+  text-align: left;
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 16px 22px;
+  color: #fff;
+  font: inherit;
+  font-size: 24px;
+  line-height: 1.4;
+  cursor: pointer;
+  transition: all 180ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.act-snip:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
+.act-snip.is-selected {
+  background: rgba(232,200,122,0.12);
+  border-color: rgba(232,200,122,0.55);
+  box-shadow: 0 0 0 3px rgba(232,200,122,0.2);
+}
+.act-snip.is-correct {
+  background: rgba(126,211,158,0.08);
+  border-color: rgba(126,211,158,0.5);
+  cursor: default;
+}
+.act-snip.is-wrong {
+  background: rgba(232,90,90,0.1);
+  border-color: rgba(232,90,90,0.55);
+  animation: shake 0.4s ease;
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(3px); }
+}
+
+.act-snip-tag {
+  font-family: 'Oswald', sans-serif;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  align-self: flex-start;
+}
+.act-snip-tag.is-correct { color: #7ed39e; }
+
+.act-move {
+  text-align: left;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 18px 24px;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+  transition: all 180ms ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.act-move:hover { background: rgba(255,255,255,0.08); border-color: rgba(232,200,122,0.4); }
+.act-move-label {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: 0.03em;
+  color: #fff;
+}
+.act-move-hint {
+  font-size: 20px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  line-height: 1.3;
+}
+
+/* -------- Pledge -------- */
+.act-pledge {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 6px;
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}
+.act-pledge-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 24px;
+  row-gap: 8px;
+  align-items: start;
+}
+.act-pledge-n {
+  grid-row: 1 / span 2;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  color: #e8c87a;
+  font-size: 40px;
+  letter-spacing: 0.06em;
+  padding-top: 4px;
+}
+.act-pledge-label {
+  font-size: 24px;
+  color: rgba(255,255,255,0.85);
+  font-weight: 400;
+}
+.act-pledge-row textarea {
+  grid-column: 2;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: #fff;
+  font: inherit;
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.4;
+  resize: vertical;
+  min-height: 64px;
+  outline: none;
+  transition: border-color 180ms, background 180ms;
+}
+.act-pledge-row textarea:focus {
+  border-color: rgba(232,200,122,0.55);
+  background: rgba(255,255,255,0.06);
+}
+.act-pledge-row textarea::placeholder {
+  color: rgba(255,255,255,0.3);
+  font-style: italic;
+}
+.act-pledge-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+/* -------- Footer + controls -------- */
+.act-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.act-status {
+  font-size: 22px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 300;
+  flex: 1;
+  min-width: 0;
+}
+.act-status.is-success {
+  color: #9ee5a8;
+}
+.act-continue {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.4);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 16px 32px;
+  font: inherit;
+  font-size: 22px;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: not-allowed;
+  transition: all 220ms ease;
+  flex-shrink: 0;
+}
+.act-continue.is-ready {
+  background: #e8c87a;
+  color: #111;
+  border-color: #e8c87a;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(232,200,122,0.35);
+}
+.act-continue.is-ready:hover { transform: translateY(-1px); }
+.act-continue[hidden] { display: none; }
+/* Gentle pulse to draw the eye when proceed appears. */
+@keyframes act-proceed-pulse {
+  0%   { box-shadow: 0 8px 28px rgba(232,200,122,0.35), 0 0 0 0 rgba(232,200,122,0.6); }
+  70%  { box-shadow: 0 8px 28px rgba(232,200,122,0.35), 0 0 0 14px rgba(232,200,122,0); }
+  100% { box-shadow: 0 8px 28px rgba(232,200,122,0.35), 0 0 0 0 rgba(232,200,122,0); }
+}
+.act-continue.is-pulse {
+  animation: act-proceed-pulse 1.6s ease-out 2;
+}
+.act-continue.is-saved {
+  background: #7ed39e;
+  border-color: #7ed39e;
+  color: #0a0a0a;
+}
+
+.act-secondary {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 999px;
+  padding: 14px 22px;
+  font: inherit;
+  font-size: 18px;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 180ms ease;
+  flex-shrink: 0;
+}
+.act-secondary:hover { background: rgba(255,255,255,0.06); color: #fff; }

@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Genesis of Sales — Training</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  /* deck-stage tweaks --------------------------------------------------- */
+  deck-stage:not(:defined) { visibility: hidden; }
+  html, body { background:#000; margin:0; padding:0; height:100%; overflow:hidden; color:#fff; }
+  body { font-family: 'Roboto', system-ui, -apple-system, sans-serif; }
+
+  /* ============== Slide canvas system ============== */
+  /* 1920x1080 design size — pixel coords below are at that scale */
+  deck-stage > section {
+    position: relative;
+    width: 1920px; height: 1080px;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+  }
+
+  /* Brand badge — appears top-left on most slides, top-right on slides 5 & 6 */
+  .brand {
+    position: absolute;
+    top: 0; left: 0;
+    width: 294px; height: 100px;
+    padding: 19px 19px 0 19px;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 38px;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    color: #fff;
+    z-index: 10;
+  }
+  .brand--right { left: auto; right: 0; padding: 19px 24px 0 19px; text-align: right; }
+
+  /* Eyebrow (small line above title) */
+  .eyebrow {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    letter-spacing: 0.01em;
+    color: #fff;
+    line-height: 1.1;
+  }
+
+  /* Big title — Oswald bold uppercase */
+  .title {
+    position: absolute;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  /* Body text — Roboto Light */
+  .body {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.55;
+  }
+  .body p { margin: 0 0 26px 0; }
+  .body p:last-child { margin-bottom: 0; }
+  .body strong { font-weight: 700; }
+  .body em { font-style: italic; }
+
+  /* Image plate (right or left) */
+  .plate {
+    position: absolute;
+    overflow: hidden;
+  }
+  .plate img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+
+  /* ============== Per-slide layouts (positions are at 1920x1080) ============== */
+
+  /* Slide 1 — INTRODUCTION (text left, image right) */
+  .s1 .eyebrow { left: 120px; top: 160px; width: 768px; }
+  .s1 .title   { left: 120px; top: 220px; width: 831px; font-size: 99px; }
+  .s1 .body    { left: 120px; top: 460px; width: 768px; font-size: 28px; }
+  .s1 .plate   { left: 1023px; top: 78px; width: 777px; height: 949px; }
+
+  /* Slide 2 — WHAT IS $ALES? (centered title with image right) */
+  .s2 .title   { left: 120px; top: 140px; width: 1680px; font-size: 220px; line-height: 0.92; }
+  .s2 .plate   { left: 1069px; top: 108px; width: 778px; height: 864px; }
+
+  /* Slide 3 — WHAT REALLY IS SALES? (image left, text right) */
+  .s3 .plate   { left: 49px; top: 53px; width: 820px; height: 975px; }
+  .s3 .eyebrow { left: 915px; top: 63px; width: 925px; font-size: 25px; }
+  .s3 .title   { left: 915px; top: 132px; width: 888px; font-size: 86px; }
+  .s3 .body    { left: 915px; top: 460px; width: 888px; font-size: 28px; }
+
+  /* Slide 4 — DISCLAIMER (text left, image right) */
+  .s4 .eyebrow { left: 120px; top: 160px; width: 768px; }
+  .s4 .title   { left: 120px; top: 220px; width: 768px; font-size: 93px; }
+  .s4 .body    { left: 120px; top: 420px; width: 768px; font-size: 28px; }
+  .s4 .plate   { left: 951px; top: 95px; width: 833px; height: 841px; }
+
+  /* Slide 5 — THE FIRST "CLOSE" (image left, text right, brand top-right) */
+  .s5 .plate   { left: 78px; top: 57px; width: 813px; height: 966px; }
+  .s5 .eyebrow { left: 983px; top: 91px; width: 860px; font-size: 25px; }
+  .s5 .title   { left: 983px; top: 158px; width: 860px; font-size: 83px; }
+  .s5 .body    { left: 983px; top: 360px; width: 860px; font-size: 28px; }
+
+  /* Slide 6 — ANATOMY (text left, image right, brand top-right) */
+  .s6 .eyebrow { left: 146px; top: 80px; width: 873px; font-size: 27px; }
+  .s6 .title   { left: 146px; top: 148px; width: 873px; font-size: 85px; }
+  .s6 .body    { left: 146px; top: 480px; width: 873px; font-size: 26px; line-height: 1.6; }
+  .s6 .body p  { margin-bottom: 18px; }
+  .s6 .plate   { left: 1057px; top: 101px; width: 785px; height: 878px; }
+
+  /* Slide 7 — FROM EDEN TO BOARDROOMS (image left, text right) */
+  .s7 .plate   { left: 106px; top: 109px; width: 794px; height: 862px; }
+  .s7 .eyebrow { left: 968px; top: 79px; width: 878px; font-size: 25px; }
+  .s7 .title   { left: 968px; top: 148px; width: 878px; font-size: 85px; }
+  .s7 .body    { left: 968px; top: 510px; width: 878px; font-size: 24px; line-height: 1.55; }
+  .s7 .body p  { margin-bottom: 16px; }
+
+  /* Slide 8 — ETERNAL PSYCHOLOGY (text left, image right) */
+  .s8 .eyebrow { left: 120px; top: 111px; width: 864px; font-size: 24px; }
+  .s8 .title   { left: 120px; top: 168px; width: 864px; font-size: 67px; }
+  .s8 .body    { left: 120px; top: 380px; width: 768px; font-size: 28px; }
+  .s8 .plate   { left: 1020px; top: 92px; width: 791px; height: 896px; }
+
+  /* Slide 9 — THANK YOU (image left, text right) */
+  .s9 .plate   { left: 32px; top: 100px; width: 804px; height: 836px; }
+  .s9 .eyebrow { left: 863px; top: 85px; width: 945px; font-size: 34px; }
+  .s9 .title   { left: 863px; top: 183px; width: 945px; font-size: 148px; line-height: 0.95; }
+  .s9 .body    { left: 863px; top: 470px; width: 945px; font-size: 32px; }
+  .s9 .body p.author { margin-top: 40px; font-size: 26px; color: #d8d8d8; }
+
+  /* ============== Narration bar (just play + restart, bottom-right) ============== */
+  #narration-bar {
+    position: fixed;
+    right: 20px; bottom: 20px;
+    z-index: 9000;
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px;
+    background: rgba(14,14,14,0.78);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+    user-select: none;
+  }
+  .nb-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #fff; color: #000;
+    border: none;
+    width: 48px; height: 48px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 120ms ease, background 120ms ease;
+  }
+  .nb-btn:hover { transform: scale(1.05); }
+  .nb-btn:active { transform: scale(0.96); }
+  .nb-btn.is-playing { background: #e8e8e8; }
+  .nb-btn.nb-replay {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+  .nb-btn.nb-replay:hover { background: rgba(255,255,255,0.10); }
+  .nb-btn.nb-back {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+  .nb-btn.nb-back:hover { background: rgba(255,255,255,0.10); }
+  .nb-btn.is-disabled,
+  .nb-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+</style>
+
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#000000">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#000000"/>
+    <g fill="#ffffff" font-family="Oswald, Arial, sans-serif" font-weight="700" text-anchor="middle">
+      <text x="600" y="380" font-size="120" letter-spacing="2">THE GENESIS</text>
+      <text x="600" y="500" font-size="120" letter-spacing="2">OF SALES</text>
+    </g>
+    <text x="600" y="600" fill="#e8c87a" font-family="Oswald, Arial, sans-serif" font-size="28" letter-spacing="8" text-anchor="middle">TRAINING · LOADING</text>
+  </svg>
+</template>
+
+<deck-stage width="1920" height="1080" no-rail>
+
+  <!-- 1 — INTRODUCTION -->
+  <section class="s1" data-label="01 Introduction">
+    <div class="brand">holiday.com</div>
+    <div class="eyebrow">Opening the session</div>
+    <div class="title">INTRODUCTION</div>
+    <div class="body">
+      <p>Before we dive into the <strong>deep-rooted psychological dynamics of sales</strong>, let's establish our <strong>foundation</strong>.</p>
+      <p>This session is designed to fearlessly explore the evolution of persuasion—from ancient narratives to modern AI-first environments.</p>
+      <p><strong>"Great things in business are never done by one person. They're done by a team of people."</strong></p>
+    </div>
+    <div class="plate"><img src="assets/image6.png" alt=""></div>
+  </section>
+
+  <!-- 2 — WHAT IS $ALES? -->
+  <section class="s2" data-label="02 What is sales">
+    <div class="brand">holiday.com</div>
+    <div class="title">WHAT IS<br>$ALES?</div>
+    <div class="plate"><img src="assets/image2.png" alt=""></div>
+  </section>
+
+  <!-- 3 — WHAT REALLY IS SALES? -->
+  <section class="s3" data-label="03 What really is sales">
+    <div class="brand">holiday.com</div>
+    <div class="plate"><img src="assets/image4.png" alt=""></div>
+    <div class="eyebrow">Defining the discipline</div>
+    <div class="title">WHAT REALLY<br>IS SALES?</div>
+    <div class="body">
+      <p>Sales is not just a transaction; it is the art and science of <strong>human persuasion</strong> and the <strong>exchange of value.</strong></p>
+      <p>It is about identifying a need, reframing perspectives, and enabling a transformation from a <strong>current state</strong> to a <strong>desired future.</strong></p>
+      <p><em>"At its core, every sales interaction is a psychological bridge between a problem and a solution, built on trust and strategic communication."</em></p>
+    </div>
+  </section>
+
+  <!-- 4 — DISCLAIMER -->
+  <section class="s4" data-label="04 Disclaimer">
+    <div class="brand">holiday.com</div>
+    <div class="eyebrow">Perspective &amp; agnostic intent</div>
+    <div class="title">DISCLAIMER</div>
+    <div class="body">
+      <p><strong>Biblical references</strong> used here are not intended to attack or degrade any religious groups, cultures, or beliefs.</p>
+      <p>From an <strong>agnostic viewpoint</strong>, these references serve as a fearless anchoring of glaring <strong>narrative facts found within the ancient written text</strong> that existed for millennia.</p>
+      <p><em>"To explore deep-rooted psychological dynamics of the human mind and the first recorded sales transaction."</em></p>
+    </div>
+    <div class="plate"><img src="assets/image1.png" alt=""></div>
+  </section>
+
+  <!-- 5 — THE FIRST "CLOSE" -->
+  <section class="s5" data-label="05 The first close">
+    <div class="brand brand--right">holiday.com</div>
+    <div class="plate"><img src="assets/image3.png" alt=""></div>
+    <div class="eyebrow">The masterclass in persuasion</div>
+    <div class="title">THE FIRST<br>"CLOSE"</div>
+    <div class="body">
+      <p>While historians look to Mesopotamian markets, the silk road, and so on… The true <strong>black and white</strong> origin of sales traces back to a <strong>garden</strong> and a <strong>masterclass in persuasion</strong>.</p>
+      <p><strong>Setting:</strong> The Garden of Eden<br>
+         <strong>Salesperson:</strong> The Serpent<br>
+         <strong>Prospect:</strong> Eve<br>
+         <strong>Product:</strong> The Apple (Knowledge)</p>
+      <p><em>"The first closed-won happened in the Garden of Eden, when the serpent pitched the world to Eve."</em></p>
+    </div>
+  </section>
+
+  <!-- 6 — ANATOMY OF THE ORIGINAL PITCH -->
+  <section class="s6" data-label="06 Anatomy of the pitch">
+    <div class="brand brand--right">holiday.com</div>
+    <div class="eyebrow">The anatomy of the first pitch</div>
+    <div class="title">ANATOMY OF THE<br>ORIGINAL PITCH</div>
+    <div class="body">
+      <p>The Serpent utilized <strong>core principles</strong> that drive modern sales funnels:</p>
+      <p><strong>Identifying the "Pain Point":</strong> Gap between where Eve was and where she could be.</p>
+      <p><strong>Reframing the Objection:</strong> Serpent used Objection Handling to reframe "risk" as opportunity.</p>
+      <p><strong>The Value Proposition:</strong> Focus on ROI of transformation over cost of transaction.</p>
+      <p><strong>Creating Urgency:</strong> Triggered the first recorded instance of FOMO.</p>
+    </div>
+    <div class="plate"><img src="assets/image5.png" alt=""></div>
+  </section>
+
+  <!-- 7 — FROM EDEN TO BOARDROOMS -->
+  <section class="s7" data-label="07 From Eden to boardrooms">
+    <div class="brand">holiday.com</div>
+    <div class="plate"><img src="assets/image7.png" alt=""></div>
+    <div class="eyebrow">Sales core principles</div>
+    <div class="title">FROM EDEN TO<br>BOARDROOMS</div>
+    <div class="body">
+      <p>To understand sales is to understand the <strong>Apple</strong> and the <strong>Serpent</strong> as metaphors for the <strong>buyer-seller dynamic:</strong></p>
+      <p><strong>1. The Apple (The Solution):</strong> Every product is an <strong>"Apple."</strong> It represents the promise of a <strong>"New Better"</strong>—a bridge to a desired state of being.</p>
+      <p><strong>2. The Serpent (The Consultant):</strong> Represents the Catalyst. Moving a prospect from <strong>"Status Quo"</strong> to <strong>"Action"</strong> through narrative.</p>
+      <p><strong>3. The Result (The Exchange):</strong> Eve traded security for an upgrade. This highlights that <strong>value is subjective</strong>—therefore, <strong>perceived</strong>.</p>
+    </div>
+  </section>
+
+  <!-- 8 — ETERNAL PSYCHOLOGY -->
+  <section class="s8" data-label="08 Eternal psychology">
+    <div class="brand">holiday.com</div>
+    <div class="eyebrow">Closing thought about the fall</div>
+    <div class="title">ETERNAL<br>PSYCHOLOGY</div>
+    <div class="body">
+      <p>Eve's encounter with the serpent and the fruit, in the <strong>Garden of Eden</strong>, teaches us that sales is not merely an economic activity; it is a <strong>deeply-rooted human psychological encounter.</strong></p>
+      <p>It is the process of <strong>painting a vision so compelling</strong> that the <strong>prospect</strong> is willing to <strong>cross a threshold they previously feared.</strong></p>
+      <p><em>"The tools have changed since the beginning of time, but the essential psychology of closing a sale remains eternal."</em></p>
+    </div>
+    <div class="plate"><img src="assets/image9.png" alt=""></div>
+  </section>
+
+  <!-- 9 — THANK YOU -->
+  <section class="s9" data-label="09 Thank you">
+    <div class="brand">holiday.com</div>
+    <div class="plate"><img src="assets/image8.png" alt=""></div>
+    <div class="eyebrow">The journey ahead</div>
+    <div class="title">THANK<br>YOU</div>
+    <div class="body">
+      <p>The <strong>first close</strong> redefined our <strong>history</strong>, but your <strong>next close</strong> defines your <strong>future</strong>.</p>
+      <p>May <strong>today's introduction and mind session</strong> fuel our visions of a <strong>future</strong> worth <strong>crossing the threshold for</strong>.</p>
+      <p class="author">— phillip.tagarda@kape.com</p>
+    </div>
+  </section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script src="narration.js"></script>
+
+</body>
+</html>

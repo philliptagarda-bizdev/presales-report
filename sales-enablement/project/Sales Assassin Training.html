@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Seven Deadly Traits of a Sales Assassin — Training</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  deck-stage:not(:defined) { visibility: hidden; }
+  html, body { background:#000; margin:0; padding:0; height:100%; overflow:hidden; color:#fff; }
+  body { font-family: 'Roboto', system-ui, -apple-system, sans-serif; }
+
+  deck-stage > section {
+    position: relative;
+    width: 1920px; height: 1080px;
+    background: #050505;
+    color: #fff;
+    overflow: hidden;
+  }
+  .brand {
+    position: absolute;
+    top: 22px; left: 28px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 0.01em;
+    line-height: 1;
+    color: #fff;
+    z-index: 50;
+  }
+  /* Transition slide */
+  .stx { background: #0a0a0a; }
+  .stx .eyebrow { position: absolute; left: 88px; top: 300px; width: 1744px; font-size: 28px; letter-spacing: 0.18em; text-transform: uppercase; color: #c8252a; font-weight: 400; }
+  .stx .title   { position: absolute; left: 88px; top: 360px; width: 1744px; font-size: 132px; line-height: 0.94; font-family: 'Oswald', sans-serif; font-weight: 700; text-transform: uppercase; color: #fff; }
+  .stx .body    { position: absolute; left: 88px; top: 720px; width: 1400px; font-size: 28px; color: rgba(255,255,255,0.65); font-weight: 300; line-height: 1.5; }
+  .stx .module  { position: absolute; right: 88px; top: 110px; font-family: 'Oswald', sans-serif; font-weight: 700; color: rgba(255,255,255,0.55); font-size: 26px; letter-spacing: 0.3em; text-transform: uppercase; }
+  .stx .splash {
+    position: absolute; right: 88px; bottom: 88px; width: 460px; height: 460px;
+    background: radial-gradient(circle at 50% 50%, rgba(200,37,42,0.35), rgba(0,0,0,0) 65%);
+    border-radius: 50%; z-index: 1;
+  }
+  .stx .splash::before {
+    content: ""; position: absolute; inset: 36% 36%;
+    background: #c8252a; border-radius: 50%;
+    box-shadow: 0 0 80px 20px rgba(200,37,42,0.6);
+  }
+
+  /* Narration bar */
+  #narration-bar {
+    position: fixed; right: 20px; bottom: 20px; z-index: 9000;
+    display: flex; align-items: center; gap: 10px; padding: 10px;
+    background: rgba(14,14,14,0.78);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 999px;
+    backdrop-filter: blur(18px) saturate(120%);
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+    user-select: none;
+  }
+  .nb-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #fff; color: #000; border: none;
+    width: 48px; height: 48px; border-radius: 999px;
+    cursor: pointer;
+    transition: transform 120ms ease, background 120ms ease;
+  }
+  .nb-btn:hover { transform: scale(1.05); }
+  .nb-btn:active { transform: scale(0.96); }
+  .nb-btn.is-playing { background: #e8e8e8; }
+  .nb-btn.nb-replay, .nb-btn.nb-back, .nb-btn.nb-home {
+    background: transparent; color: #fff;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+  .nb-btn.nb-replay:hover, .nb-btn.nb-back:hover, .nb-btn.nb-home:hover { background: rgba(255,255,255,0.10); }
+  .nb-btn.is-next {
+    background: #c8252a; color: #fff; border-color: #c8252a;
+    box-shadow: 0 4px 18px rgba(200,37,42,0.5);
+    animation: nb-next-pulse 1.6s ease-out 2;
+  }
+  .nb-btn.is-next:hover { background: #db3338; transform: scale(1.05); }
+  @keyframes nb-next-pulse {
+    0%   { box-shadow: 0 4px 18px rgba(200,37,42,0.5), 0 0 0 0 rgba(200,37,42,0.55); }
+    70%  { box-shadow: 0 4px 18px rgba(200,37,42,0.5), 0 0 0 12px rgba(200,37,42,0); }
+    100% { box-shadow: 0 4px 18px rgba(200,37,42,0.5), 0 0 0 0 rgba(200,37,42,0); }
+  }
+  .nb-btn.is-disabled, .nb-btn:disabled {
+    opacity: 0.3; cursor: not-allowed; pointer-events: none;
+  }
+
+  /* Activity red theme */
+  .act-shell.act-red {
+    background: rgba(20,12,12,0.6);
+    border-color: rgba(200,37,42,0.18);
+  }
+  .act-shell.act-red.is-pulse {
+    box-shadow: 0 30px 80px rgba(200,37,42,0.35), 0 0 0 2px rgba(200,37,42,0.45) inset;
+  }
+  .act-eyebrow--red { color: #c8252a !important; }
+  .act-shell.act-red .act-snip.is-selected {
+    background: rgba(200,37,42,0.12);
+    border-color: rgba(200,37,42,0.55);
+    box-shadow: 0 0 0 3px rgba(200,37,42,0.2);
+  }
+  .act-shell.act-red .act-snip.is-correct {
+    background: rgba(126,211,158,0.08);
+    border-color: rgba(126,211,158,0.5);
+  }
+  .act-shell.act-red .act-snip-tag.is-correct { color: #7ed39e; }
+  .act-shell.act-red .act-move:hover { border-color: rgba(200,37,42,0.55); }
+  .act-shell.act-red .act-pledge-row textarea:focus { border-color: rgba(200,37,42,0.55); }
+  .act-pledge-n--red { color: #c8252a !important; }
+  .act-continue.act-continue--red.is-ready {
+    background: #c8252a; color: #fff; border-color: #c8252a;
+    box-shadow: 0 8px 28px rgba(200,37,42,0.45);
+  }
+  .act-continue.act-continue--red.is-ready:hover { background: #db3338; }
+  .act-continue.act-continue--red.is-saved {
+    background: #7ed39e; border-color: #7ed39e; color: #0a0a0a;
+  }
+  .act-frame-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 0.04em;
+    margin-right: 4px;
+  }
+
+  /* Each faithfully-rendered slide */
+  .psp-slide div { box-sizing: border-box; }
+  .psp-slide img { display: block; }
+</style>
+<link rel="stylesheet" href="activities.css">
+
+</head>
+<body>
+
+<deck-stage width="1920" height="1080" no-rail>
+
+    <!-- 1 -->
+  <section class="psp-slide" data-label="01 Killer level up" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;letter-spacing:0.01em;">holiday.com</div>
+    <div style="position:absolute;left:60px;top:90px;width:1200px;font-family:'Oswald',sans-serif;font-weight:700;font-size:108px;line-height:1.05;color:#c8252a;text-transform:uppercase;letter-spacing:0.01em;">AFTER AN EYE-OPENER, READY FOR A <span style="color:#fff;">&ldquo;KILLER&rdquo;</span> LEVEL UP?</div>
+    <div style="position:absolute;left:60px;top:430px;width:1180px;font-family:'Roboto',sans-serif;font-size:32px;line-height:1.55;color:rgba(255,255,255,0.9);font-weight:300;">
+      <div style="margin-bottom:18px;">Discover your <strong>unique strengths <span style="color:#c8252a;">or deadly traits</span></strong>.</div>
+      <div style="margin-bottom:18px;">Complete this quick assessment to find your <strong>sales<span style="color:#c8252a;">-assassin</span></strong> alias &amp; style.</div>
+      <div style="margin-bottom:18px;font-weight:700;color:#fff;">Do not close or just minimize the results page &amp; do not tell anyone who you are until session end.</div>
+      <div>Start the assessment at:</div>
+      <div><a href="https://oneflow.com/sales-personality/test/" target="_blank" rel="noopener" style="color:#fff;text-decoration:underline;white-space:nowrap;">https://oneflow.com/sales-personality/test/</a></div>
+    </div>
+    <img style="position:absolute;left:1252px;top:293px;width:539px;height:708px;object-fit:cover;border-radius:4px;" src="assets-assassin/image16.jpg" alt="">
+  </section>
+
+    <!-- 2 -->
+  <section class="psp-slide" data-label="02 What makes successful" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;letter-spacing:0.01em;">holiday.com</div>
+    <img style="position:absolute;left:923px;top:116px;width:75px;height:60px;object-fit:contain;" src="assets-assassin/image7.png" alt="">
+    <div style="position:absolute;left:0;top:185px;width:1920px;text-align:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:104px;line-height:1.05;text-transform:uppercase;letter-spacing:0.01em;color:#fff;">WHAT MAKES A <span style="color:#c8252a;">&ldquo;SUCCESSFUL&rdquo;</span></div>
+    <div style="position:absolute;left:50%;top:400px;transform:translateX(-50%);width:160px;height:6px;background:#c8252a;"></div>
+    <div style="position:absolute;left:0;top:475px;width:1920px;text-align:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:104px;line-height:1;text-transform:uppercase;letter-spacing:0.02em;color:#fff;">SALESPERSON?</div>
+    <div style="position:absolute;left:0;top:700px;width:1920px;text-align:center;font-family:'Roboto',sans-serif;font-weight:300;font-size:28px;line-height:1.7;color:rgba(255,255,255,0.7);">
+      <div>Beyond being in the right place at the right time.&mdash;Who said luck has been a factor in success?</div>
+      <div>Let&rsquo;s target the 7 +1 core skills and traits of top performers &ldquo;sales assassins&rdquo;.</div>
+    </div>
+  </section>
+
+    <!-- 3 -->
+  <section class="psp-slide" data-label="03 Communication" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;line-height:1;text-transform:uppercase;color:#fff;letter-spacing:0.01em;"><span style="color:#c8252a;">1.</span> EXCELLENT COMMUNICATION</div>
+    <!-- LEFT CARD -->
+    <div style="position:absolute;left:90px;top:410px;width:824px;height:390px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:54px 70px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:32px;">OBJECTIVES</div>
+      <ul style="margin:0;padding:0 0 0 26px;list-style:disc;color:rgba(255,255,255,0.7);font-family:'Roboto',sans-serif;font-size:24px;line-height:1.7;font-weight:300;">
+        <li style="margin-bottom:8px;">Clearly explain product benefits and features.</li>
+        <li style="margin-bottom:8px;">Listen actively to uncover true needs and concerns.</li>
+        <li style="margin-bottom:8px;">Build rapid rapport and establish trust.</li>
+      </ul>
+    </div>
+    <!-- RIGHT CARD -->
+    <div style="position:absolute;left:1005px;top:410px;width:824px;min-height:472px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 60px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:28px;">C.L.E.A.R. THE SMOKE</div>
+      <div style="font-family:'Roboto',sans-serif;font-size:24px;line-height:1.65;color:rgba(255,255,255,0.85);font-weight:300;">
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">C &mdash; Connect</strong> (Greet, Build Rapport, Establish Trust)</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">L &mdash; Listen</strong> (Active Listening)</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">E &mdash; Explain</strong> (Explain Directly, Easy to Understand)</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">A &mdash; Ask</strong> (Effective Discovery Questions)</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">R &mdash; Resolve</strong> (Strong CTA)</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- 4 -->
+  <section class="psp-slide" data-label="04 Persistence" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;line-height:1;text-transform:uppercase;color:#c8252a;letter-spacing:0.01em;">2. PERSISTENCE &amp; RESILIENCE</div>
+    <div style="position:absolute;left:90px;top:410px;width:824px;height:390px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:54px 70px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:32px;">OBJECTIVES</div>
+      <ul style="margin:0;padding:0 0 0 26px;list-style:disc;color:rgba(255,255,255,0.7);font-family:'Roboto',sans-serif;font-size:24px;line-height:1.7;font-weight:300;">
+        <li style="margin-bottom:8px;">Understand sales is tough; rejection is guaranteed.</li>
+        <li style="margin-bottom:8px;">Handle "no" with resilience.</li>
+        <li style="margin-bottom:8px;">Treat every rejection as a learning opportunity.</li>
+      </ul>
+    </div>
+    <div style="position:absolute;left:1005px;top:410px;width:824px;min-height:390px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:54px 60px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:28px;">WE NEED TO S.H.A.T.T.E.R. TO ENDURE</div>
+      <div style="font-family:'Roboto',sans-serif;font-size:24px;line-height:1.7;color:rgba(255,255,255,0.85);font-weight:300;">In my experience spanning a decade, I have come up with a systematic way to shatter and deal with rejection. Let us dissect that in the next slide.</div>
+    </div>
+  </section>
+
+    <!-- 5 -->
+  <section class="psp-slide" data-label="05 SHATTER framework" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;line-height:1;text-transform:uppercase;color:#fff;letter-spacing:0.01em;">SHATTER</div>
+    <div style="position:absolute;left:120px;top:320px;width:520px;height:520px;border-radius:50%;border:4px solid #c8252a;box-shadow:0 0 60px rgba(200,37,42,0.45);overflow:hidden;">
+      <img style="width:100%;height:100%;object-fit:cover;" src="assets-assassin/image5.png" alt="">
+    </div>
+    <div style="position:absolute;left:700px;top:230px;font-family:'Oswald',sans-serif;font-weight:700;font-size:64px;line-height:1;text-transform:uppercase;letter-spacing:0.02em;">
+      <span style="color:#c8252a;">S.H.A.T.T.E.R.</span> <span style="color:#fff;">FRAMEWORK</span>
+      <img style="display:inline-block;width:44px;height:44px;margin-left:6px;vertical-align:middle;object-fit:contain;" src="assets-assassin/image3.png" alt="">
+    </div>
+    <div style="position:absolute;left:700px;top:360px;width:1180px;font-family:'Roboto',sans-serif;font-size:26px;line-height:1.85;color:rgba(255,255,255,0.88);font-weight:300;">
+      <div style="margin-bottom:14px;"><strong style="font-weight:700;color:#fff;">S &mdash;</strong> Strategic Mindset: View rejection as a data point in a volume game, not personal.</div>
+      <div style="margin-bottom:14px;"><strong style="font-weight:700;color:#fff;">H &mdash;</strong> Hardened Resilience: Develop the "callus" to handle "no" without losing momentum.</div>
+      <div style="margin-bottom:14px;"><strong style="font-weight:700;color:#fff;">A &mdash;</strong> Analyze the Interaction: Pinpoint the source of friction (timing, budget, or trust).</div>
+      <div style="margin-bottom:14px;"><strong style="font-weight:700;color:#fff;">T &mdash;</strong> Target the Lesson: Isolate one key takeaway for the next lead.</div>
+      <div style="margin-bottom:14px;"><strong style="font-weight:700;color:#fff;">T &mdash;</strong> Transform the "No": Pivot the follow-up strategy based on feedback.</div>
+      <div style="margin-bottom:14px;"><strong style="font-weight:700;color:#fff;">E &mdash;</strong> Elevate the Approach: Sharpen your pitch using the learned insight.</div>
+      <div><strong style="font-weight:700;color:#fff;">R &mdash;</strong> Repeat &amp; Refine: Re-engage with a more polished approach.</div>
+    </div>
+  </section>
+
+    <!-- 6 -->
+  <section class="psp-slide" data-label="06 Empathy" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;line-height:1;text-transform:uppercase;color:#c8252a;letter-spacing:0.01em;">3. EMPATHY</div>
+    <div style="position:absolute;left:90px;top:410px;width:824px;height:390px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:54px 70px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:32px;">OBJECTIVES</div>
+      <ul style="margin:0;padding:0 0 0 26px;list-style:disc;color:rgba(255,255,255,0.7);font-family:'Roboto',sans-serif;font-size:24px;line-height:1.7;font-weight:300;">
+        <li style="margin-bottom:8px;">Understand we don't sell products; we solve problems.</li>
+        <li style="margin-bottom:8px;">Put yourself in the customer&rsquo;s shoes.</li>
+        <li style="margin-bottom:8px;">Tailor solutions to specific pain points.</li>
+      </ul>
+    </div>
+    <div style="position:absolute;left:1005px;top:410px;width:824px;min-height:472px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 60px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:28px;">PLAY THE S.L.O.T. GAME</div>
+      <div style="font-family:'Roboto',sans-serif;font-size:24px;line-height:1.65;color:rgba(255,255,255,0.85);font-weight:300;">
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">S &mdash;</strong> Solve, Not Sell: Product is a tool; solution is the goal.</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">L &mdash;</strong> Look Through Their Lens: Use empathy to understand their obstacles.</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">O &mdash;</strong> Orient to Pain: Map their struggles before proposing a solution.</div>
+        <div><strong style="font-weight:700;color:#fff;">T &mdash;</strong> Tailor the Hit: Customize the solution for their unique situation.</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- 7 -->
+  <section class="psp-slide" data-label="07 Product Knowledge" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;line-height:1;text-transform:uppercase;color:#fff;letter-spacing:0.01em;"><span style="color:#c8252a;">4.</span> DEEP PRODUCT KNOWLEDGE</div>
+    <div style="position:absolute;left:90px;top:410px;width:824px;height:390px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:54px 70px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:32px;">OBJECTIVES</div>
+      <ul style="margin:0;padding:0 0 0 26px;list-style:disc;color:rgba(255,255,255,0.7);font-family:'Roboto',sans-serif;font-size:24px;line-height:1.7;font-weight:300;">
+        <li style="margin-bottom:8px;">Know the features, benefits, and limitations inside out.</li>
+        <li style="margin-bottom:8px;">Answer questions with total confidence.</li>
+        <li style="margin-bottom:8px;">Anticipate concerns before the customer voices them.</li>
+      </ul>
+    </div>
+    <div style="position:absolute;left:1005px;top:410px;width:824px;min-height:390px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 60px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:28px;">WE NEED TO A.C.E. IT</div>
+      <div style="font-family:'Roboto',sans-serif;font-size:24px;line-height:1.65;color:rgba(255,255,255,0.85);font-weight:300;">
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">A &mdash;</strong> Anticipate Friction: Predict objections. Seeing the "shatter" allows you to control the impact.</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">C &mdash;</strong> Command Details: Master features, benefits, and limitations. Total knowledge defeats customer doubt.</div>
+        <div><strong style="font-weight:700;color:#fff;">E &mdash;</strong> Execute with Confidence: Answer questions with precision. Authority stops customers from looking for the exit.</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- 8 -->
+  <section class="psp-slide" data-label="08 Adaptability" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;line-height:1;text-transform:uppercase;color:#c8252a;letter-spacing:0.01em;">5. ADAPTABILITY</div>
+    <div style="position:absolute;left:90px;top:410px;width:824px;height:390px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:54px 70px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:32px;">OBJECTIVES</div>
+      <ul style="margin:0;padding:0 0 0 26px;list-style:disc;color:rgba(255,255,255,0.7);font-family:'Roboto',sans-serif;font-size:24px;line-height:1.7;font-weight:300;">
+        <li style="margin-bottom:8px;">The sales landscape is constantly evolving.</li>
+        <li style="margin-bottom:8px;">Adjust your approach based on the <strong style="color:#fff;font-weight:700;">client</strong> and the <strong style="color:#fff;font-weight:700;">situation</strong>.</li>
+        <li style="margin-bottom:8px;">Learn quickly and pivot in real-time.</li>
+      </ul>
+    </div>
+    <div style="position:absolute;left:1005px;top:410px;width:824px;min-height:472px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 60px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:28px;">RESULTS V.A.R.Y.</div>
+      <div style="font-family:'Roboto',sans-serif;font-size:24px;line-height:1.65;color:rgba(255,255,255,0.85);font-weight:300;">
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">V &mdash;</strong> Vigilant Observation: Constantly scan the market and client needs; don't focus on the past.</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">A &mdash;</strong> Adaptive Maneuvering: Adjust your pitch in real-time until you find the fracture point.</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">R &mdash;</strong> Rapid Processing: Learn instantly from a "no" or hesitation; pivot immediately.</div>
+        <div><strong style="font-weight:700;color:#fff;">Y &mdash;</strong> Yield to the Facts: Accept the evolved landscape; abandon the old script and move with the new reality.</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- 9 -->
+  <section class="psp-slide" data-label="09 Positive Attitude" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;line-height:1;text-transform:uppercase;color:#fff;letter-spacing:0.01em;"><span style="color:#c8252a;">6.</span> POSITIVE ATTITUDE</div>
+    <div style="position:absolute;left:90px;top:410px;width:824px;height:390px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:54px 70px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:32px;">OBJECTIVES</div>
+      <ul style="margin:0;padding:0 0 0 26px;list-style:disc;color:rgba(255,255,255,0.7);font-family:'Roboto',sans-serif;font-size:24px;line-height:1.7;font-weight:300;">
+        <li style="margin-bottom:8px;">Maintain genuine enthusiasm for what you sell.</li>
+        <li style="margin-bottom:8px;">Transfer that excitement to the buyer.</li>
+        <li style="margin-bottom:8px;">Stay motivated through difficult deals.</li>
+      </ul>
+    </div>
+    <div style="position:absolute;left:1005px;top:410px;width:824px;min-height:472px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 60px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:28px;">LIGHT THE F.U.S.E.</div>
+      <div style="font-family:'Roboto',sans-serif;font-size:24px;line-height:1.65;color:rgba(255,255,255,0.85);font-weight:300;">
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">F &mdash;</strong> Fanatical Belief: Be genuinely sold on your solution; your enthusiasm is contagious.</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">U &mdash;</strong> Underwrite the Energy: Control the room's emotional climate; be the source of the spark.</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">S &mdash;</strong> Spark the Buyer: Transfer your excitement and conviction until the buyer sees the value.</div>
+        <div><strong style="font-weight:700;color:#fff;">E &mdash;</strong> Enduring Drive: Sustain motivation throughout long, challenging deals; the grind requires constant fuel.</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- 10 -->
+  <section class="psp-slide" data-label="10 Time Management" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;line-height:1;text-transform:uppercase;color:#c8252a;letter-spacing:0.01em;">7. TIME MANAGEMENT</div>
+    <div style="position:absolute;left:90px;top:410px;width:824px;height:417px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:54px 70px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:32px;">OBJECTIVES</div>
+      <ul style="margin:0;padding:0 0 0 26px;list-style:disc;color:rgba(255,255,255,0.7);font-family:'Roboto',sans-serif;font-size:24px;line-height:1.7;font-weight:300;">
+        <li style="margin-bottom:8px;">Prioritize high-value activities that drive revenue.</li>
+        <li style="margin-bottom:8px;">Use all available tools to minimize friction and deliver quickly.</li>
+        <li style="margin-bottom:8px;">Dedicate specific time blocks for knowledge enrichment and follow-ups.</li>
+      </ul>
+    </div>
+    <div style="position:absolute;left:1005px;top:410px;width:824px;min-height:472px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 60px;box-sizing:border-box;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:34px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:28px;">USE OUR E.D.G.E.</div>
+      <div style="font-family:'Roboto',sans-serif;font-size:24px;line-height:1.65;color:rgba(255,255,255,0.85);font-weight:300;">
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">E &mdash;</strong> Extract Value: Focus only on high-stakes, revenue-driving activities; ignore the noise.</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">D &mdash;</strong> Deploy Arsenal: Use all available tools (CRM, automation, AI) to reduce friction and deliver fast solutions.</div>
+        <div style="margin-bottom:18px;"><strong style="font-weight:700;color:#fff;">G &mdash;</strong> Generate Flow: Schedule "Dark Time" for dedicated, uninterrupted knowledge enrichment and skill sharpening.</div>
+        <div><strong style="font-weight:700;color:#fff;">E &mdash;</strong> Enforce Follow-up: Maintain a disciplined schedule to ensure no lead goes cold and every detail is examined.</div>
+      </div>
+    </div>
+  </section>
+
+    <!-- 11 -->
+  <section class="psp-slide" data-label="11 DNA" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:60px;line-height:1;text-transform:uppercase;color:#fff;letter-spacing:0.01em;">THE DNA OF A TOP PERFORMER</div>
+
+    <!-- LEFT: 100% block -->
+    <div style="position:absolute;left:80px;top:380px;width:760px;color:#fff;">
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;line-height:1.05;letter-spacing:0.04em;color:rgba(255,255,255,0.8);text-transform:uppercase;">WE DO WHATEVER IT TAKES TO GET<br>A</div>
+      <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:240px;line-height:1;letter-spacing:0;color:#c8252a;margin-top:-30px;">100%</div>
+      <div style="font-family:'Oswald',sans-serif;font-weight:500;font-size:26px;letter-spacing:0.18em;color:#fff;text-transform:uppercase;margin-top:6px;">HIT OUT ON SUCCESS</div>
+    </div>
+
+    <!-- RIGHT: concentric rings + HIT badge + trait labels -->
+    <div style="position:absolute;left:920px;top:200px;width:760px;height:760px;">
+      <!-- outer ring (solid thin) -->
+      <div style="position:absolute;left:60px;top:60px;width:640px;height:640px;border-radius:50%;border:2px solid #d35f1b;opacity:0.65;"></div>
+      <!-- inner dashed ring -->
+      <div style="position:absolute;left:140px;top:140px;width:480px;height:480px;border-radius:50%;border:1px dashed rgba(200,37,42,0.55);"></div>
+      <!-- communication wedge (highlighted slice, top-right) -->
+      <div style="position:absolute;left:60px;top:60px;width:640px;height:640px;border-radius:50%;background:conic-gradient(from 0deg, rgba(200,37,42,0.32) 0deg, rgba(200,37,42,0.32) 70deg, transparent 70deg, transparent 360deg);mask:radial-gradient(circle, transparent 39%, #000 40%, #000 49%, transparent 50%);-webkit-mask:radial-gradient(circle, transparent 39%, #000 40%, #000 49%, transparent 50%);"></div>
+      <!-- central HIT badge -->
+      <div style="position:absolute;left:280px;top:280px;width:200px;height:200px;border-radius:50%;background:#fafafa;border:3px solid #c8252a;display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:42px;color:#c8252a;letter-spacing:0.06em;box-shadow:0 0 60px rgba(200,37,42,0.4);">HIT</div>
+      <!-- trait labels around the ring (compass points) -->
+      <div style="position:absolute;left:280px;top:25px;font-family:'Roboto',sans-serif;font-weight:700;font-size:24px;color:#fff;">Communication</div>
+      <div style="position:absolute;right:0px;top:170px;font-family:'Roboto',sans-serif;font-weight:700;font-size:24px;color:#fff;">Persistence</div>
+      <div style="position:absolute;right:0px;top:380px;font-family:'Roboto',sans-serif;font-weight:700;font-size:24px;color:#fff;">Empathy</div>
+      <div style="position:absolute;right:0px;top:580px;font-family:'Roboto',sans-serif;font-weight:700;font-size:24px;color:#fff;">Product Knowledge</div>
+      <div style="position:absolute;left:260px;top:660px;font-family:'Roboto',sans-serif;font-weight:700;font-size:24px;color:#fff;">Time Management</div>
+      <div style="position:absolute;left:30px;top:455px;font-family:'Roboto',sans-serif;font-weight:700;font-size:24px;color:#fff;">Adaptability</div>
+      <div style="position:absolute;left:30px;top:240px;font-family:'Roboto',sans-serif;font-weight:700;font-size:24px;color:#fff;">Positive Attitude</div>
+    </div>
+  </section>
+
+  <!-- ACTIVITY A — SHATTER DRILL -->
+  <section class="activity" data-activity="shatter-drill" data-label="A1 SHATTER drill" data-noadvance>
+    <div class="brand">holiday.com</div>
+    <div class="activity-root"></div>
+  </section>
+
+  <!-- 12 -->
+  <section class="psp-slide" data-label="12 The Educator" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:95px;font-family:'Oswald',sans-serif;font-weight:700;font-size:60px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">THE SECRET WEAPON IN YOUR ARSENAL IS TO BECOME THE EDUCATOR</div>
+    <div style="position:absolute;left:90px;top:430px;width:840px;font-family:'Roboto',sans-serif;font-size:26px;line-height:1.7;color:rgba(255,255,255,0.88);font-weight:300;">
+      <ul style="margin:0;padding:0 0 0 28px;list-style:disc;">
+        <li style="margin-bottom:36px;">Become an educator, not just a vendor.</li>
+        <li style="margin-bottom:36px;">Solve the problems of your "past self."</li>
+        <li>Earn authority by staying one step ahead of the journey.</li>
+      </ul>
+    </div>
+    <img style="position:absolute;left:1009px;top:380px;width:824px;height:432px;object-fit:cover;border-radius:4px;" src="assets-assassin/image13.png" alt="">
+  </section>
+
+      <!-- 13 -->
+  <section class="psp-slide" data-label="13 Integrity" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1;text-transform:uppercase;color:#c8252a;letter-spacing:0.02em;">SALES ASSASSINS HAVE THE UTMOST INTEGRITY</div>
+    <div style="position:absolute;left:230px;top:470px;width:1500px;font-family:'Roboto',sans-serif;font-style:italic;font-weight:700;font-size:60px;line-height:1.45;color:#fff;text-transform:uppercase;letter-spacing:0.01em;">
+      <span style="color:#c8252a;font-style:italic;font-weight:700;font-size:90px;line-height:0;vertical-align:-12px;display:inline-block;margin-right:14px;">&ldquo;</span>A man's ambition should never exceed his worth. We would do well to remember that<span style="color:#c8252a;font-style:italic;font-weight:700;font-size:90px;line-height:0;vertical-align:-26px;display:inline-block;margin-left:8px;">&rdquo;</span>
+    </div>
+    <div style="position:absolute;left:230px;top:830px;width:1500px;text-align:right;font-family:'Roboto',serif;font-style:italic;font-weight:700;font-size:26px;color:#c8252a;">&mdash; The Harbinger, John Wick Chapter 4</div>
+  </section>
+
+      <!-- 14 -->
+  <section class="activity" data-activity="alias-share" data-label="14 Share your alias" data-noadvance style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:60px;line-height:1;text-transform:uppercase;color:#fff;letter-spacing:0.01em;">WHAT'S YOUR <span style="color:#c8252a;">ASSASSIN ALIAS</span>?</div>
+    <div class="activity-root" style="position:absolute;left:90px;top:220px;width:1740px;height:780px;"></div>
+  </section>
+
+    <!-- 15 -->
+  <section class="psp-slide" data-label="15 Thank You" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+
+    <div style="position:absolute;left:80px;top:90px;width:1760px;text-align:center;font-family:'Roboto',sans-serif;font-style:italic;font-weight:700;font-size:30px;line-height:1.45;color:#fff;text-transform:uppercase;letter-spacing:0.01em;">
+      &ldquo;Wabi-sabi, a Japanese philosophy, involves restoring broken objects and enhancing their value by embracing the inherent beauty of imperfection.&rdquo;
+    </div>
+
+    <div style="position:absolute;left:80px;top:220px;width:1760px;text-align:center;font-family:'Roboto',sans-serif;font-weight:400;font-size:30px;line-height:1.55;color:#c8252a;">
+      Pieces of the shattered &ldquo;self&rdquo; are always there whether put back together by gold or mud, we learn to live with the imperfections and appreciate its beauty.
+    </div>
+
+    <div style="position:absolute;left:50%;top:360px;transform:translateX(-50%);width:60px;height:60px;display:flex;align-items:center;justify-content:center;">
+      <svg viewBox="0 0 24 24" width="48" height="48" fill="#fff"><path d="M12 2 L13.6 8.4 L20 7 L15.2 12 L20 17 L13.6 15.6 L12 22 L10.4 15.6 L4 17 L8.8 12 L4 7 L10.4 8.4 Z"/></svg>
+    </div>
+
+    <div style="position:absolute;left:0;top:460px;width:1920px;text-align:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:160px;line-height:1;letter-spacing:0.02em;color:#c8252a;text-transform:uppercase;">ANY QUESTIONS?</div>
+
+    <div style="position:absolute;left:0;top:730px;width:1920px;text-align:center;font-family:'Oswald',sans-serif;font-weight:500;font-size:28px;letter-spacing:0.06em;text-transform:uppercase;">
+      <span style="color:#fff;">phillip.tagarda@kape.com</span>
+      <span style="color:#c8252a;margin:0 12px;">|</span>
+      <span style="color:#c8252a;">#7deadlytraitsofasalesassasin</span>
+    </div>
+
+    <div style="position:absolute;left:0;top:810px;width:1920px;text-align:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:170px;line-height:1;letter-spacing:0.02em;color:#fff;text-transform:uppercase;">THANK YOU!</div>
+  </section>
+
+  <!-- ACTIVITY B — ASSASSIN PLEDGE -->
+  <section class="activity" data-activity="assassin-pledge" data-label="A2 Assassin Code" data-noadvance>
+    <div class="brand">holiday.com</div>
+    <div class="activity-root"></div>
+  </section>
+
+  <section class="psp-slide" data-label="M03 Title — Presale Chat Flow" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">PRESALE <span style="color:#c8252a;">CHAT &amp; TICKET</span> FLOW</div>
+  <div style="position:absolute;left:122px;top:240px;width:1740px;font-family:'Oswald',sans-serif;font-size:32px;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:0.16em;text-transform:uppercase;">Presale Guidelines &middot; Module 03</div>
+  <div style="position:absolute;left:122px;top:430px;width:1500px;font-family:'Roboto',sans-serif;font-size:32px;line-height:1.55;color:rgba(255,255,255,0.85);font-weight:300;">
+    The operating playbook for every Holiday.com presale chat and ticket.
+  </div>
+  <div style="position:absolute;left:122px;top:600px;width:1500px;font-family:'Roboto',sans-serif;font-size:26px;color:rgba(255,255,255,0.65);font-weight:300;">
+    Prefer a quick walkthrough? <a href="https://docs.google.com/videos/d/1A5q90l1xLhQwuu_ebZovg3eT29oeOKqzJHxhT-Z0JHY/edit?usp=sharing" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">Watch the training video here</a>.
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Learning Objectives" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">LEARNING OBJECTIVES</div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;min-height:600px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 70px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-size:30px;line-height:1.65;">By the end of this course, you will understand:</div>
+    <ul style="margin-top:28px;padding-left:28px;font-size:26px;line-height:1.7;list-style:disc;">
+      <li style="margin-bottom:14px;">The recommended <strong style="color:#fff;">presale chat flow</strong></li>
+      <li style="margin-bottom:14px;">How to identify <strong style="color:#fff;">sales opportunities</strong></li>
+      <li style="margin-bottom:14px;">How to ask <strong style="color:#fff;">effective discovery questions</strong></li>
+      <li style="margin-bottom:14px;">How to recommend the <strong style="color:#fff;">right data plan</strong></li>
+      <li>How to guide customers toward purchase with a <strong style="color:#fff;">clear call to action</strong></li>
+    </ul>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Presale Interaction" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">WHAT IS A <span style="color:#c8252a;">PRESALE</span> INTERACTION?</div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;min-height:600px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 70px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-size:26px;margin-bottom:22px;">Presale interactions occur when:</div>
+    <ul style="padding-left:28px;font-size:24px;line-height:1.75;list-style:disc;margin-bottom:32px;">
+      <li>Customers inquire about <strong style="color:#fff;">eSIM services</strong></li>
+      <li>The customer <strong style="color:#fff;">does not yet</strong> have an active data plan</li>
+      <li>The conversation presents an <strong style="color:#fff;">opportunity</strong> to guide the customer toward purchase</li>
+    </ul>
+    <div style="font-size:26px;color:rgba(255,255,255,0.95);font-style:italic;">
+      Your role is to understand the customer&rsquo;s needs and recommend the most suitable plan.
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 CTA Importance" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">IMPORTANCE OF A <span style="color:#c8252a;">CALL TO ACTION</span></div>
+  <div style="position:absolute;left:90px;top:320px;width:824px;min-height:660px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">Examples of CTA</div>
+    <ul style="padding-left:24px;font-size:22px;line-height:1.7;list-style:disc;">
+      <li>Recommending a plan</li>
+      <li>Sharing a purchase link</li>
+      <li>Offering to guide the customer through the purchase process</li>
+    </ul>
+  </div>
+  <div style="position:absolute;left:1005px;top:320px;width:824px;min-height:660px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">A strong CTA helps customers</div>
+    <ul style="padding-left:24px;font-size:22px;line-height:1.7;list-style:disc;">
+      <li>Feel <strong style="color:#fff;">confident</strong></li>
+      <li>Take the <strong style="color:#fff;">next step</strong></li>
+      <li><strong style="color:#fff;">Complete</strong> their purchase</li>
+    </ul>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Key Features" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">KEY FEATURES TO <span style="color:#c8252a;">HIGHLIGHT</span></div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;min-height:600px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 70px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-size:24px;margin-bottom:22px;">When assisting presale customers, emphasize key product benefits:</div>
+    <ul style="padding-left:28px;font-size:24px;line-height:1.85;list-style:disc;">
+      <li><strong style="color:#fff;">eSIM compatibility</strong> with supported iPhone and Android models</li>
+      <li><strong style="color:#fff;">150+ supported destinations</strong></li>
+      <li><strong style="color:#fff;">One eSIM</strong> usable across multiple destinations</li>
+      <li><strong style="color:#fff;">50% discount</strong> for the first 500,000 travelers</li>
+      <li><strong style="color:#fff;">6-month refund policy</strong> for unused data plans</li>
+    </ul>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Chat Flow 8 steps" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">PRESALE CHAT FLOW &mdash; <span style="color:#c8252a;">8 STEPS</span></div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;font-family:'Roboto',sans-serif;">
+    
+      <div style="padding:32px 24px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:230px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;color:#c8252a;line-height:1;margin-bottom:18px;">01</div>
+        <div style="font-size:22px;line-height:1.4;color:#fff;font-weight:400;">Greeting &amp; Acknowledgement</div>
+      </div>
+    
+      <div style="padding:32px 24px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:230px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;color:#c8252a;line-height:1;margin-bottom:18px;">02</div>
+        <div style="font-size:22px;line-height:1.4;color:#fff;font-weight:400;">Promotion &amp; Setting Expectations</div>
+      </div>
+    
+      <div style="padding:32px 24px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:230px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;color:#c8252a;line-height:1;margin-bottom:18px;">03</div>
+        <div style="font-size:22px;line-height:1.4;color:#fff;font-weight:400;">Discovery / Probing Questions</div>
+      </div>
+    
+      <div style="padding:32px 24px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:230px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;color:#c8252a;line-height:1;margin-bottom:18px;">04</div>
+        <div style="font-size:22px;line-height:1.4;color:#fff;font-weight:400;">Recommend the Best Plan</div>
+      </div>
+    
+      <div style="padding:32px 24px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:230px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;color:#c8252a;line-height:1;margin-bottom:18px;">05</div>
+        <div style="font-size:22px;line-height:1.4;color:#fff;font-weight:400;">Highlight Key Benefits</div>
+      </div>
+    
+      <div style="padding:32px 24px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:230px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;color:#c8252a;line-height:1;margin-bottom:18px;">06</div>
+        <div style="font-size:22px;line-height:1.4;color:#fff;font-weight:400;">Guide the Customer to Purchase</div>
+      </div>
+    
+      <div style="padding:32px 24px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:230px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;color:#c8252a;line-height:1;margin-bottom:18px;">07</div>
+        <div style="font-size:22px;line-height:1.4;color:#fff;font-weight:400;">Offer Continued Support</div>
+      </div>
+    
+      <div style="padding:32px 24px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:230px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;color:#c8252a;line-height:1;margin-bottom:18px;">08</div>
+        <div style="font-size:22px;line-height:1.4;color:#fff;font-weight:400;">Close the Interaction</div>
+      </div>
+    
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Greeting & Promotion" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">GREETING &amp; <span style="color:#c8252a;">PROMOTION</span></div>
+  <div style="position:absolute;left:90px;top:320px;width:824px;min-height:580px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">Greeting &amp; Acknowledgement</div>
+    <ul style="padding-left:24px;font-size:22px;line-height:1.65;list-style:disc;">
+      <li>Be friendly and approachable</li>
+      <li>Confirm you can assist with eSIM-related questions</li>
+      <li>Avoid overwhelming the customer with too much info immediately</li>
+    </ul>
+  </div>
+  <div style="position:absolute;left:1005px;top:320px;width:824px;min-height:580px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">Promotion &amp; Setting Expectations</div>
+    <div style="font-size:21px;margin-bottom:14px;">Position the promotions to prevent disconnections:</div>
+    <div style="background:rgba(255,255,255,0.04);border-left:3px solid #c8252a;padding:18px 22px;font-style:italic;font-size:20px;line-height:1.55;">
+      &ldquo;Yes, we do offer a data plan that works in China. We&rsquo;re also currently running a <strong style="color:#fff;font-style:normal;">50% discount for the first 500,000 travelers</strong>&hellip;
+      <br><br>
+      If you&rsquo;d like, I can help check whether our service will work well for your trip and guide you to the best option.&rdquo;
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Discovery questions" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">DISCOVERY / <span style="color:#c8252a;">PROBING QUESTIONS</span></div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;min-height:600px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 70px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-size:24px;margin-bottom:18px;">Ask <strong style="color:#fff;">1&ndash;2 questions at a time</strong>, personalized to their responses. Avoid sounding like a form.</div>
+    <ul style="padding-left:28px;font-size:22px;line-height:1.85;list-style:disc;">
+      <li><strong style="color:#fff;">Destination:</strong> &ldquo;Which country or countries will you be traveling to?&rdquo;</li>
+      <li><strong style="color:#fff;">Travel Dates:</strong> &ldquo;When will you be traveling, and how long will your trip be?&rdquo;</li>
+      <li><strong style="color:#fff;">Device Compatibility:</strong> &ldquo;Are you using an eSIM-compatible and carrier-unlocked device?&rdquo;</li>
+      <li><strong style="color:#fff;">Use Case:</strong> &ldquo;How do you intend to use the data &mdash; browsing, streaming?&rdquo;</li>
+    </ul>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Recommend plan" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">RECOMMEND THE <span style="color:#c8252a;">BEST PLAN</span></div>
+  <div style="position:absolute;left:90px;top:320px;width:824px;min-height:580px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">Best Practices</div>
+    <ul style="padding-left:24px;font-size:22px;line-height:1.7;list-style:disc;">
+      <li>Highlight <strong style="color:#fff;">why</strong> the plan fits their needs</li>
+      <li>Avoid listing too many plans</li>
+      <li>Focus on <strong style="color:#fff;">1&ndash;2 recommendations</strong></li>
+    </ul>
+  </div>
+  <div style="position:absolute;left:1005px;top:320px;width:824px;min-height:580px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">Example</div>
+    <div style="background:rgba(255,255,255,0.04);border-left:3px solid #c8252a;padding:18px 22px;font-style:italic;font-size:20px;line-height:1.6;">
+      &ldquo;Based on your trip, our <strong style="color:#fff;font-style:normal;">Japan 7-Day Unlimited Data plan</strong> would be a great option. It should ensure that you have enough connectivity for browsing, messaging, and streaming during your stay.&rdquo;
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Key benefits & purchase" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">KEY BENEFITS &amp; <span style="color:#c8252a;">PURCHASE GUIDANCE</span></div>
+  <div style="position:absolute;left:90px;top:320px;width:824px;min-height:580px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">Optional Benefits to Mention</div>
+    <ul style="padding-left:24px;font-size:21px;line-height:1.7;list-style:disc;">
+      <li>Instant delivery</li>
+      <li>No physical SIM required</li>
+      <li>Easy installation</li>
+      <li>Reliable network connections</li>
+      <li>24/7 live chat support</li>
+      <li>Refund policy &mdash; 6 mo. refund (if no usage), 1 year to use</li>
+    </ul>
+  </div>
+  <div style="position:absolute;left:1005px;top:320px;width:824px;min-height:580px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">Guide to Purchase</div>
+    <ol style="padding-left:24px;font-size:21px;line-height:1.7;">
+      <li>Download the <strong style="color:#fff;">holiday.com app</strong></li>
+      <li>Sign up, select destination, choose duration</li>
+      <li>Enter payment details, complete checkout</li>
+    </ol>
+    <div style="margin-top:18px;font-size:20px;color:rgba(255,255,255,0.7);font-style:italic;">
+      Note: 365 days to install and activate. Tap &ldquo;Turn on eSIM&rdquo; only after arrival to start your plan.
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 5-Step Chat Flow" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">THE <span style="color:#c8252a;">5-STEP</span> CHAT FLOW</div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px;">
+    
+      <div style="padding:26px 22px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:460px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#c8252a;line-height:1;margin-bottom:14px;">01</div>
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;line-height:1.2;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.02em;">Greeting &amp; Hook</div>
+        <div style="font-size:18px;line-height:1.5;color:rgba(255,255,255,0.78);font-weight:300;">Acknowledge, empathize, hook with <strong style="color:#fff;">50% discount</strong> (first 500k travelers)</div>
+      </div>
+    
+      <div style="padding:26px 22px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:460px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#c8252a;line-height:1;margin-bottom:14px;">02</div>
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;line-height:1.2;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.02em;">Discovery</div>
+        <div style="font-size:18px;line-height:1.5;color:rgba(255,255,255,0.78);font-weight:300;">Ask 1&ndash;2 questions: destination, dates, device compatibility, use case</div>
+      </div>
+    
+      <div style="padding:26px 22px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:460px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#c8252a;line-height:1;margin-bottom:14px;">03</div>
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;line-height:1.2;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.02em;">Recommend &amp; Reassure</div>
+        <div style="font-size:18px;line-height:1.5;color:rgba(255,255,255,0.78);font-weight:300;">Pitch best plan. <strong style="color:#fff;">One eSIM for Life</strong>. <strong style="color:#fff;">6-Month Refund Policy</strong></div>
+      </div>
+    
+      <div style="padding:26px 22px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:460px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#c8252a;line-height:1;margin-bottom:14px;">04</div>
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;line-height:1.2;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.02em;">CTA &amp; Consent Pivot</div>
+        <div style="font-size:18px;line-height:1.5;color:rgba(255,255,255,0.78);font-weight:300;">App &gt; Destination &gt; Checkout. <strong style="color:#fff;">365-Day Activation</strong></div>
+      </div>
+    
+      <div style="padding:26px 22px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:460px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:36px;color:#c8252a;line-height:1;margin-bottom:14px;">05</div>
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;line-height:1.2;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:0.02em;">Support, Sign-off &amp; Follow-Up</div>
+        <div style="font-size:18px;line-height:1.5;color:rgba(255,255,255,0.78);font-weight:300;">24/7 support. Multi-touch follow-up (Day 3, Day 7)</div>
+      </div>
+    
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Presale Tickets" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">PRESALE <span style="color:#c8252a;">TICKET</span> INTERACTIONS</div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;min-height:600px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 70px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-size:24px;margin-bottom:18px;">Ticket interactions occur when:</div>
+    <ul style="padding-left:28px;font-size:22px;line-height:1.75;list-style:disc;margin-bottom:32px;">
+      <li>Customers inquire about eSIM services but <strong style="color:#fff;">disconnect</strong> before purchase</li>
+      <li>Customers inquire via <strong style="color:#fff;">email ticket</strong></li>
+      <li>The conversation presents an <strong style="color:#fff;">ongoing opportunity</strong> through our 2-touch follow-up sequence</li>
+    </ul>
+    <div style="font-size:22px;color:rgba(255,255,255,0.85);font-style:italic;line-height:1.6;">
+      Your role: build on your initial understanding, adhere to data privacy rules, and proactively recommend the most suitable plan through timely, value-driven ticket responses.
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Follow-up Sequence" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">PRESALE <span style="color:#c8252a;">FOLLOW-UP</span> SEQUENCE</div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;min-height:720px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 70px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-size:24px;margin-bottom:24px;">Use the macros below in your follow-up cadence:</div>
+    <div style="font-size:21px;line-height:1.8;">
+      <div style="margin-bottom:22px;">
+        <strong style="color:#c8252a;">First (30 min &ndash; 1 hr):</strong> <a href="https://vpn-support.zendesk.com/admin/workspaces/agent-workspace/macros/50706531679643" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">[HD] Presale Follow-Up 1: Initial Contact</a><br>
+        Summarize what they need, recommend a specific plan, mention the 6-month refund rule.
+      </div>
+      <div style="margin-bottom:22px;">
+        <strong style="color:#c8252a;">Day 3:</strong> <a href="https://vpn-support.zendesk.com/admin/workspaces/agent-workspace/macros/50706552827675" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">[HD] Presale Follow-Up 2: Third Day Check-In</a><br>
+        Offer more help with their decision; include a 60-second setup guide.
+      </div>
+      <div style="margin-bottom:22px;">
+        <strong style="color:#c8252a;">Day 7 (with account):</strong> <a href="https://vpn-support.zendesk.com/admin/workspaces/agent-workspace/macros/50706694794907" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">[HD] Presale Follow-Up 3: With Account</a><br>
+        Final reminder; invite last questions, offer future assistance.
+      </div>
+      <div>
+        <strong style="color:#c8252a;">Day 7 (no account):</strong> <a href="https://vpn-support.zendesk.com/admin/workspaces/agent-workspace/macros/50706591833627" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">[HD] Presale Follow-Up 3: No Account Yet</a><br>
+        Final reminder; provide a link to our Privacy Policy.
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 P.A.Y.S." style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">THE <span style="color:#c8252a;">P.A.Y.S.</span> CONSULTATIVE FRAMEWORK</div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+    
+      <div style="padding:30px 26px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:540px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:96px;color:#c8252a;line-height:1;margin-bottom:8px;">P</div>
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;line-height:1.2;color:#fff;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.02em;">Profile</div>
+        <div style="font-size:19px;line-height:1.55;color:rgba(255,255,255,0.8);font-weight:300;">Get to the root of their need in 2&ndash;3 messages. <em style="color:rgba(255,255,255,0.7);">&ldquo;What was the most frustrating part of getting online on your last trip?&rdquo;</em></div>
+      </div>
+    
+      <div style="padding:30px 26px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:540px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:96px;color:#c8252a;line-height:1;margin-bottom:8px;">A</div>
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;line-height:1.2;color:#fff;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.02em;">Assess &amp; Articulate Value</div>
+        <div style="font-size:19px;line-height:1.55;color:rgba(255,255,255,0.8);font-weight:300;">Instantly present the unique holiday.com feature that solves the exact pain point they just mentioned.</div>
+      </div>
+    
+      <div style="padding:30px 26px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:540px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:96px;color:#c8252a;line-height:1;margin-bottom:8px;">Y</div>
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;line-height:1.2;color:#fff;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.02em;">Yield Incentives</div>
+        <div style="font-size:19px;line-height:1.55;color:rgba(255,255,255,0.8);font-weight:300;">Drop the high-impact offer. <strong style="color:#fff;">50% off your first purchase</strong> &mdash; limited to first 500,000 travelers.</div>
+      </div>
+    
+      <div style="padding:30px 26px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);min-height:540px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:96px;color:#c8252a;line-height:1;margin-bottom:8px;">S</div>
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;line-height:1.2;color:#fff;margin-bottom:18px;text-transform:uppercase;letter-spacing:0.02em;">Secure Commitment</div>
+        <div style="font-size:19px;line-height:1.55;color:rgba(255,255,255,0.8);font-weight:300;">Confirm the benefit works for them, then use the limited discount to push an incentive-driven close.</div>
+      </div>
+    
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Value-First Mindset" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">VALUE-FIRST <span style="color:#c8252a;">SALES MINDSET</span></div>
+  <div style="position:absolute;left:90px;top:240px;width:1740px;font-family:'Roboto',sans-serif;font-size:22px;color:rgba(255,255,255,0.75);font-style:italic;font-weight:300;margin-bottom:18px;">
+    Customer education beats persuasion. Map travel frustrations to our unique features.
+  </div>
+  <div style="position:absolute;left:90px;top:320px;width:1740px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;">
+    
+      <div style="padding:24px 28px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-left:4px solid #c8252a;border-radius:4px;display:flex;gap:24px;align-items:center;">
+        <div style="flex:1;">
+          <div style="font-family:'Oswald',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;">Pain</div>
+          <div style="font-size:20px;line-height:1.45;font-weight:400;">Wasting money on fixed bundles</div>
+        </div>
+        <div style="color:#c8252a;font-size:32px;font-weight:700;">&rarr;</div>
+        <div style="flex:1;">
+          <div style="font-family:'Oswald',sans-serif;font-size:14px;color:#c8252a;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;">Solution</div>
+          <div style="font-size:20px;line-height:1.45;font-weight:400;color:#fff;">Ultimate Flexibility &mdash; <strong>Pay-per-Day Customization</strong></div>
+        </div>
+      </div>
+    
+      <div style="padding:24px 28px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-left:4px solid #c8252a;border-radius:4px;display:flex;gap:24px;align-items:center;">
+        <div style="flex:1;">
+          <div style="font-family:'Oswald',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;">Pain</div>
+          <div style="font-size:20px;line-height:1.45;font-weight:400;">Hassle of new QR codes every trip</div>
+        </div>
+        <div style="color:#c8252a;font-size:32px;font-weight:700;">&rarr;</div>
+        <div style="flex:1;">
+          <div style="font-family:'Oswald',sans-serif;font-size:14px;color:#c8252a;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;">Solution</div>
+          <div style="font-size:20px;line-height:1.45;font-weight:400;color:#fff;">Permanent Connectivity &mdash; <strong>One eSIM for Life</strong> across 150+ destinations</div>
+        </div>
+      </div>
+    
+      <div style="padding:24px 28px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-left:4px solid #c8252a;border-radius:4px;display:flex;gap:24px;align-items:center;">
+        <div style="flex:1;">
+          <div style="font-family:'Oswald',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;">Pain</div>
+          <div style="font-size:20px;line-height:1.45;font-weight:400;">Losing access to home numbers</div>
+        </div>
+        <div style="color:#c8252a;font-size:32px;font-weight:700;">&rarr;</div>
+        <div style="flex:1;">
+          <div style="font-family:'Oswald',sans-serif;font-size:14px;color:#c8252a;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;">Solution</div>
+          <div style="font-size:20px;line-height:1.45;font-weight:400;color:#fff;">Zero Interruption &mdash; eSIM runs alongside <strong>Physical SIM</strong>; WhatsApp &amp; 2FA stay active</div>
+        </div>
+      </div>
+    
+      <div style="padding:24px 28px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-left:4px solid #c8252a;border-radius:4px;display:flex;gap:24px;align-items:center;">
+        <div style="flex:1;">
+          <div style="font-family:'Oswald',sans-serif;font-size:14px;color:rgba(255,255,255,0.5);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;">Pain</div>
+          <div style="font-size:20px;line-height:1.45;font-weight:400;">Uncertainty of when to activate</div>
+        </div>
+        <div style="color:#c8252a;font-size:32px;font-weight:700;">&rarr;</div>
+        <div style="flex:1;">
+          <div style="font-family:'Oswald',sans-serif;font-size:14px;color:#c8252a;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:6px;">Solution</div>
+          <div style="font-size:20px;line-height:1.45;font-weight:400;color:#fff;">Risk-Free Planning &mdash; <strong>365-Day Activation Window</strong></div>
+        </div>
+      </div>
+    
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Closing the Sale" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">MASTER THE <span style="color:#c8252a;">PIVOT</span></div>
+  <div style="position:absolute;left:90px;top:240px;width:1740px;font-size:22px;color:rgba(255,255,255,0.7);font-style:italic;margin-bottom:18px;">Strategic CTA placement &mdash; when and how to drop your call to action.</div>
+  <div style="position:absolute;left:90px;top:360px;width:824px;min-height:620px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">Pivot 1: Post-Value Articulation</div>
+    <div style="margin-bottom:18px;font-size:20px;color:rgba(255,255,255,0.7);font-style:italic;">After the &lsquo;A&rsquo; in P.A.Y.S.</div>
+    <div style="font-size:21px;line-height:1.6;margin-bottom:18px;">Capitalize on the &ldquo;aha!&rdquo; moment right after you match their pain point to our feature.</div>
+    <div style="background:rgba(255,255,255,0.04);border-left:3px solid #c8252a;padding:18px 22px;font-style:italic;font-size:20px;line-height:1.55;">
+      &ldquo;That hassle is gone with holiday.com. Click here to install your permanent profile now, so you never worry about downloading another QR code again.&rdquo;
+    </div>
+  </div>
+  <div style="position:absolute;left:1005px;top:360px;width:824px;min-height:620px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:46px 58px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:32px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:24px;">Pivot 2: Post-Incentive Yield</div>
+    <div style="margin-bottom:18px;font-size:20px;color:rgba(255,255,255,0.7);font-style:italic;">After the &lsquo;Y&rsquo; in P.A.Y.S.</div>
+    <div style="font-size:21px;line-height:1.6;margin-bottom:18px;">Leverage Fear of Missing Out (F.O.M.O.) right after mentioning the 50% off promo.</div>
+    <div style="background:rgba(255,255,255,0.04);border-left:3px solid #c8252a;padding:18px 22px;font-style:italic;font-size:20px;line-height:1.55;">
+      &ldquo;The 50% off deal ends at 500,000 travelers and we&rsquo;re nearing the limit. Configure your days now to lock in the discount before it&rsquo;s gone.&rdquo;
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 ZTF Update" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">ZTF UPDATE &mdash; <span style="color:#c8252a;">SALES OPPORTUNITY</span></div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;min-height:620px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 70px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-size:22px;margin-bottom:18px;">Optimized options for the Sales Opportunity ZTF to better fit the eSIM data plan model:</div>
+    <ul style="padding-left:28px;font-size:21px;line-height:1.75;list-style:disc;margin-bottom:24px;">
+      <li>Removed <strong style="color:#fff;">&ldquo;Yes &mdash; Existing Inactive&rdquo;</strong> and <strong style="color:#fff;">&ldquo;Yes &mdash; Active Renewal&rdquo;</strong> &mdash; not appropriate for data plans</li>
+      <li>Added <strong style="color:#fff;">&ldquo;Yes &mdash; Additional Purchase&rdquo;</strong> for customers with an existing eSIM who buy a new plan</li>
+      <li>Changed &ldquo;subscription&rdquo; to <strong style="color:#fff;">&ldquo;data plan&rdquo;</strong> in all field options</li>
+      <li>Additional scenarios for the &ldquo;No&rdquo; option: coupon redemptions with no additional purchase, payment issues at checkout</li>
+    </ul>
+    <div style="font-size:21px;color:rgba(255,255,255,0.85);">
+      For more information: <a href="https://holidayinternalwiki.zendesk.com/hc/en-us/articles/45070821719451-Zendesk-Ticket-Fields" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">Zendesk Ticket Fields page in Wiki</a>. <strong style="color:#c8252a;">Please refresh Zendesk to reflect the updates.</strong>
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Email Composition" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">PRESALE TICKET <span style="color:#c8252a;">EMAIL FORMAT</span></div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;min-height:600px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 70px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-size:24px;margin-bottom:24px;">Two ticket archetypes guide our email composition:</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+      <div style="background:rgba(255,255,255,0.04);border-left:3px solid #c8252a;padding:24px 28px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:14px;">Customer ticket (needs education)</div>
+        <div style="font-size:20px;line-height:1.55;color:rgba(255,255,255,0.82);">Educating and compelling body with a CTA. Treat the email as a teaching moment first, sales moment second.</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.04);border-left:3px solid #c8252a;padding:24px 28px;">
+        <div style="font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;color:#fff;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:14px;">Customer ticket (shopper)</div>
+        <div style="font-size:20px;line-height:1.55;color:rgba(255,255,255,0.82);">Educating and engaging body that uses active listening. Mirror specific language from their ticket.</div>
+      </div>
+    </div>
+    <div style="margin-top:30px;font-size:21px;color:rgba(255,255,255,0.85);">
+      Full templates and copy library: <a href="https://docs.google.com/presentation/d/1swmRCNiun9RXP3NM6UKqW1c1Yt94yREMLzNyKTUXATY/edit?usp=sharing" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">Email Composition Framework</a>.
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Next Steps" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:122px;top:100px;font-family:'Oswald',sans-serif;font-weight:700;font-size:54px;line-height:1.05;text-transform:uppercase;color:#fff;letter-spacing:0.01em;width:1740px;">NEXT STEPS &amp; <span style="color:#c8252a;">RESOURCES</span></div>
+  <div style="position:absolute;left:90px;top:280px;width:1740px;min-height:620px;background:#0e0e0e;border:1px solid rgba(255,255,255,0.06);border-top:4px solid #c8252a;border-radius:4px;box-shadow:0 12px 30px rgba(0,0,0,0.5);padding:50px 70px;box-sizing:border-box;font-family:'Roboto',sans-serif;font-size:22px;line-height:1.6;color:rgba(255,255,255,0.88);font-weight:300;">
+    <div style="font-size:24px;margin-bottom:30px;">For the most up-to-date information, check the resources below:</div>
+    <div style="font-size:22px;line-height:1.9;">
+      <div style="margin-bottom:18px;">&bull; PQRA Slack channel: <a href="https://polymoon.slack.com/archives/C09KC82RN58/p1773279564182019" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">polymoon &middot; #presale-quality</a></div>
+      <div style="margin-bottom:18px;">&bull; Official Wiki article: <a href="https://holidayinternalwiki.zendesk.com/hc/en-us/articles/47711660648603-Chat-Flow-Presale-Guidelines" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">Chat Flow &mdash; Presale Guidelines</a></div>
+      <div style="margin-bottom:18px;">&bull; Acknowledgment form: <a href="https://docs.google.com/forms/d/e/1FAIpQLScFVVJkVBzfed8C1836pkrMKYdhxCZ92XXG-ii_dvXzvtjoHQ/viewform?usp=header" target="_blank" rel="noopener" style="color:#c8252a;text-decoration:underline;white-space:nowrap;">Confirm your acknowledgment here</a></div>
+    </div>
+    <div style="margin-top:36px;font-size:22px;color:rgba(255,255,255,0.85);">
+      Questions or concerns not covered in this training? Reach out to your <strong style="color:#fff;">Shift Manager</strong> or the <strong style="color:#fff;">L&amp;C Team</strong>.
+    </div>
+  </div>
+
+  </section>
+
+  <section class="psp-slide" data-label="M03 Thank You" style="background:#050505 url('assets-assassin/image1.png') center/cover no-repeat;">
+    <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+    <div style="position:absolute;left:90px;top:92px;width:6px;height:86px;background:#c8252a;"></div>
+    
+  <div style="position:absolute;left:14px;top:15px;font-family:'Oswald',sans-serif;font-size:32px;color:#c8252a;font-weight:500;">holiday.com</div>
+  <div style="position:absolute;left:0;top:380px;width:1920px;text-align:center;font-family:'Oswald',sans-serif;font-weight:700;font-size:200px;line-height:1;color:#fff;text-transform:uppercase;letter-spacing:0.02em;">THANK YOU!</div>
+  <div style="position:absolute;left:0;top:640px;width:1920px;text-align:center;font-family:'Oswald',sans-serif;font-weight:500;font-size:26px;color:rgba(255,255,255,0.55);letter-spacing:0.18em;text-transform:uppercase;">Module 03 &middot; Presale Chat &amp; Ticket Flow</div>
+  <div style="position:absolute;left:0;top:730px;width:1920px;text-align:center;font-size:22px;color:rgba(255,255,255,0.65);font-family:'Roboto',sans-serif;font-weight:300;">
+    Now go &mdash; close warm, follow up sharp.
+  </div>
+
+  </section>
+
+</deck-stage>
+
+<script src="deck-stage.js"></script>
+<script src="activities-assassin.js"></script>
+<script src="narration-assassin.js"></script>
+
+</body>
+</html>

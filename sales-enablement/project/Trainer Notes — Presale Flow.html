@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trainer Notes — Presale Chat & Ticket Flow (Internal)</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0e0e0e; --card:#171717; --border:#262626;
+    --ink:#f4f4f4; --muted:#a3a3a3; --accent:#e8c87a;
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); color: var(--ink); margin: 0; padding: 0; }
+  body { font-family: 'Roboto', system-ui, sans-serif; font-weight: 300; line-height: 1.55; }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(14,14,14,0.92);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 28px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .topbar .lock {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid rgba(232,200,122,0.3);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  .topbar h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+  }
+  .topbar .meta {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .topbar button {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    padding: 6px 12px;
+    font: inherit;
+    font-size: 12px;
+    border-radius: 999px;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .topbar button:hover { background: rgba(255,255,255,0.05); }
+
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 28px 28px 80px;
+  }
+
+  .lead {
+    background: linear-gradient(180deg, rgba(232,200,122,0.06), rgba(232,200,122,0));
+    border: 1px solid rgba(232,200,122,0.18);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 32px;
+  }
+  .lead h2 {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    letter-spacing: 0.04em;
+  }
+  .lead p { margin: 0; color: var(--muted); font-size: 14px; }
+  .lead strong { color: var(--ink); font-weight: 500; }
+
+  .slide {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 22px;
+    page-break-inside: avoid;
+  }
+  .slide-head {
+    display: flex; align-items: baseline; gap: 14px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+  }
+  .slide-num {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .slide-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  .slide-sub {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    margin: 0 0 8px 0;
+  }
+  .narration {
+    font-size: 15px;
+    color: #e4e4e4;
+    line-height: 1.7;
+    margin: 0 0 24px 0;
+  }
+  .riffs { margin: 0; padding-left: 0; list-style: none; }
+  .riffs li {
+    position: relative;
+    padding: 12px 14px 12px 44px;
+    margin-bottom: 8px;
+    background: rgba(255,255,255,0.025);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    font-size: 14px;
+    color: #dcdcdc;
+  }
+  .riffs li::before {
+    counter-increment: riff;
+    content: counter(riff);
+    position: absolute;
+    left: 14px; top: 12px;
+    font-family: 'Oswald', sans-serif;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .riffs { counter-reset: riff; }
+  .riffs li strong { color: #fff; font-weight: 500; }
+
+  /* Print — page per slide */
+  @media print {
+    @page { margin: 12mm; size: auto; }
+    body { background: #fff; color: #000; }
+    .topbar { display: none; }
+    .lead { background: #faf6e8; border-color: #d8c890; color: #000; }
+    .lead p { color: #444; }
+    .slide {
+      background: #fff;
+      border: 1px solid #ddd;
+      page-break-after: always;
+      box-shadow: none;
+    }
+    .slide:last-child { page-break-after: auto; }
+    .slide-title, .topbar h1 { color: #000; }
+    .narration { color: #222; }
+    .riffs li {
+      background: #fafafa;
+      border-left-color: #b08a2e;
+      color: #222;
+    }
+    .riffs li strong { color: #000; }
+    .slide-num, .riffs li::before { color: #b08a2e; }
+    .label, .slide-sub { color: #555; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="lock">🔒 Trainer-only · Do not publish</span>
+  <h1>Presale Chat &amp; Ticket Flow — Trainer Notes</h1>
+  <span class="meta">14 slides · narration script + elaboration cues</span>
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+
+<div class="wrap">
+
+  <div class="lead">
+    <h2>How to use this document</h2>
+    <p>
+      This file is your private companion to <strong>Presale Chat &amp; Ticket Flow.html</strong>. It is
+      <strong>not linked from the deck and is not part of the published website</strong> — keep it local or
+      share it only with trainers. For each slide you'll find <strong>the narration script</strong> (what the
+      on-screen voice says) followed by <strong>three elaboration cues</strong> you can riff on live.
+    </p>
+  </div>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 01</span>
+      <h2 class="slide-title">Presale Flow — Opening</h2>
+      <span class="slide-sub">Setting the foundation</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Welcome back, team. This is the presale chat, and ticket flow session. The genesis session rewired, how you think. This one, rewires what you do. On every single chat. And every single ticket. By the end, you will know the recommended presale flow. Start, to finish. How to spot a sales opportunity, the moment it appears. How to ask a few sharp questions, without sounding like a form. How to recommend the right data plan. And how to guide a traveller, all the way, to purchase. With a clear call to action. If you prefer, there is a short training video, linked on this slide. Watch it, on your own time. For now, stay with me. One thing, before we start. This is a flow. Not a script. A script, makes you sound like a robot. A flow, gives you a path, while you stay human. Every traveller is different. The order of these stages, holds. The words, are yours. Keep that distinction, in your mind, the whole way through. Let's begin.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Anchor to Session One: Genesis rewired <strong>how they think</strong>; this rewires <strong>what they do</strong>.</li>
+      <li>Stress “flow, not script” early — agents fear sounding robotic; the flow frees them.</li>
+      <li>Point to the linked training video as optional self-study, not a replacement for the live session.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 02</span>
+      <h2 class="slide-title">What Is a Presale Interaction?</h2>
+      <span class="slide-sub">Defining the moment</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">So. What exactly, is a presale interaction? It is simpler than it sounds. A presale happens, in three moments. One. When a customer asks, about our eSIM service. Two. When that customer, does not yet have an active data plan. And three. When the conversation, gives you an opening, to guide them toward a purchase. Notice the pattern. Interest. Plus, no active plan. Plus, an opening. That, is a presale. And the moment you see all three, your role changes. You are no longer, just answering a question. You are understanding a need. And recommending, the most suitable plan. Here is the mindset shift. Most chats that land in your queue, are already presales. The traveller asking, does this work in Thailand. The traveller asking, is my phone compatible. The traveller asking, how much is data, for a week. Every one of those. Is interest. Plus no plan. Plus an opening. So train your eye. The sales opportunity, is almost always there. The only question, is whether you see it. In time. And whether you take it. Gently. And with care.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Drill the formula: <strong>Interest + No active plan + An opening</strong>. Have them repeat it.</li>
+      <li>Ask the room for three real chat openers and test each against the three criteria.</li>
+      <li>Reframe: most queue chats are <em>already</em> presales — the skill is seeing it in time.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 03</span>
+      <h2 class="slide-title">The Call to Action</h2>
+      <span class="slide-sub">Never end on a full stop</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Every presale chat, should end, with a clear call to action. A C.T.A. And yet. This is the single most common thing, that agents forget. They answer the question. Beautifully. And then. They just stop. The customer says thanks. And leaves. To do nothing. A call to action, is simply, the next step. Made obvious. And made easy. It can be three things. One. Recommending a specific plan. Two. Sharing a purchase link. Three. Offering to walk them through the purchase, yourself. That is it. A strong C.T.A. does three things, for the customer. It helps them feel confident. It helps them take the next step. And it helps them, complete their purchase. Without a C.T.A., even a perfect chat, leaks. The traveller drifts away. To compare tabs, again. With a C.T.A., you close the loop. So here is your rule, for this session. Never end a presale chat, on a full stop. End it, on a door. An open, inviting door. Shall I share the link. Would you like me, to set this up with you. Always. Leave them. A next step.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Show a real transcript that ended with “glad I could help!” and nothing else — the leak.</li>
+      <li>Contrast the three CTA forms; have agents rewrite a dead ending into an open door.</li>
+      <li>Tie to conversion data: chats with an explicit CTA convert markedly higher.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 04</span>
+      <h2 class="slide-title">Key Features to Highlight</h2>
+      <span class="slide-sub">Tools, not a checklist</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Now. The features. When you help a presale customer, you have five hero features. Memorise these. One. Compatibility. Our eSIM works, with supported iPhone, and Android models. Two. Reach. One hundred and fifty plus, supported destinations. Three. Flexibility. One eSIM. Usable, across multiple destinations. You install once. It works, everywhere we cover. Four. The offer. A fifty percent discount, for the first five hundred thousand travellers. Five. Peace of mind. A six month refund policy, on unused data plans. Now. Hear me carefully. Do not, dump all five, into one message. That is a wall of text. And a wall of text, ends a chat. Instead. Pick the one, or two features, that match what the customer just told you. The nervous, first time traveller. Lead with the refund policy. The frequent flyer. Lead with one eSIM, for life. The deal hunter. Lead with the fifty percent off. Features, are not a list, you read out. They are tools, you reach for. The right tool. For the right person. At the right moment. That, is the whole art.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Demonstrate the “wall of text” anti-pattern, then the surgical one-feature reply.</li>
+      <li>Run persona matching live: nervous first-timer, frequent flyer, deal hunter.</li>
+      <li>Clarify refund nuance: 6-month refund on <em>unused</em> plans; 1 year to use.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 05</span>
+      <h2 class="slide-title">The Presale Chat Flow</h2>
+      <span class="slide-sub">The path you walk every chat</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Here it is. The presale chat flow. The path, you will walk, on every live chat. There are eight stages. One. Greeting, and acknowledgement. Two. Promotion, and setting expectations. Three. Discovery. The questions you ask. Four. Recommend the best plan. Five. Highlight the key benefits. Six. Guide the customer, to purchase. Seven. Offer continued support. And eight. Close the interaction. Eight stages. But do not panic. They collapse, into a simple rhythm. Greet. Hook. Ask. Recommend. Reassure. Guide. Support. Close. Say that out loud, a few times. It becomes muscle memory. Some of you, will see this, as five bigger steps. Greeting and hook. Discovery. Recommend and reassure. The call to action. And support, with sign off. Eight stages. Or five steps. Same path. The numbers, do not matter. What matters, is this. You always know, where you are. And you always know, what comes next. A traveller can sense, when an agent is lost. And a traveller can sense, when an agent is leading. This flow. Is how you lead. Calmly. Every single time.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Chant the rhythm — Greet · Hook · Ask · Recommend · Reassure · Guide · Support · Close.</li>
+      <li>Note the 8-stage ↔ 5-step equivalence so neither framing confuses them.</li>
+      <li>Emphasise: knowing “where you are” is what lets you lead calmly.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 06</span>
+      <h2 class="slide-title">Greet · Hook · Ask (Stages 1–3)</h2>
+      <span class="slide-sub">The opening half</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Let's walk the first three stages. Stage one. Greeting, and acknowledgement. Be friendly. Be approachable. Confirm, that you can help, with their eSIM questions. And do not, overwhelm them, with everything at once. A warm hello, buys you, the whole conversation. Stage two. Promotion, and setting expectations. The moment after you answer their first question, position the offer. This keeps their attention. And it prevents the chat, from going cold. Picture a customer, asking about data plans for China. You might say. Yes, we do offer a plan, that works in China. We are also running, a fifty percent discount, for our first five hundred thousand travellers. If you would like, I can check that our service fits your trip, and guide you to the best option. Just share your travel details. Notice what that does. It answers. It hooks. And it opens discovery. Stage three. Discovery. Before you recommend anything, understand their needs. Ask about destination. Travel dates. Device compatibility. And how they plan, to use the data. But ask, one or two questions, at a time. Never a long list. Personalise, based on their answers. And never, ever, sound like a form.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Model the China example aloud — answer, hook, open discovery in one breath.</li>
+      <li>Stress “1–2 questions at a time,” never a form-dump; show a bad form-like example.</li>
+      <li>Add the device-unsure branch: “No worries, I can help you check eSIM support.”</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 07</span>
+      <h2 class="slide-title">Recommend · Guide · Close (Stages 4–8)</h2>
+      <span class="slide-sub">The closing half</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Now, the second half. Stage four. Recommend the best plan. Guide them, to the most suitable option. And show them, you understood. Based on your trip, our Japan, seven day, unlimited data plan, would be a great fit. That ties the plan, to their own words. Focus on one, or two recommendations. Never a menu. Stage five. Reassure. If they hesitate, briefly explain the benefits. Instant delivery. No physical SIM required. Easy installation. And twenty four, seven, live chat support. Stage six. Guide them, to purchase. Make the next step, simple. Download the Holiday dot com app. Sign up. Select the destination. And choose the duration. Then enter payment, and complete checkout. And here, a critical detail. They have three hundred and sixty five days, to install, and activate. To avoid early activation, they should only tap, turn on eSIM, after they arrive. Say that clearly. It prevents, a very common mistake. Stage seven. Offer further assistance. Remind them, support is always here. And stage eight. Close warmly. In the meantime, is there anything else, I can help with. Leave them, with a good impression. Every time.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>The 365-day / “Turn on eSIM after arrival” rule is the #1 mistake-preventer — repeat it.</li>
+      <li>Show how recommendation language must echo the customer’s own trip words.</li>
+      <li>Close warmly without re-opening a sales loop: “anything else?” then sign off.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 08</span>
+      <h2 class="slide-title">Activity — Order the Flow</h2>
+      <span class="slide-sub">Mid-deck reinforcement</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Let's lock that flow in. On your screen, you will see the stages, of a presale chat. But they are shuffled. Out of order. Your job, is simple. Put them back, into the correct sequence. From the very first hello. To the final, warm close. Tap a stage. Then tap the slot, where it belongs. If you place one wrong, it will gently shake. Just try again. There is no timer. And no pressure. If you need more time to think, pause the narration, on the right side. Then resume, whenever you are ready. As you order them, say each stage, out loud. Greet. Hook. Ask. Recommend. Reassure. Guide. Support. Close. When all eight, are in place, we will move on, together.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Let them struggle briefly; the shuffle exposes who has internalised the rhythm.</li>
+      <li>After completion, ask which stage they personally skip most under pressure.</li>
+      <li>Remind them to pause narration if they need more time — no timer, no pressure.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 09</span>
+      <h2 class="slide-title">The Value-First Mindset</h2>
+      <span class="slide-sub">The play</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Now we go deeper. Into the mindset, underneath the flow. Our whole strategy, rests on one principle. Customer education, beats persuasion. We do not, just sell data bundles. We understand, the customer's whole situation. Then we map, their travel frustrations, to our features. The goal, is not to convince. It is to show them, how we solve, their exact pain. Let me give you, four pairings. Pain one. Wasting money, on fixed bundles. Solution. Flexibility. Our pay per day option, lets them pay, for the exact days, they need. Pain two. The hassle, of a new QR code, every trip. Solution. Permanence. One eSIM, for life. One install. One hundred and fifty plus destinations. Forever. Pain three. Losing access, to their home number. Solution. Zero interruption. Our eSIM runs, alongside their physical SIM. So their messaging, and their two factor codes, keep working. And pain four. Uncertainty, about when to activate. Solution. Risk free planning. The three hundred and sixty five day, activation window. Buy now. Activate, only when they travel. See the pattern. You are not pushing a product. You are handing them, a solution. To a problem, they already feel. That. Is value first selling.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>“Customer education beats persuasion” — say it, then have them paraphrase it.</li>
+      <li>Walk each Pain → Solution pair and ask for a real chat that fits it.</li>
+      <li>Reinforce: we map frustration to feature; we don’t list specs.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 10</span>
+      <h2 class="slide-title">The P.A.Y.S. Framework</h2>
+      <span class="slide-sub">Feature-first value selling</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Here is the framework, that ties it all together. P.A.Y.S. Four letters. P. A. Y. S. It helps you, control the conversation, and create urgency. Without sounding, like a script. P. Profile. Identify the pain point. Get to the root of their need, in two, or three messages. Ask a direct question. What was the most frustrating part, of getting online, on your last trip. Then listen. To the answer. A. Assess, and articulate value. The moment they name a pain, present the one feature, that solves it. Instantly. Lead, with the solution. Y. Yield incentives. Now, create urgency. Drop the high impact offer. Remember, the fifty percent off, on a first purchase, is strictly limited, to our first five hundred thousand travellers. S. Secure commitment. Confirm the benefit works, for them. So, getting the exact days you need, works for you. Then, use that limited discount, to guide a warm close. Profile. Assess. Yield. Secure. P.A.Y.S. The beauty, is in the order. You earn the right, to create urgency. By understanding them, first. Urgency, without understanding, feels like pressure. Urgency, after understanding, feels like a friend, looking out for you. Same words. A completely different feeling. Always. Profile first.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Order matters: you earn urgency by profiling first — pressure vs. friend.</li>
+      <li>Drill the Profile question and the Secure confirmation line as scripts to adapt.</li>
+      <li>Cross-link Y (Yield) to the 50% / 500k hook so it’s grounded in a real limit.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 11</span>
+      <h2 class="slide-title">Master the Pivot</h2>
+      <span class="slide-sub">Strategic CTA placement</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Now. The art, of the call to action. When. And how. To drop it. A good C.T.A., should never feel, like an interruption. It should feel, like the natural next step. To get this right, deploy your strongest C.T.A.s, at two pivots, in the conversation. Pivot one. Right after value. Just after the A, in P.A.Y.S. You have matched their pain, to our feature. That, is the aha moment. Capitalise on it. You might say. That hassle, is gone, with Holiday dot com. You can install your permanent profile now, so you never download, another QR code, again. Pivot two. Right after the incentive. Just after the Y, in P.A.Y.S. You have mentioned, the fifty percent offer. Now, gently, use F.O.M.O. The fifty percent deal, ends, at five hundred thousand travellers. And we are nearing the limit. Configure your days now, to lock in the discount, before it is gone. Two pivots. Post value. And post incentive. And one warning, from the genesis session. F.O.M.O. must always, be true. Real limits. Real lead times. Never, a fake countdown. Honest urgency, converts. Fake urgency, destroys trust. Use it. With care.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Map both pivots back to P.A.Y.S. letters (after A, after Y) so it’s memorable.</li>
+      <li>Hammer the ethics rule: F.O.M.O. must be true — fake scarcity is a fireable flag.</li>
+      <li>Shift managers: flag any transcript using fabricated urgency immediately.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 12</span>
+      <h2 class="slide-title">Tickets & the Follow-Up Sequence</h2>
+      <span class="slide-sub">When the chat doesn’t close live</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">Not every presale, happens live. Sometimes, a customer asks about our eSIM, then disconnects, before purchasing. Sometimes, they reach us, by email ticket. That, is a presale ticket. And your role, is the same. Build on what you already understood. Recommend the right plan. And follow up. Through a structured, two touch sequence. Here is the sequence. And the macros, are linked, right on this slide. First follow up. Thirty minutes, to one hour later. Send, presale follow up one. Initial contact. Summarise their need. Recommend a specific plan. And mention, the six month refund rule. Second follow up. On day three. Send, presale follow up two. The third day check in. Offer more help. And include a useful resource. Like a sixty second setup guide. Final follow up. On day seven. If they now have an account, send the with account version. If they do not, send the no account version. With a link, to our privacy policy. Either way, this is the last touch. And one more thing. Data compliance. If a customer declines consent, or does not purchase, by day seven. Delete their information. That, is not optional. And for the sales opportunity ticket field, check the updated definitions, on the Wiki ticket fields page. Also linked, here.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Walk the timeline: 30–60 min, Day 3, Day 7 (with/without account). Open the macros live.</li>
+      <li>Data compliance is non-negotiable: delete info on declined consent or no Day-7 purchase.</li>
+      <li>Point to the updated Sales Opportunity ZTF definitions on the Wiki ticket fields page.</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 13</span>
+      <h2 class="slide-title">Next Steps & Thank You</h2>
+      <span class="slide-sub">Stay current · confirm · reach out</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">That. Is the presale chat, and ticket flow. You now have the path. The features. The framework. And the pivots. Before you go, a few next steps. For the most current information, always check, the P.Q.R.A. channel. And the official Holiday Wiki. Both, are linked, on this slide. Things change. Stay current. When you are ready, please confirm your acknowledgement, using the form, linked here. That tells your shift manager, you have completed this session. And if anything, was unclear. Or you hit a scenario, this deck did not cover. Reach out. To your shift manager. Or the learning and culture team. We would much rather, you ask. Than guess. Shift managers. This flow, is your coaching baseline. Hold every transcript, against it. Thank you, team. The flow. Is yours now. Go. And guide your next traveller. All the way. Home.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Have everyone open the acknowledgement form before they leave the room.</li>
+      <li>PQRA channel + Wiki are the living sources — promos and plans change often.</li>
+      <li>Close on the line: “go guide your next traveller all the way home.”</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <header class="slide-head">
+      <span class="slide-num">Slide 14</span>
+      <h2 class="slide-title">Activity — Your Pledge</h2>
+      <span class="slide-sub">Closing commitment</span>
+    </header>
+    <p class="label">Narration (what they hear)</p>
+    <p class="narration">One last thing. Before you go. Let's put it, into action. On the screen, three short commitments. One. The first discovery question, you will ask, on your next presale chat. Two. The one feature, you will lead with, for a nervous, first time traveller. And three. The presale peer, you will trade transcripts with, this week. Type each one in. When you are happy, click, save my pledge. You can also print it. And stick it, next to your monitor. Writing a commitment down, makes it far more likely, you actually do it. That, is the science. So make these real. Thank you, team. The threshold. Is yours, to cross.</p>
+    <p class="label">Elaboration cues</p>
+    <ul class="riffs">
+      <li>Insist they type real specifics — a real question, a real feature, a real peer’s name.</li>
+      <li>Encourage printing and sticking it to the monitor; cite the write-it-down effect.</li>
+      <li>Pledges save to localStorage — they can revisit and update any time.</li>
+    </ul>
+  </section>
+
+</div>
+</body>
+</html>

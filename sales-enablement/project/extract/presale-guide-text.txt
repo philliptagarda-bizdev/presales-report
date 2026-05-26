@@ -1,0 +1,424 @@
+Chat Flow Presale Guidelines
+If you prefer a quick walkthrough, you can watch the training video here.
+
+-- 1 of 35 --
+
+Learning Objectives
+By the end of this course, you will understand
+the recommended presale chat flow,
+including how to identify sales opportunities,
+ask effective discovery questions,
+recommend the right data plan, and guide
+customers toward purchase with a clear call
+to action.
+
+-- 2 of 35 --
+
+What Is a Presale Interaction?
+
+-- 3 of 35 --
+
+Presale interactions occur when:
+● Customers inquire about eSIM services
+● The customer does not yet have an active data plan
+● The conversation presents an opportunity to guide the
+customer toward purchase
+Your role is to understand the customer’s needs and recommend
+the most suitable plan.
+Presale interactions
+
+-- 4 of 35 --
+
+Importance of a Call to Action
+(CTA)
+
+-- 5 of 35 --
+
+Every presale chat should include a clear call to action.
+Examples of CTA:
+● Recommending a plan
+● Sharing a purchase link
+● Offering to guide the customer through the purchase process
+A strong CTA helps customers:
+● Feel confident
+● Take the next step
+● Complete their purchase.
+Call to Action (CTA)
+
+-- 6 of 35 --
+
+Key Features to Highlight
+
+-- 7 of 35 --
+
+When assisting presale customers, emphasize key product benefits:
+● eSIM compatibility with supported iPhone and Android models
+● 150+ supported destinations
+● One eSIM usable across multiple destinations
+● 50% discount for the first 500,000 travelers
+● 6-month refund policy for unused data plans
+Key Features
+
+-- 8 of 35 --
+
+Presale Chat Flow Overview
+
+-- 9 of 35 --
+
+Presale Chat Flow
+1. Greeting & Acknowledgement
+2. Promotion & Setting Expectations
+3. Discovery / Probing Questions
+4. Recommend the Best Plan
+5. Highlight Key Benefits
+6. Guide the Customer to Purchase
+7. Offer Continued Support
+8. Close the Interaction
+
+-- 10 of 35 --
+
+Stage of Interaction 	Best Practice
+Greeting and Acknowledgement 	Acknowledge the customerʼs inquiry and create a friendly tone.
+● Be friendly and approachable.
+● Confirm that you can assist with eSIM-related questions.
+● Avoid overwhelming the customer with too much information
+immediately.
+Promotion and Setting of Expectations 	After answering the customerʼs initial question, position the promotions available
+on the app to keep their attention and prevent chat disconnections:
+Example scenario:
+A customer initially contacted us about whether or not we have data plans for
+China.
+“Yes, we do offer a data plan that works in China. Weʼre also currently running a
+50% discount for the first 500,000 travelers, which you can take advantage of
+while the promotion is available.
+If youʼd like, I can also help check whether our service will work well for your trip
+and guide you to the best option. Just let me know your travel details, and Iʼll be
+happy to assist.ˮ
+
+-- 11 of 35 --
+
+Stage of Interaction 	Best Practice
+Discovery / Probing Questions 	After addressing the customerʼs initial query/reason for contact, we need to
+understand the customerʼs exact travel and connectivity needs before
+recommending a plan. Prefacing your questions with a disclaimer can help you
+check if a customer would be receptive to answering these questions, as well.
+The Support Team MAY ask questions such as:
+● Destination - “Which country or countries will you be traveling to?ˮ
+● Travel Dates - “When will you be traveling, and how long will your trip be?ˮ
+● Device Compatibility - “Just to confirm, are you using an
+eSIM-compatible and carrier-unlocked device?ˮ
+○ If the customer is unsure - “No worries, I can help you check if
+your device supports eSIM.ˮ
+● General Use Case - “May I ask how you intend to use the data plan, too?
+Browsing, streaming, etc.?ˮ
+Best Practices:
+● Ask 12 questions at a time instead of sending a long list.
+● Personalize based on the customerʼs responses.
+● Avoid sounding like a form or script.
+
+-- 12 of 35 --
+
+Stage of
+Interaction Best Practice
+Recommend the Best
+Plan
+Guide the customer toward the most suitable option based on their needs. Furthermore, show the customer that you understand their needs by
+incorporating it to the recommendation.
+Example: “Based on your trip, our Japan 7Day unlimited data plan would be a great option. It should ensure that you have enough connectivity for
+browsing, messaging, and streaming during your stay.ˮ
+Best Practices:
+● Highlight why the plan fits their needs
+● Avoid listing too many plans
+● Focus on 12 recommendations
+Explain Key Benefits
+Briefly) 	Customers often want reassurance before purchasing. If they are not convinced yet, you can proceed with mentioning the benefits of using an
+eSIM.
+Example: “With our eSIM, youʼll be able to connect to the internet as soon as you arrive, as long as youʼve set up the eSIM properly and have good
+connectivity. The installation is quick, and your data plan automatically activates once youʼre in the destination.ˮ
+Optional points agents can mention:
+● Instant delivery
+● No physical SIM required
+● Easy installation
+● Reliable network connections
+● 24/7 live chat support
+● Refund policy 6 mos. refund policy - as long as no usage, and 1 year to use it)
+
+-- 13 of 35 --
+
+Stage of Interaction 	Best Practice
+Guide the Customer to Purchase and Set Proper
+Expectations 	Once the customer is ready, make the next step clear and simple.
+Example: “You can purchase the plan directly from our app.ˮ
+“If you'd like, I can walk you through the purchase process as well.ˮ
+Specific Steps:
+1. Download the holiday.com app—available on select devices only.
+2. Sign up, select your destination, and choose the duration that matches your needs.
+For you, we recommend getting a {insert plan that matches the customerʼs
+needs}.
+3. Enter your payment details and complete the purchase on the checkout screen.
+Note: You have 365 days to install and activate your eSIM. To avoid early activation, tap
+“Turn on eSIMˮ in the app only after arrival to enable data roaming and start your plan.ˮ
+Offer Further Assistance 	Always close the conversation by keeping support available.
+Example: “If you have any questions during installation or while traveling, feel free to
+reach out. Our Support Team is available anytime to help!ˮ
+Close the Interaction 	Leave the customer with a good impression of the service.
+Example: “In the meantime, can I help you with anything else?ˮ
+
+-- 14 of 35 --
+
+Step 01: Greeting & Hook
+Action: Acknowledge, empathize, & hook.
+Enrichment: Offer 50% discount (first 500k travelers).
+Step 02: Discovery (Profile)
+Action: Ask 1-2 questions to find pain points.
+Enrichment: Determine Destination/Duration. Check Compatibility (eSIM/carrier-unlocked; iOS supported). Uncover
+Use Case/Past Frustrations (e.g., fixed data bundles).
+Step 03: Recommend & Reassure (Value-First Selling)
+Action: Pitch best plan & build trust.
+Enrichment: Pitch Upgrade: Unlimited Daily Data (Pay-per-Day). Differentiators: One eSIM for Life (150+ destinations);
+keep physical SIM for messaging. Reassure: 6-Month Refund Policy (unused plans/incompatible devices).
+Step 04: The CTA & Consent Pivot (Commitment)
+Action: Deliver strong CTA to guide checkout.
+Enrichment: Guide: App > Select Destination > Checkout. Rule: 365-Day Activation; tap "Turn on eSIM" upon arrival.
+🚨 PIVOT: Let us know so we can get you set up and don’t miss out on these savings!
+Step 05: Support, Sign-off & Follow-Up
+Action: Offer future assistance & conclude warmly.
+Enrichment: Remind 24/7 support is available. Pipeline Activation: Multi-Touch Follow-Up (Day 3, Day 7). Data
+Compliance: Delete info if consent declined or no purchase after Day 7.
+The 5-Step Chat Flow
+
+-- 15 of 35 --
+
+Presale ticket interactions occur when:
+● Customers inquire about our eSIM services but disconnect
+before securing their holiday.com plan
+● Customers that inquire about or eSIM services via email
+ticket
+● The initial conversation presents an ongoing opportunity to
+guide the customer toward purchase through our structured
+2-touch follow-up sequence
+Your role is to seamlessly build on your initial understanding of
+the customer’s needs, strictly adhere to data privacy rules, and
+proactively recommend the most suitable plan through timely,
+value-driven ticket responses to close the sale.
+Presale ticket interactions
+
+-- 16 of 35 --
+
+Presale Ticket Flow Overview
+
+-- 17 of 35 --
+
+Presale Ticket Flow
+1. Greeting & Acknowledgement
+2. Promotion & Setting Expectations
+3. Discovery / Probing Questions
+4. Recommend the Best Plan
+5. Highlight Key Benefits
+6. Guide the Customer to Purchase
+7. Offer Continued Support
+8. Close the Initial Email
+9. Follow-up sequence
+
+-- 18 of 35 --
+
+Presale Follow-up Sequence
+Follow-up process (including new macros)
+● [HD] Presale Follow-Up 1 Initial Contact
+○ First follow-up (30 mins - 1 hr): Send [HD] Presale Follow-Up 1 Initial Contact. Summarize what they
+need, recommend a specific plan, and mention the 6-month refund rule.
+● [HD] Presale Follow-Up 2 Third Day Check-In
+○ Second follow-up (Day 3): Send [HD] Presale Follow-Up 2 Third Day Check-In. Offer more help with
+their decision and include a helpful resource, like a 60-second setup guide.
+● [HD] Presale Follow-Up 3: 7th day after initial interaction (With account)
+○ If yes, send [HD] Presale Follow-Up 3: 7th day after initial interaction (With account). This is your
+final reminder; invite last questions, and offer future assistance.
+● [HD] Presale Follow-Up 3: 7th day after initial interaction (No account yet)
+○ If not, send [HD] Presale Follow-Up 3: 7th day after initial interaction (No account yet). This is your
+final reminder; invite last questions and provide a link to our Privacy Policy.
+
+-- 19 of 35 --
+
+Stage of Interaction 	Best Practice
+Greeting and Acknowledgement 	Acknowledge the customerʼs inquiry and create a friendly, approachable tone.
+Confirm you can assist with their eSIM questions but avoid overwhelming them
+with information immediately.
+Promotion and Setting of Expectations
+Hook their attention early to prevent disconnects or Ghosting. Position available
+promotions immediately—for example, mention that we are currently running a
+50% discount for our first 500,000 purchasers.
+Discovery / Probing Questions
+Understand their specific travel needs before recommending a plan. Ask 12
+personalized questions at a time (avoid sounding like a script).
+• Destination: "Which country are you traveling to?"
+• Travel Dates: "How long will your trip be?"
+• Device: "Are you using an eSIM-compatible, unlocked device?"
+• Use Case: "How do you intend to use the data?"
+
+-- 20 of 35 --
+
+Stage of Interaction 	Best Practice
+Recommend & Highlight Benefits
+Focus on 12 targeted plan recommendations and immediately pair them with our
+unique features (the P.A.Y.S. framework).
+• Highlight Pay-per-Day Customization to avoid wasted data.
+• Emphasize One eSIM for Life (one install for 150+ destinations).
+• Note that our eSIM runs alongside their physical SIM, keeping WhatsApp/iMessage
+active.
+Guide the Customer to Purchase
+Deliver a strong, simple Call to Action CTA.
+• Guide them to download the holiday.com app (available on iOS and Android), select their
+destination, and check out.
+• Remind them of the 365Day Activation Window and instruct them to only tap "Turn on
+eSIM" after arrival.
+Offer Further Support & Close
+Always keep the door open. Remind the customer that our 24/7 Support Team is
+available to help during installation or while traveling.
+• Conclude professionally to leave a good impression, make them feel they can reach
+back anytime and assure them that our team is always available to help.
+
+-- 21 of 35 --
+
+Stage of Interaction 	Best Practice
+Follow-Up Sequence*
+Execute this structured sequence
+Follow-up process (including new macros)
+● HD Presale Follow-Up 1 Initial Contact
+○ First follow-up 30 mins - 1 hr): Send HD Presale Follow-Up 1
+Initial Contact. Summarize what they need, recommend a specific
+plan, and mention the 6-month refund rule.
+● HD Presale Follow-Up 2 Third Day Check-In
+○ Second follow-up Day 3 Send HD Presale Follow-Up 2 Third
+Day Check-In. Offer more help with their decision and include a
+helpful resource, like a 60-second setup guide.
+● HD Presale Follow-Up 3 7th day after initial interaction With account)
+○ If yes, send HD Presale Follow-Up 3 7th day after initial
+interaction With account). This is your final reminder; invite last
+questions, and offer future assistance.
+● HD Presale Follow-Up 3 7th day after initial interaction No account yet)
+○ If not, send HD Presale Follow-Up 3 7th day after initial
+interaction No account yet). This is your final reminder; invite last
+questions and provide a link to our Privacy Policy.
+
+-- 22 of 35 --
+
+Presale Ticket Format
+Email Composition Framework
+Customer ticket (needs education)
+
+-- 23 of 35 --
+
+Educating and compelling body with CTA
+
+-- 24 of 35 --
+
+
+
+-- 25 of 35 --
+
+Customer ticket (shopper)
+
+-- 26 of 35 --
+
+Educating and engaging body (active listening)
+
+-- 27 of 35 --
+
+ZTF Update: Sales Opportunity
+
+-- 28 of 35 --
+
+ZTF Update: Sales Opportunity
+We've further optimized the options for the Sales Opportunity ZTF to make them a better
+fit with how eSIM data plan works.
+What changed?
+● Removed the Yes - Existing Inactive and Yes - Active Renewal options since they're
+not appropriate with how eSIM data plan works.
+● Added Yes - Additional Purchase for customers with an existing eSIM who purchased
+a new/additional data plan.
+● Changed the term "subscription" to "data plan" on all ticket field options.
+● Provided additional scenarios for the No option:
+○ Customers who redeemed a coupon with no additional purchase
+○ Customers who encountered payment issues during checkout
+For more information about the updated definitions, please refer to the Zendesk Ticket
+Fields page in Wiki.
+Please refresh Zendesk to reflect the updates on your end.
+
+-- 29 of 35 --
+
+The Value-First Sales Mindset
+
+-- 30 of 35 --
+
+The play
+Our strategy relies on the principle that "customer education beats persuasion"
+We do not just sell data bundles; We understand the customer’s entire sentiment
+immediately map the customer's travel frustrations to our unique, industry-leading
+features, the goal is to effectively communicate how we can help solve their pain.
+Pain: Wasting money on fixed bundles ➔ Solution: Ultimate Flexibility. Emphasize
+our Pay-per-Day Customization slider bar, allowing them to pay for the exact days
+they need
+Pain: Hassle of new QR codes every trip ➔ Solution: Permanent Connectivity.
+Highlight One eSIM for Life, a single profile installation that works across 150+
+destinations forever
+Pain: Losing access to home numbers ➔ Solution: Zero Interruption. Reassure
+them that our eSIM Runs Alongside their Physical SIM, keeping WhatsApp and 2FA
+active
+Pain: Uncertainty of when to activate ➔ Solution: Risk-Free Planning. Explain our
+365-Day Activation Window, letting them buy now with zero pressure to activate
+until they travel
+
+-- 31 of 35 --
+
+Effective Communication
+The P.A.Y.S. Consultative Framework - Quick, Feature-First Value Selling
+We ideally use the P.A.Y.S. framework to control the conversation and drive
+urgency without sounding like a script:
+P - Profile (Identify Pain Points): Get to the root of their need in 2-3 messages
+Ask direct context questions like, "What was the most frustrating part of getting
+online on your last trip?"
+A - Assess & Articulate Value (Lead with Solution): Instantly present the unique
+holiday.com feature that solves the exact pain point they just mentioned
+Y - Yield Incentives (Create Urgency): Drop the high-impact offer immediately after
+establishing value
+Remind them that the “50% off your first purchase” hook is strictly limited to our first
+500,000 travelers
+S - Secure Commitment (Close the Sale): Confirm the benefit works for them ("So,
+getting the exact days you need works for you?"), then use the limited discount to
+push an incentive-driven close
+
+-- 32 of 35 --
+
+Closing the sale
+Master the Pivot: Strategic CTA Placement - When and How to Drop Your
+Call-to-Action
+A Call-to-Action (CTA): Effective CTAs should never feel like an interruption. To
+maximize conversion rates, we need to deploy strong CTAs at two primary
+conversational pivots
+Pivot 1: Post-Value Articulation (After the 'A' in P.A.Y.S.)
+The Goal: Capitalize on the "aha!" moment right after you match their pain point to
+our feature
+Example: "That hassle is gone with holiday.com. Click here to install your
+permanent profile now, so you never worry about downloading another
+QR code again."
+Pivot 2: Post-Incentive Yield (After the 'Y' in P.A.Y.S.)
+The Goal: Leverage Fear of Missing Out (FOMO) right after mentioning the 50% off
+promo
+Example: "The 50% off deal ends at 500,000 travelers and we're nearing the
+limit. Configure your days now to lock in the discount before it's gone."
+
+-- 33 of 35 --
+
+For the most updated information, always check the PQRA channel
+and official Wiki for Holiday.
+Next Steps to be Followed
+Kindly confirm your acknowledgment here.
+If you find any questions or concerns not covered in the training deck,
+please reach out to your Shift Manager or the L&C Team.
+
+-- 34 of 35 --
+
+Thank you!
+
+-- 35 of 35 --
+
