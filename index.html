@@ -2090,6 +2090,141 @@ body{padding-top:70px!important}
 #wgB-pia.wg-ctrl-active{background:rgba(245,158,11,.22)!important}
 
 
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE-ENRICHMENT-V1 — Fluid Design System for All Screen Sizes
+   Industry-standard clamp() typography · Adaptive Wind God · Multi-tier
+   Injected: 2026-06-16
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Global fluid scale tokens ── */
+:root {
+  --fz-metric-big: clamp(18px, 1.9vw + 5px, 28px);
+  --fz-metric-med: clamp(14px, 1.3vw + 4px, 20px);
+  --fz-hkc-val:    clamp(17px, 1.8vw + 4px, 30px);
+  --fz-section-h2: clamp(15px, 1.4vw + 4px, 20px);
+  --fz-chip-val:   clamp(14px, 1.3vw + 3px, 21px);
+  --fz-t12-stat:   clamp(12px, 0.9vw + 3px, 16px);
+}
+
+/* ── Apply fluid typography ── */
+.metric-big                    { font-size: var(--fz-metric-big) !important; }
+.metric-med                    { font-size: var(--fz-metric-med) !important; }
+.hkc-val                       { font-size: var(--fz-hkc-val) !important; }
+.section-hdr h2, .section h2   { font-size: var(--fz-section-h2) !important; }
+.chip .chip-val                { font-size: var(--fz-chip-val) !important; }
+.t12-stat .val                 { font-size: var(--fz-t12-stat) !important; }
+.wg-kpi-val                    { font-size: clamp(20px, 1.9vw + 6px, 32px) !important; }
+
+/* ── Wind God: chart height scales with viewport ── */
+#wg-chart-area { height: clamp(200px, 26vw + 50px, 330px) !important; }
+
+/* ── Fluid container horizontal padding ── */
+.container {
+  padding-left:  clamp(12px, 2.5vw, 32px) !important;
+  padding-right: clamp(12px, 2.5vw, 32px) !important;
+}
+
+/* ────────────────────────────────────────────────────────────────
+   1100px — wide windowed / half-screen on 2K+
+   ──────────────────────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .top-nav { padding: 0 20px !important; }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   760px — snapped half-screen on 1080p · landscape tablet
+   ──────────────────────────────────────────────────────────────── */
+@media (max-width: 760px) {
+  /* Container */
+  .container { padding-left: 16px !important; padding-right: 16px !important; }
+
+  /* Nav: compress — hide text-only links, keep brand pills */
+  .top-nav { padding: 0 14px !important; height: 46px !important; }
+  .nav-title-text { font-size: 11px !important; }
+  .nav-links { gap: 1px !important; }
+  .nav-links a:not(.nav-pill-in):not(.nav-pill-out) { display: none !important; }
+  .nav-links .nav-pill-in,
+  .nav-links .nav-pill-out { padding: 4px 10px !important; font-size: 10px !important; }
+
+  /* Hero */
+  .hero-v2 { padding: 18px 16px 16px !important; }
+  .hkc-val  { font-size: clamp(16px, 4vw, 22px) !important; }
+  .hkc-lbl, .hkc-delta { font-size: 9px !important; }
+  .hero-progress-bar-wrap { padding: 14px 16px !important; }
+  .hero-kpi-grid { gap: 8px !important; }
+
+  /* Wind God: stats row → 2×2 grid */
+  #wg-stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  /* Reset borders for 2-col layout */
+  #wg-stats-grid > div {
+    border-right: 1px solid rgba(255,255,255,.08) !important;
+    border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  }
+  #wg-stats-grid > div:nth-child(2n)     { border-right: none !important; }
+  #wg-stats-grid > div:nth-child(n+3)    { border-bottom: none !important; }
+
+  /* Wind God: chip font scales */
+  .wg-kpi-val { font-size: clamp(18px, 4vw, 26px) !important; }
+  .wg-kpi-lbl { font-size: 9px !important; }
+
+  /* Wind God: chart shorter */
+  #wg-chart-area { height: clamp(190px, 32vw, 280px) !important; }
+
+  /* Wind God: control buttons compress */
+  .wg-ctrl-btn,
+  #wgV-timeline, #wgV-monthly, #wgV-weekly, #wgV-forecast {
+    padding: 4px 9px !important;
+    font-size: 10px !important;
+  }
+
+  /* Trajectory T12: 2-col stats */
+  .t12-stats { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Gross sales summary: 2-col */
+  #grossSalesSummary { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Section headers */
+  .section-hdr h2, .section h2 { font-size: clamp(14px, 3.5vw, 18px) !important; }
+  .sec-body { padding: 16px !important; }
+
+  /* Metric values */
+  .metric-big { font-size: clamp(18px, 4.5vw, 24px) !important; }
+  .metric-med { font-size: clamp(14px, 3.2vw, 18px) !important; }
+
+  /* Pillar banners */
+  .pillar-banner { padding: 14px 16px !important; }
+  .pillar-title  { font-size: clamp(14px, 3.5vw, 19px) !important; }
+
+  /* Tables: horizontal scroll */
+  .card, .card-sm { overflow-x: auto !important; }
+  .tbl { min-width: 440px; }
+
+  /* Chart minimum heights */
+  .chart-wrap { min-height: 140px !important; }
+  .chart-tall { min-height: 180px !important; }
+  .chart-xl   { min-height: 200px !important; }
+}
+
+/* ────────────────────────────────────────────────────────────────
+   480px — mobile / very narrow window
+   ──────────────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .container { padding-left: 10px !important; padding-right: 10px !important; }
+
+  .hero-kpi-grid { grid-template-columns: 1fr !important; gap: 6px !important; }
+  .hkc-val  { font-size: clamp(20px, 6vw, 26px) !important; }
+  .hero-v2  { padding: 12px !important; }
+
+  #wg-chart-area { height: 190px !important; }
+
+  .top-nav        { padding: 0 10px !important; }
+  .nav-badge-pill { display: none !important; }
+
+  .sec-body   { padding: 10px !important; }
+  .metric-big { font-size: clamp(20px, 6.5vw, 26px) !important; }
+}
+
 </style>
 </head>
 <body>
@@ -2618,7 +2753,7 @@ function toggleTheme(){ if(typeof window.toggleTheme==='function') window.toggle
   </div>
 
   <!-- Stats row -->
-  <div style="display:grid;grid-template-columns:repeat(4,1fr);background:rgba(0,0,0,.22);border-bottom:1px solid rgba(255,255,255,.04)">
+  <div id="wg-stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);background:rgba(0,0,0,.22);border-bottom:1px solid rgba(255,255,255,.04)">
     <div style="padding:16px 22px;border-right:1px solid rgba(255,255,255,.04)">
       <div style="font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.13em;color:#475569;margin-bottom:5px">Latest</div>
       <div id="wgStat-latest-val" style="font-size:28px;font-weight:900;color:#f1f5f9;line-height:1.1;font-variant-numeric:tabular-nums">—</div>
@@ -2642,7 +2777,7 @@ function toggleTheme(){ if(typeof window.toggleTheme==='function') window.toggle
   </div>
 
   <!-- Chart -->
-  <div style="padding:14px 20px 6px;position:relative;height:330px">
+  <div id="wg-chart-area" style="padding:14px 20px 6px;position:relative;height:330px">
     <canvas id="wgMainCanvas"></canvas>
   </div>
 
