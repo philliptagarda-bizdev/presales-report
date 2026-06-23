@@ -2638,7 +2638,7 @@ function toggleTheme(){ if(typeof window.toggleTheme==='function') window.toggle
         <div class="wg-kpi-lbl">Needed Jun&ndash;Dec</div>
       </div>
       <div class="wg-kpi-chip">
-        <div class="wg-kpi-val" style="color:#9ca3af">53%</div>
+        <div class="wg-kpi-val" style="color:#9ca3af">52%</div>
         <div class="wg-kpi-lbl">XV vs Target</div>
       </div>
     </div>
@@ -2964,7 +2964,7 @@ function toggleTheme(){ if(typeof window.toggleTheme==='function') window.toggle
 <div style="margin-bottom:32px">
 <div class="brand-header bh-bau" style="margin-top:24px"><div class="bh-dot" style="background:var(--text-muted)"></div><div class="bh-name" style="color:var(--text-dim)">XV — Support Team</div><div class="bh-sub">Non-presale channel · organic conversion</div></div>
 <div class="grid-3" style="margin-bottom:16px">
-<div class="card-sm"><div class="metric-lbl">Jun Volume / Sales</div><div class="metric-med">267 / <span style="color:var(--green-light)">30</span></div><div class="metric-delta down">▼ vol ×1.9 vs May 139 · quality diluted</div></div>
+<div class="card-sm"><div class="metric-lbl">Jun Volume / Sales</div><div class="metric-med">277 / <span style="color:var(--green-light)">34</span></div><div class="metric-delta down">▼ vol ×2.0 vs May 139 · quality diluted</div></div>
 <div class="card-sm"><div class="metric-lbl">Jun (1–22) Close Rate</div><div class="metric-med" style="color:var(--orange)">12.27%</div><div class="metric-delta flat">→ protective foundation · absorbing FIFA activation volume</div></div>
 <div class="card-sm"><div class="metric-lbl">W3 Status</div><div class="metric-med" style="color:var(--orange)">Root Cause</div><div class="metric-delta flat">Session opens W3 — performance gate</div></div>
 </div>
@@ -4035,7 +4035,7 @@ function toggleTheme(){ if(typeof window.toggleTheme==='function') window.toggle
 
 <div class="card">
 <div class="action-item"><span class="action-pill pill-all">Support</span><div class="action-text"><strong>Support Team routing-precision review.</strong> 12.27% Jun (1–22) — the protective foundation absorbing the FIFA connectivity + activation surge (277 tickets vs 139 May). Identify routing gains as the activation spike normalizes post-Jul 11. Est. +$4k–$8k/month.</div></div>
-<div class="action-item"><span class="action-pill pill-ob">Outbound</span><div class="action-text"><strong>Audrey outbound ramp.</strong> 1,087 contacts (77% of pace) with 4 closes / $1,574 now landing. W3 check-in to sustain the daily contact rate and convert the active warm-lead pipeline.</div></div>
+<div class="action-item"><span class="action-pill pill-ob">Outbound</span><div class="action-text"><strong>Audrey outbound ramp.</strong> 1,087 contacts (78% of pace) with 4 closes / $1,574 now landing. W3 check-in to sustain the daily contact rate and convert the active warm-lead pipeline.</div></div>
 <div class="action-item"><span class="action-pill pill-cg">CG / PIA</span><div class="action-text"><strong>Near-miss coaching brief — CG + PIA.</strong> CG recovered to 34.83% (near May 36.11%) · PIA 29.31% (validated). 30-min brief to hold CG and regain PIA 35%+. Est. combined value: +$2,800–$4,200/month.</div></div>
 <div class="action-item"><span class="action-pill pill-all">Teams</span><div class="action-text"><strong>Work 37 For-Follow-Up leads.</strong> Monday cadence on stalled large-team (≥100 user) leads. These carry 60%+ of deal value. Est. +$8k–$12k/month from dedicated Monday cadence.</div></div>
 <div class="action-item"><span class="action-pill pill-all">Co-Pilot</span><div class="action-text"><strong>Expand Co-Pilot to Paris, Arla, Estie.</strong> June W1 = first full feedback cycle closed. Harold $171 · Jorie $128.67 · Nick $123.67 incentive. Onboard next cohort W3. Est. +8.97 pts lift per agent adds ~$1,200/agent/month.</div></div>
@@ -4349,9 +4349,9 @@ yRight:{position:"right",ticks:{color:"#9aa5b4",font:{size:11}},grid:{drawOnChar
 (function buildTeamsChart() {
 const canvas = document.getElementById("teamsChart");
 if (!canvas) return;
-const labels = ["Jan","Feb","Mar","Apr","May"];
-const leads = [377, 375, 366, 317, 245];
-const closed = [104, 97, 114, 94, 74];
+const labels = ["Jan","Feb","Mar","Apr","May","Jun W3"];
+const leads = [377, 375, 366, 317, 328, 67];
+const closed = [104, 97, 114, 94, 104, 27];
 const closeRate = leads.map((l,i) => +(closed[i]/l*100).toFixed(1));
 new Chart(canvas, { type:"bar", data:{
 labels,
@@ -5653,7 +5653,7 @@ buildFunnelChart();
 
 // ── Volume Projection — Brand-aware ───────────────────────────
 var VOL_DATA={
-xv:{actual:[2090,3182,3717,3998,3668,1226,null,null,null,null,null,null],bau:[910,264,261,166,139,267,null,null,null,null,null,null],
+xv:{actual:[2090,3182,3717,3998,3668,2518,null,null,null,null,null,null],bau:[910,264,261,166,139,277,null,null,null,null,null,null],
 pess:[null,null,null,null,null,3886,3778,3671,3568,3468,3371,3278],vpess:[null,null,null,null,null,3738,3495,3268,3056,2857,2672,2499],
 target:[null,null,null,null,null,4690,4690,4690,4690,4690,4690,4690],color:"#60a5fa",name:"XV",
 notes:{pess:"XV: −2.8%/mo from May. Support Team holds ~130/mo. Year-End ~$1.66M.",vpess:"XV: −6.5%/mo. Support Team atrophies.",target:"XV On Target: ~4,690 contacts/month. Support Team ramps 200→500 over Q3."}},
@@ -5948,7 +5948,7 @@ el.innerHTML = [
 "<h3 style='font-size:15px;font-weight:800;color:var(--orange);margin:24px 0 10px;text-transform:uppercase;letter-spacing:.04em'>W3 Priorities (Jun 16–22)</h3>",
 "<ol style='padding-left:18px;line-height:2'>",
 "<li><strong>Support Team routing review</strong> — 12.27% protective foundation absorbing FIFA activation volume; routing-precision gains post-Jul 11</li>",
-"<li><strong>Audrey outbound ramp</strong> — 1,087 contacts (77% pace), 4 closes landing; sustain daily rate</li>",
+"<li><strong>Audrey outbound ramp</strong> — 1,087 contacts (78% pace), 4 closes landing; sustain daily rate</li>",
 "<li><strong>CG/PIA near-miss brief</strong> — hold CG 34.83% (near May), regain PIA 35%+; est. +$2,800/mo</li>",
 "<li><strong>Teams For-Follow-Up</strong> — push 37 leads to close in Jun W3</li>",
 "<li><strong>Co-Pilot expand</strong> — onboard Paris, Arla, Estie to inbound pilot</li>",
